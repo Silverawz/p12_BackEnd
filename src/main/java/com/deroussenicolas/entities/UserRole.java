@@ -2,8 +2,11 @@ package com.deroussenicolas.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
@@ -14,6 +17,8 @@ import com.sun.istack.NotNull;
  * @author deroussen nicolas
  *
  */
+@Entity
+@Table(name="UserRole")
 public class UserRole implements Serializable {
 
 	/**
@@ -26,7 +31,9 @@ public class UserRole implements Serializable {
 	@NotNull
 	@Size(min = 5, max = 70)
 	private String description;
-
+	@OneToOne
+	private User user;
+	
 	public UserRole() {
 		super();
 	}
@@ -45,6 +52,14 @@ public class UserRole implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public static long getSerialversionuid() {
