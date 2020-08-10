@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -27,17 +28,20 @@ public class Post implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id_post;
 	@NotNull
 	@Size(min = 5, max = 255)
 	private String message;
 	@NotNull
 	private Date date;
+	
 	@ManyToOne
 	private User user;
+	
 	@ManyToOne
 	private Topic topic;
+	
 
 	public Post() {
 		super();

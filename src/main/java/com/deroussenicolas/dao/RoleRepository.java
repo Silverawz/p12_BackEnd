@@ -1,11 +1,12 @@
 package com.deroussenicolas.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import org.springframework.stereotype.Repository;
 
-import com.deroussenicolas.entities.UserRole;
+import com.deroussenicolas.entities.Role;
 
 @Repository
-public interface UserRoleRepository extends JpaRepository <UserRole, Long> {
+public interface RoleRepository extends JpaRepository <Role, Long> {
 
 }

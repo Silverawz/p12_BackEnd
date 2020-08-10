@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -28,15 +29,18 @@ public class Category implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id_category;
 	@NotNull
 	@Size(min = 5, max = 70)
 	private String description;
-	@OneToMany(mappedBy = "topic", cascade = CascadeType.ALL)
+	
+	
+	@OneToMany(mappedBy = "id_topic", cascade = CascadeType.ALL)
 	private List<Topic> topicList;
-	@OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "id_article", cascade = CascadeType.ALL)
 	private List<Article> articlecList;
+	
 	
 	public Category() {
 		super();
@@ -65,7 +69,6 @@ public class Category implements Serializable {
 	public void setTopicList(List<Topic> topicList) {
 		this.topicList = topicList;
 	}
-
 	public List<Article> getArticlecList() {
 		return articlecList;
 	}

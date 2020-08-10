@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -27,7 +28,7 @@ public class Article implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id_article;
 	@NotNull
 	@Size(min = 5, max = 70)
@@ -41,6 +42,8 @@ public class Article implements Serializable {
 	private Category category;
 	@ManyToOne
 	private User user;
+	
+	
 	
 	public Article() {
 		super();
@@ -85,7 +88,6 @@ public class Article implements Serializable {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-
 	public User getUser() {
 		return user;
 	}

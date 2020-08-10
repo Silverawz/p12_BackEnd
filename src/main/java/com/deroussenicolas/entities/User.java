@@ -2,14 +2,19 @@ package com.deroussenicolas.entities;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
@@ -27,7 +32,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id_user;
 	@NotNull
 	@Size(min = 3, max = 70)
@@ -36,18 +41,24 @@ public class User implements Serializable {
 	@Size(min = 3, max = 70)
 	private String lastname;
 	@NotNull
+	@Email
 	@Size(min = 5, max = 70)
 	private String email;
 	@NotNull
 	@Size(min = 5, max = 255)
 	private String password;
-	@OneToOne
-	private UserRole UserRole;
-	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
-	private List<Post> postList;
-	@OneToMany(mappedBy = "topic", cascade = CascadeType.ALL)
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="user_role", joinColumns=@JoinColumn(name="id_user"), inverseJoinColumns=@JoinColumn(name="id_role"))
+	private Set<Role> roles;	
+	
+	
+	@OneToMany(mappedBy = "id_topic")
 	private List<Topic> topicList;
-	@OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
+	
+	@OneToMany(mappedBy = "id_post")
+	private List<Post> postList;
+
+	@OneToMany(mappedBy = "id_article", cascade = CascadeType.ALL)
 	private List<Article> articleList;
 	
 	public User() {
@@ -94,20 +105,12 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public UserRole getUserRole() {
-		return UserRole;
+	public Set<Role> getRoles() {
+		return roles;
 	}
 
-	public void setUserRole(UserRole userRole) {
-		UserRole = userRole;
-	}
-
-	public List<Post> getPostList() {
-		return postList;
-	}
-
-	public void setPostList(List<Post> postList) {
-		this.postList = postList;
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 
 	public List<Topic> getTopicList() {
@@ -116,6 +119,14 @@ public class User implements Serializable {
 
 	public void setTopicList(List<Topic> topicList) {
 		this.topicList = topicList;
+	}
+
+	public List<Post> getPostList() {
+		return postList;
+	}
+
+	public void setPostList(List<Post> postList) {
+		this.postList = postList;
 	}
 
 	public List<Article> getArticleList() {
@@ -129,6 +140,7 @@ public class User implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 	
 
 }
