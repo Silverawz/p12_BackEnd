@@ -1,5 +1,6 @@
 package com.deroussenicolas;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +16,11 @@ import com.deroussenicolas.dao.PostRepository;
 import com.deroussenicolas.dao.RoleRepository;
 import com.deroussenicolas.dao.TopicRepository;
 import com.deroussenicolas.dao.UserRepository;
+import com.deroussenicolas.entities.Article;
+import com.deroussenicolas.entities.Category;
+import com.deroussenicolas.entities.Post;
 import com.deroussenicolas.entities.Role;
+import com.deroussenicolas.entities.Topic;
 import com.deroussenicolas.entities.User;
 
 @SpringBootApplication
@@ -61,6 +66,32 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		roleSet.add(roleR.findAll().get(0));
 		user.setRoles(roleSet);
 		userR.save(user);
+		
+		Category category = new Category();
+		category.setDescription("Football");
+		categoryR.save(category);
+		
+		Article article = new Article();
+		article.setCategory(categoryR.findAll().get(0));
+		article.setUser(userR.findAll().get(0));
+		article.setDate(new Date());
+		article.setMessage("Les fils du triomphe ont finalement décroché la victoire à Marseille.");
+		article.setTitle("Ils y arrivent !");
+		articleR.save(article);
+		
+		
+		Topic topic = new Topic();
+		topic.setTitle("je ne comprends pas!");
+		topic.setUser(userR.findAll().get(0));
+		topic.setCategory(categoryR.findAll().get(0));
+		topicR.save(topic);
+		
+		Post post = new Post();
+		post.setTopic(topicR.findAll().get(0));
+		post.setDate(new Date());
+		post.setUser(userR.findAll().get(0));
+		post.setMessage("ceci est un messagececi est un messagececi est un messagececi est un messagececi est un messagececi est un message");
+		postR.save(post);
 		
 		System.err.println("testing.... END");
 	}
