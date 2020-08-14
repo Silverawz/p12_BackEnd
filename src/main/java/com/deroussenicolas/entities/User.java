@@ -48,7 +48,7 @@ public class User implements Serializable {
 	@Size(min = 5, max = 255)
 	private String password;
 	@ManyToMany(cascade=CascadeType.ALL)
-	@JoinTable(name="user_role", joinColumns=@JoinColumn(name="id_user"), inverseJoinColumns=@JoinColumn(name="id_role"))
+	@JoinTable(name="user_has_role", joinColumns=@JoinColumn(name="user_id_user"), inverseJoinColumns=@JoinColumn(name="role_id_role"))
 	private Set<Role> roles;	
 	
 	

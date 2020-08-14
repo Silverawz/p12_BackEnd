@@ -34,15 +34,10 @@ public class Topic implements Serializable {
 	@NotNull
 	@Size(min = 5, max = 70)
 	private String title;
-	
 	@ManyToOne
 	private User user;
-	
 	@OneToMany(mappedBy = "id_post", cascade = CascadeType.ALL)
 	private List<Post> postList;
-	
-	@ManyToOne
-	private Category category;
 	
 	public Topic() {
 		super();
@@ -78,14 +73,6 @@ public class Topic implements Serializable {
 
 	public void setPostList(List<Post> postList) {
 		this.postList = postList;
-	}
-
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
 	}
 
 	public static long getSerialversionuid() {
