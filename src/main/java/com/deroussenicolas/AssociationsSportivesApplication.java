@@ -1,5 +1,6 @@
 package com.deroussenicolas;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -43,6 +44,7 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 	private PostRepository postR;
 	@Autowired
 	private TopicRepository topicR;
+	private static final Logger LOGGER = LoggerFactory.getLogger(AssociationsSportivesApplication.class);
 	
 	public static void main(String[] args) {
 		SpringApplication.run(AssociationsSportivesApplication.class, args);
@@ -53,7 +55,10 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		
 		
 		System.err.println("commandlineRunner.... START");
-		
+		LOGGER.error("Message logged at ERROR level");
+		LOGGER.warn("Message logged at WARN level");
+		LOGGER.info("Message logged at INFO level");
+		LOGGER.debug("Message logged at DEBUG level");
 		
 		// OK
 		/*
