@@ -1,53 +1,52 @@
-
-2020-08-15 18:24:34.315  INFO 12800 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 12800 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-15 18:24:34.318  INFO 12800 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
-2020-08-15 18:24:35.058  INFO 12800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-15 18:24:35.148  INFO 12800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81ms. Found 6 JPA repository interfaces.
-2020-08-15 18:24:36.071  INFO 12800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-08-15 18:24:36.085  INFO 12800 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-15 18:24:36.085  INFO 12800 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-15 18:24:36.230  INFO 12800 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-08-15 18:24:36.231  INFO 12800 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1868 ms
-2020-08-15 18:24:36.453  INFO 12800 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-15 18:24:36.511  INFO 12800 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-15 18:24:36.557  WARN 12800 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-15 18:24:36.581  INFO 12800 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-15 18:24:36.765  INFO 12800 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-15 18:24:36.900  INFO 12800 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-15 18:24:37.138  INFO 12800 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-15 18:24:37.146  INFO 12800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-08-15 18:24:37.148  INFO 12800 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-15 18:24:37.160  INFO 12800 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-15 18:24:38.001  INFO 12800 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-15 18:24:38.011  INFO 12800 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-15 18:24:38.393  INFO 12800 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-15 18:24:38.405  INFO 12800 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.521 seconds (JVM running for 4.951)
-2020-08-15 18:24:38.407 ERROR 12800 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-15 18:24:38.408  WARN 12800 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-15 18:24:38.408  INFO 12800 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-15 18:24:54.247  INFO 17744 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 17744 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-15 18:24:54.251  INFO 17744 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
-2020-08-15 18:24:54.975  INFO 17744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-15 18:24:55.086  INFO 17744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101ms. Found 6 JPA repository interfaces.
-2020-08-15 18:24:55.944  INFO 17744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-08-15 18:24:55.955  INFO 17744 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-15 18:24:55.956  INFO 17744 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-15 18:24:56.088  INFO 17744 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-08-15 18:24:56.088  INFO 17744 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1791 ms
-2020-08-15 18:24:56.872  INFO 17744 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-15 18:24:56.987  INFO 17744 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-15 18:24:57.068  INFO 17744 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-15 18:24:57.070  WARN 17744 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-15 18:24:57.260  INFO 17744 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-15 18:24:57.423  INFO 17744 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-15 18:24:57.687  INFO 17744 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-15 18:24:57.710  INFO 17744 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-15 18:24:57.725  INFO 17744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-08-15 18:24:57.727  INFO 17744 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-15 18:24:58.637  INFO 17744 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-15 18:24:58.644  INFO 17744 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-15 18:24:58.997  INFO 17744 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-15 18:24:59.007  INFO 17744 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 5.223 seconds (JVM running for 5.632)
-2020-08-15 18:24:59.009 ERROR 17744 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-15 18:24:59.011  WARN 17744 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-15 18:24:59.011  INFO 17744 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-16 16:52:43.559  INFO 8180 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 8180 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-16 16:52:43.568  INFO 8180 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-16 16:52:44.099  INFO 8180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-16 16:52:44.169  INFO 8180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62ms. Found 6 JPA repository interfaces.
+2020-08-16 16:52:44.817  INFO 8180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-16 16:52:44.825  INFO 8180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-16 16:52:44.825  INFO 8180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-16 16:52:44.932  INFO 8180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-16 16:52:44.932  INFO 8180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1327 ms
+2020-08-16 16:52:45.095  INFO 8180 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-16 16:52:45.135  INFO 8180 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-16 16:52:45.176  WARN 8180 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-16 16:52:45.188  INFO 8180 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-16 16:52:45.351  INFO 8180 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-16 16:52:45.482  INFO 8180 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-16 16:52:45.665  INFO 8180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-16 16:52:45.667  INFO 8180 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-16 16:52:45.699  INFO 8180 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-16 16:52:45.723  INFO 8180 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-16 16:52:46.425  INFO 8180 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-16 16:52:46.433  INFO 8180 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-16 16:52:46.717  INFO 8180 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-16 16:52:46.725  INFO 8180 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.5 seconds (JVM running for 3.876)
+2020-08-16 16:52:46.726 ERROR 8180 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-16 16:52:46.726  WARN 8180 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-16 16:52:46.727  INFO 8180 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-16 16:53:29.522  INFO 7924 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 7924 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-16 16:53:29.524  INFO 7924 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-16 16:53:30.091  INFO 7924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-16 16:53:30.161  INFO 7924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63ms. Found 6 JPA repository interfaces.
+2020-08-16 16:53:30.766  INFO 7924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-16 16:53:30.775  INFO 7924 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-16 16:53:30.775  INFO 7924 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-16 16:53:30.876  INFO 7924 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-16 16:53:30.876  INFO 7924 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1311 ms
+2020-08-16 16:53:31.045  INFO 7924 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-16 16:53:31.089  INFO 7924 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-16 16:53:31.127  WARN 7924 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-16 16:53:31.145  INFO 7924 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-16 16:53:31.303  INFO 7924 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-16 16:53:31.405  INFO 7924 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-16 16:53:31.583  INFO 7924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-16 16:53:31.585  INFO 7924 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-16 16:53:31.597  INFO 7924 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-16 16:53:31.614  INFO 7924 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-16 16:53:32.250  INFO 7924 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-16 16:53:32.257  INFO 7924 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-16 16:53:32.481  INFO 7924 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-16 16:53:32.488  INFO 7924 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.294 seconds (JVM running for 3.651)
+2020-08-16 16:53:32.490 ERROR 7924 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-16 16:53:32.490  WARN 7924 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-16 16:53:32.490  INFO 7924 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
