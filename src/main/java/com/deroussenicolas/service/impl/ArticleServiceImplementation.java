@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.deroussenicolas.dao.ArticleRepository;
+import com.deroussenicolas.entities.Article;
 import com.deroussenicolas.service.ArticleService;
 
 /**
@@ -18,4 +19,9 @@ public class ArticleServiceImplementation implements ArticleService {
 
 	@Autowired
 	private ArticleRepository articleRepository;
+
+	@Override
+	public void save(Article article) {
+		articleRepository.save(article);	
+	}
 }

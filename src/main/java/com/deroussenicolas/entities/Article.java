@@ -91,5 +91,10 @@ public class Article implements Serializable {
 		return serialVersionUID;
 	}
 
+	@Override
+	public String toString() {
+		return "Article [id_article=" + id_article + ", title=" + title + ", message=" + message + ", date=" + date
+				+ ", user=" + user + "]";
+	}
 
 }

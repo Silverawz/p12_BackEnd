@@ -1,7 +1,5 @@
 package com.deroussenicolas.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -10,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -49,10 +48,10 @@ public class UserControllerRest {
 		}
 	}
 	
-	@GetMapping("/user/get")
-	public List<User> readingUser() {
+	@GetMapping("/user/{id}")
+	public User getUser(@PathVariable int id) {
 		try {
-			return userService.findAll();
+			return userService.findOneUserById(Long.valueOf(id));
 		} catch (Exception e) {
             throw new ResponseStatusException(    		
                     HttpStatus.BAD_REQUEST, "Error", e
