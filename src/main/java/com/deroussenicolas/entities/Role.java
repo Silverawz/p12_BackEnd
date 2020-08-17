@@ -56,4 +56,9 @@ public class Role implements Serializable {
 		return serialVersionUID;
 	}
 
+	@Override
+	public String toString() {
+		return "Role [id_role=" + id_role + ", description=" + description + "]";
+	}
+
 }

@@ -1,246 +1,417 @@
-2020-08-16 16:52:43.559  INFO 8180 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 8180 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-16 16:52:43.568  INFO 8180 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
-2020-08-16 16:52:44.099  INFO 8180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-16 16:52:44.169  INFO 8180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62ms. Found 6 JPA repository interfaces.
-2020-08-16 16:52:44.817  INFO 8180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-08-16 16:52:44.825  INFO 8180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-16 16:52:44.825  INFO 8180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-16 16:52:44.932  INFO 8180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-08-16 16:52:44.932  INFO 8180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1327 ms
-2020-08-16 16:52:45.095  INFO 8180 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-16 16:52:45.135  INFO 8180 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-16 16:52:45.176  WARN 8180 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-16 16:52:45.188  INFO 8180 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-16 16:52:45.351  INFO 8180 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-16 16:52:45.482  INFO 8180 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-16 16:52:45.665  INFO 8180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-08-16 16:52:45.667  INFO 8180 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-16 16:52:45.699  INFO 8180 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-16 16:52:45.723  INFO 8180 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-16 16:52:46.425  INFO 8180 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-16 16:52:46.433  INFO 8180 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 16:52:46.717  INFO 8180 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-16 16:52:46.725  INFO 8180 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.5 seconds (JVM running for 3.876)
-2020-08-16 16:52:46.726 ERROR 8180 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-16 16:52:46.726  WARN 8180 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-16 16:52:46.727  INFO 8180 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-16 16:53:29.522  INFO 7924 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 7924 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-16 16:53:29.524  INFO 7924 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
-2020-08-16 16:53:30.091  INFO 7924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-16 16:53:30.161  INFO 7924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63ms. Found 6 JPA repository interfaces.
-2020-08-16 16:53:30.766  INFO 7924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-08-16 16:53:30.775  INFO 7924 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-16 16:53:30.775  INFO 7924 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-16 16:53:30.876  INFO 7924 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-08-16 16:53:30.876  INFO 7924 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1311 ms
-2020-08-16 16:53:31.045  INFO 7924 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-16 16:53:31.089  INFO 7924 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-16 16:53:31.127  WARN 7924 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-16 16:53:31.145  INFO 7924 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-16 16:53:31.303  INFO 7924 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-16 16:53:31.405  INFO 7924 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-16 16:53:31.583  INFO 7924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-08-16 16:53:31.585  INFO 7924 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-16 16:53:31.597  INFO 7924 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-16 16:53:31.614  INFO 7924 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-16 16:53:32.250  INFO 7924 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-16 16:53:32.257  INFO 7924 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 16:53:32.481  INFO 7924 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-16 16:53:32.488  INFO 7924 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.294 seconds (JVM running for 3.651)
-2020-08-16 16:53:32.490 ERROR 7924 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-16 16:53:32.490  WARN 7924 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-16 16:53:32.490  INFO 7924 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-16 20:15:13.381  INFO 7896 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 7896 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-16 20:15:13.383  INFO 7896 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
-2020-08-16 20:15:14.031  INFO 7896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-16 20:15:14.121  INFO 7896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83ms. Found 6 JPA repository interfaces.
-2020-08-16 20:15:14.792  INFO 7896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-08-16 20:15:14.803  INFO 7896 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-16 20:15:14.803  INFO 7896 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-08-16 20:15:14.917  INFO 7896 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-08-16 20:15:14.918  INFO 7896 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1487 ms
-2020-08-16 20:15:15.077  INFO 7896 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:15:15.122  INFO 7896 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-16 20:15:15.169  WARN 7896 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-16 20:15:15.175  INFO 7896 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-16 20:15:15.325  INFO 7896 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-16 20:15:15.425  INFO 7896 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-16 20:15:15.611  INFO 7896 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-16 20:15:15.613  INFO 7896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-08-16 20:15:15.615  INFO 7896 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-16 20:15:15.628  INFO 7896 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-16 20:15:16.277  INFO 7896 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-16 20:15:16.289  INFO 7896 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:15:16.534  INFO 7896 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-16 20:15:16.540  INFO 7896 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.538 seconds (JVM running for 3.91)
-2020-08-16 20:15:16.542 ERROR 7896 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-16 20:15:16.543  WARN 7896 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-16 20:15:16.543  INFO 7896 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-16 20:15:33.312  INFO 16648 --- [main] .d.AssociationsSportivesApplicationTests : Starting AssociationsSportivesApplicationTests on DESKTOP-DDG4VL2 with PID 16648 (started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-16 20:15:33.313  INFO 16648 --- [main] .d.AssociationsSportivesApplicationTests : No active profile set, falling back to default profiles: default
-2020-08-16 20:15:33.870  INFO 16648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-16 20:15:33.943  INFO 16648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66ms. Found 6 JPA repository interfaces.
-2020-08-16 20:15:34.452  INFO 16648 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:15:34.522  INFO 16648 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-16 20:15:34.589  INFO 16648 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-16 20:15:34.765  INFO 16648 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-16 20:15:34.799  WARN 16648 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-16 20:15:35.016  INFO 16648 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-16 20:15:35.229  INFO 16648 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-16 20:15:35.250  INFO 16648 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-16 20:15:35.588  INFO 16648 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-16 20:15:36.127  INFO 16648 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-16 20:15:36.137  INFO 16648 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:15:36.404  INFO 16648 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-16 20:15:36.412  INFO 16648 --- [main] .d.AssociationsSportivesApplicationTests : Started AssociationsSportivesApplicationTests in 3.371 seconds (JVM running for 4.37)
-2020-08-16 20:15:36.414 ERROR 16648 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-16 20:15:36.414  WARN 16648 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-16 20:15:36.415  INFO 16648 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-16 20:15:37.029  INFO 16648 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:15:37.031  INFO 16648 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:15:37.032  INFO 16648 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-08-16 20:15:37.046  INFO 16648 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-08-16 20:18:04.851  INFO 5888 --- [main] .d.AssociationsSportivesApplicationTests : Starting AssociationsSportivesApplicationTests on DESKTOP-DDG4VL2 with PID 5888 (started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-16 20:18:04.853  INFO 5888 --- [main] .d.AssociationsSportivesApplicationTests : No active profile set, falling back to default profiles: default
-2020-08-16 20:18:05.418  INFO 5888 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-16 20:18:05.505  INFO 5888 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79ms. Found 6 JPA repository interfaces.
-2020-08-16 20:18:06.059  INFO 5888 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:18:06.131  INFO 5888 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-16 20:18:06.190  INFO 5888 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-16 20:18:06.360  INFO 5888 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-16 20:18:06.433  WARN 5888 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-16 20:18:06.633  INFO 5888 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-16 20:18:06.837  INFO 5888 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-16 20:18:06.856  INFO 5888 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-16 20:18:07.176  INFO 5888 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-16 20:18:07.584  INFO 5888 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-16 20:18:07.591  INFO 5888 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:18:07.831  INFO 5888 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-16 20:18:07.837  INFO 5888 --- [main] .d.AssociationsSportivesApplicationTests : Started AssociationsSportivesApplicationTests in 3.25 seconds (JVM running for 4.143)
-2020-08-16 20:18:07.839 ERROR 5888 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-16 20:18:07.839  WARN 5888 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-16 20:18:07.839  INFO 5888 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-16 20:18:08.377  INFO 5888 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:18:08.379  INFO 5888 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:18:08.380  INFO 5888 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-08-16 20:18:08.392  INFO 5888 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-08-16 20:18:46.332  INFO 32 --- [main] .d.AssociationsSportivesApplicationTests : Starting AssociationsSportivesApplicationTests on DESKTOP-DDG4VL2 with PID 32 (started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-16 20:18:46.333  INFO 32 --- [main] .d.AssociationsSportivesApplicationTests : No active profile set, falling back to default profiles: default
-2020-08-16 20:18:46.904  INFO 32 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-16 20:18:47.000  INFO 32 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87ms. Found 6 JPA repository interfaces.
-2020-08-16 20:18:47.520  INFO 32 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:18:47.589  INFO 32 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-16 20:18:47.651  INFO 32 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-16 20:18:47.818  INFO 32 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-16 20:18:47.855  WARN 32 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-16 20:18:48.091  INFO 32 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-16 20:18:48.272  INFO 32 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-16 20:18:48.290  INFO 32 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-16 20:18:48.598  INFO 32 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-16 20:18:49.081  INFO 32 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-16 20:18:49.090  INFO 32 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:18:49.331  INFO 32 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-16 20:18:49.339  INFO 32 --- [main] .d.AssociationsSportivesApplicationTests : Started AssociationsSportivesApplicationTests in 3.267 seconds (JVM running for 4.208)
-2020-08-16 20:18:49.340 ERROR 32 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-16 20:18:49.340  WARN 32 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-16 20:18:49.340  INFO 32 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-16 20:18:49.891  INFO 32 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:18:49.893  INFO 32 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:18:49.894  INFO 32 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-08-16 20:18:49.908  INFO 32 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-08-16 20:19:55.068  INFO 16456 --- [main] .d.AssociationsSportivesApplicationTests : Starting AssociationsSportivesApplicationTests on DESKTOP-DDG4VL2 with PID 16456 (started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-16 20:19:55.069  INFO 16456 --- [main] .d.AssociationsSportivesApplicationTests : No active profile set, falling back to default profiles: default
-2020-08-16 20:19:55.705  INFO 16456 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-16 20:19:55.806  INFO 16456 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92ms. Found 6 JPA repository interfaces.
-2020-08-16 20:19:56.319  INFO 16456 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:19:56.388  INFO 16456 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-16 20:19:56.459  INFO 16456 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-16 20:19:56.637  INFO 16456 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-16 20:19:56.668  WARN 16456 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-16 20:19:56.890  INFO 16456 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-16 20:19:57.084  INFO 16456 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-16 20:19:57.102  INFO 16456 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-16 20:19:57.412  INFO 16456 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-16 20:19:57.849  INFO 16456 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-16 20:19:57.858  INFO 16456 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:19:58.117  INFO 16456 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-16 20:19:58.123  INFO 16456 --- [main] .d.AssociationsSportivesApplicationTests : Started AssociationsSportivesApplicationTests in 3.323 seconds (JVM running for 4.22)
-2020-08-16 20:19:58.124 ERROR 16456 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-16 20:19:58.125  WARN 16456 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-16 20:19:58.125  INFO 16456 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-16 20:19:58.532  INFO 16456 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:19:58.536  INFO 16456 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:19:58.536  INFO 16456 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-08-16 20:19:58.548  INFO 16456 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-08-16 20:20:58.740  INFO 8204 --- [main] .d.AssociationsSportivesApplicationTests : Starting AssociationsSportivesApplicationTests on DESKTOP-DDG4VL2 with PID 8204 (started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-16 20:20:58.741  INFO 8204 --- [main] .d.AssociationsSportivesApplicationTests : No active profile set, falling back to default profiles: default
-2020-08-16 20:20:59.316  INFO 8204 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-16 20:20:59.403  INFO 8204 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78ms. Found 6 JPA repository interfaces.
-2020-08-16 20:20:59.937  INFO 8204 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:21:00.014  INFO 8204 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-16 20:21:00.084  INFO 8204 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-16 20:21:00.254  INFO 8204 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-16 20:21:00.303  WARN 8204 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-16 20:21:00.512  INFO 8204 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-16 20:21:00.700  INFO 8204 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-16 20:21:00.718  INFO 8204 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-16 20:21:01.065  INFO 8204 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-16 20:21:01.475  INFO 8204 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-16 20:21:01.484  INFO 8204 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:21:01.765  INFO 8204 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-16 20:21:01.773  INFO 8204 --- [main] .d.AssociationsSportivesApplicationTests : Started AssociationsSportivesApplicationTests in 3.288 seconds (JVM running for 4.184)
-2020-08-16 20:21:01.775 ERROR 8204 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-16 20:21:01.776  WARN 8204 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-16 20:21:01.776  INFO 8204 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-16 20:21:02.287  INFO 8204 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:21:02.289  INFO 8204 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:21:02.290  INFO 8204 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-08-16 20:21:02.302  INFO 8204 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-08-16 20:21:34.207  INFO 9048 --- [main] .d.AssociationsSportivesApplicationTests : Starting AssociationsSportivesApplicationTests on DESKTOP-DDG4VL2 with PID 9048 (started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-16 20:21:34.208  INFO 9048 --- [main] .d.AssociationsSportivesApplicationTests : No active profile set, falling back to default profiles: default
-2020-08-16 20:21:34.771  INFO 9048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-16 20:21:34.873  INFO 9048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95ms. Found 6 JPA repository interfaces.
-2020-08-16 20:21:35.467  INFO 9048 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:21:35.539  INFO 9048 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-16 20:21:35.603  INFO 9048 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-16 20:21:35.792  INFO 9048 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-16 20:21:35.859  WARN 9048 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-16 20:21:36.064  INFO 9048 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-16 20:21:36.255  INFO 9048 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-16 20:21:36.275  INFO 9048 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-16 20:21:36.596  INFO 9048 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-16 20:21:37.052  INFO 9048 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-16 20:21:37.062  INFO 9048 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:21:37.290  INFO 9048 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-16 20:21:37.296  INFO 9048 --- [main] .d.AssociationsSportivesApplicationTests : Started AssociationsSportivesApplicationTests in 3.354 seconds (JVM running for 4.239)
-2020-08-16 20:21:37.298 ERROR 9048 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-16 20:21:37.298  WARN 9048 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-16 20:21:37.298  INFO 9048 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-16 20:21:37.817  INFO 9048 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:21:37.818  INFO 9048 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:21:37.819  INFO 9048 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-08-16 20:21:37.831  INFO 9048 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-08-16 20:21:57.994  INFO 18672 --- [main] .d.AssociationsSportivesApplicationTests : Starting AssociationsSportivesApplicationTests on DESKTOP-DDG4VL2 with PID 18672 (started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
-2020-08-16 20:21:57.995  INFO 18672 --- [main] .d.AssociationsSportivesApplicationTests : No active profile set, falling back to default profiles: default
-2020-08-16 20:21:58.556  INFO 18672 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-08-16 20:21:58.644  INFO 18672 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79ms. Found 6 JPA repository interfaces.
-2020-08-16 20:21:59.203  INFO 18672 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:21:59.274  INFO 18672 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-08-16 20:21:59.338  INFO 18672 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2020-08-16 20:21:59.504  INFO 18672 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-08-16 20:21:59.547  WARN 18672 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-08-16 20:21:59.762  INFO 18672 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-08-16 20:21:59.949  INFO 18672 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-08-16 20:21:59.966  INFO 18672 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-08-16 20:22:00.293  INFO 18672 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-08-16 20:22:00.714  INFO 18672 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-08-16 20:22:00.724  INFO 18672 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:22:00.963  INFO 18672 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-08-16 20:22:00.969  INFO 18672 --- [main] .d.AssociationsSportivesApplicationTests : Started AssociationsSportivesApplicationTests in 3.243 seconds (JVM running for 4.109)
-2020-08-16 20:22:00.970 ERROR 18672 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
-2020-08-16 20:22:00.971  WARN 18672 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
-2020-08-16 20:22:00.971  INFO 18672 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
-2020-08-16 20:22:01.519  INFO 18672 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-08-16 20:22:01.521  INFO 18672 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-08-16 20:22:01.522  INFO 18672 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-08-16 20:22:01.536  INFO 18672 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-08-17 12:22:12.085  INFO 13040 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 13040 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 12:22:12.093  INFO 13040 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 12:22:12.890  INFO 13040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 12:22:13.010  INFO 13040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109ms. Found 6 JPA repository interfaces.
+2020-08-17 12:22:13.834  INFO 13040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 12:22:13.844  INFO 13040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 12:22:13.844  INFO 13040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 12:22:13.990  INFO 13040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 12:22:13.990  INFO 13040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1826 ms
+2020-08-17 12:22:14.221  INFO 13040 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 12:22:14.286  INFO 13040 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 12:22:14.349  INFO 13040 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 12:22:14.359  WARN 13040 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 12:22:14.522  INFO 13040 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 12:22:14.652  INFO 13040 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 12:22:14.901  INFO 13040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 12:22:14.903  INFO 13040 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 12:22:14.982  INFO 13040 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 12:22:15.004  INFO 13040 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 12:22:15.754  INFO 13040 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 12:22:15.762  INFO 13040 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 12:22:16.014  INFO 13040 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 12:22:16.022  INFO 13040 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.369 seconds (JVM running for 4.766)
+2020-08-17 12:22:16.024 ERROR 13040 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 12:22:16.024  WARN 13040 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 12:22:16.024  INFO 13040 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 12:25:01.476  INFO 7116 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 7116 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 12:25:01.482  INFO 7116 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 12:25:02.402  INFO 7116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 12:25:02.526  INFO 7116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109ms. Found 6 JPA repository interfaces.
+2020-08-17 12:25:03.369  INFO 7116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 12:25:03.385  INFO 7116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 12:25:03.386  INFO 7116 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 12:25:03.510  INFO 7116 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 12:25:03.510  INFO 7116 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1966 ms
+2020-08-17 12:25:03.730  INFO 7116 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 12:25:03.794  INFO 7116 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 12:25:03.907  WARN 7116 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 12:25:03.918  INFO 7116 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 12:25:04.163  INFO 7116 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 12:25:04.322  INFO 7116 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 12:25:04.412  INFO 7116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 12:25:04.414  INFO 7116 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 12:25:04.567  INFO 7116 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 12:25:04.592  INFO 7116 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 12:25:05.483  INFO 7116 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 12:25:05.491  INFO 7116 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 12:25:05.811  INFO 7116 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 12:25:05.819  INFO 7116 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.98 seconds (JVM running for 6.026)
+2020-08-17 12:25:05.821 ERROR 7116 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 12:25:05.821  WARN 7116 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 12:25:05.822  INFO 7116 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 12:25:20.301  INFO 7116 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 12:25:20.301  INFO 7116 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 12:25:20.311  INFO 7116 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-08-17 12:27:05.322  INFO 19332 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 19332 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 12:27:05.325  INFO 19332 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 12:27:05.885  INFO 19332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 12:27:05.967  INFO 19332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76ms. Found 6 JPA repository interfaces.
+2020-08-17 12:27:06.593  INFO 19332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 12:27:06.601  INFO 19332 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 12:27:06.602  INFO 19332 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 12:27:06.709  INFO 19332 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 12:27:06.709  INFO 19332 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1345 ms
+2020-08-17 12:27:06.903  INFO 19332 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 12:27:06.953  INFO 19332 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 12:27:07.006  INFO 19332 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 12:27:07.024  WARN 19332 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 12:27:07.162  INFO 19332 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 12:27:07.260  INFO 19332 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 12:27:07.455  INFO 19332 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 12:27:07.473  INFO 19332 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 12:27:07.483  INFO 19332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 12:27:07.485  INFO 19332 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 12:27:08.177  INFO 19332 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 12:27:08.184  INFO 19332 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 12:27:08.423  INFO 19332 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 12:27:08.429  INFO 19332 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.447 seconds (JVM running for 3.798)
+2020-08-17 12:27:08.431 ERROR 19332 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 12:27:08.431  WARN 19332 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 12:27:08.431  INFO 19332 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 12:27:36.748  INFO 19332 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 12:27:36.749  INFO 19332 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 12:27:36.755  INFO 19332 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-08-17 12:27:36.787  WARN 19332 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+2020-08-17 12:27:49.827  WARN 19332 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:28:07.215  WARN 19332 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unrecognized token 'a': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false'); nested exception is com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'a': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (PushbackInputStream); line: 1, column: 2]]
+2020-08-17 12:29:49.826  WARN 19332 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:31:12.739  WARN 19332 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:31:25.080  WARN 19332 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-08-17 12:31:44.903  WARN 19332 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:32:54.064  WARN 19332 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:34:59.375  WARN 19332 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:35:08.502  WARN 19332 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:35:15.303  WARN 19332 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:35:18.017  WARN 19332 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:36:06.257  WARN 19332 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:36:50.801  WARN 19332 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1048, SQLState: 23000
+2020-08-17 12:36:50.802 ERROR 19332 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : Le champ 'date' ne peut être vide (null)
+2020-08-17 12:36:50.813 ERROR 19332 --- [http-nio-8080-exec-7] c.d.controller.UserControllerRest        : Error during the user creation in database = com.deroussenicolas.entities.User@65153efd
+2020-08-17 12:37:32.465  WARN 19332 --- [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1048, SQLState: 23000
+2020-08-17 12:37:32.465 ERROR 19332 --- [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : Le champ 'date' ne peut être vide (null)
+2020-08-17 12:37:32.468 ERROR 19332 --- [http-nio-8080-exec-9] c.d.controller.UserControllerRest        : Error during the user creation in database = com.deroussenicolas.entities.User@335d3b9e
+2020-08-17 12:39:39.782  WARN 19332 --- [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1048, SQLState: 23000
+2020-08-17 12:39:39.783 ERROR 19332 --- [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Le champ 'date' ne peut être vide (null)
+2020-08-17 12:39:39.784 ERROR 19332 --- [http-nio-8080-exec-1] c.d.controller.UserControllerRest        : Error during the user creation in database = com.deroussenicolas.entities.User@578973d
+2020-08-17 12:47:01.002  INFO 15752 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 15752 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 12:47:01.004  INFO 15752 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 12:47:01.594  INFO 15752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 12:47:01.679  INFO 15752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77ms. Found 6 JPA repository interfaces.
+2020-08-17 12:47:02.301  INFO 15752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 12:47:02.312  INFO 15752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 12:47:02.312  INFO 15752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 12:47:02.414  INFO 15752 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 12:47:02.415  INFO 15752 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1372 ms
+2020-08-17 12:47:02.582  INFO 15752 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 12:47:02.626  INFO 15752 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 12:47:02.677  INFO 15752 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 12:47:02.688  WARN 15752 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 12:47:02.814  INFO 15752 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 12:47:02.914  INFO 15752 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 12:47:03.105  INFO 15752 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 12:47:03.122  INFO 15752 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 12:47:03.133  INFO 15752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 12:47:03.134  INFO 15752 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 12:47:03.732  INFO 15752 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 12:47:03.738  INFO 15752 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 12:47:03.955  INFO 15752 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 12:47:03.961  INFO 15752 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.304 seconds (JVM running for 3.66)
+2020-08-17 12:47:03.962 ERROR 15752 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 12:47:03.963  WARN 15752 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 12:47:03.963  INFO 15752 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 12:47:06.475  INFO 15752 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 12:47:06.476  INFO 15752 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 12:47:06.482  INFO 15752 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-08-17 12:47:06.646  WARN 15752 --- [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1048, SQLState: 23000
+2020-08-17 12:47:06.647 ERROR 15752 --- [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Le champ 'date' ne peut être vide (null)
+2020-08-17 12:47:06.655 ERROR 15752 --- [http-nio-8080-exec-1] c.d.controller.UserControllerRest        : Error during the user creation in database = com.deroussenicolas.entities.User@3964c91b
+2020-08-17 12:47:40.542  INFO 18104 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 18104 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 12:47:40.544  INFO 18104 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 12:47:41.088  INFO 18104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 12:47:41.164  INFO 18104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68ms. Found 6 JPA repository interfaces.
+2020-08-17 12:47:41.818  INFO 18104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 12:47:41.827  INFO 18104 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 12:47:41.827  INFO 18104 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 12:47:41.951  INFO 18104 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 12:47:41.952  INFO 18104 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1369 ms
+2020-08-17 12:47:42.157  INFO 18104 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 12:47:42.209  INFO 18104 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 12:47:42.267  INFO 18104 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 12:47:42.277  WARN 18104 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 12:47:42.427  INFO 18104 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 12:47:42.541  INFO 18104 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 12:47:42.777  INFO 18104 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 12:47:42.785  INFO 18104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 12:47:42.787  INFO 18104 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 12:47:42.795  INFO 18104 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 12:47:43.432  INFO 18104 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 12:47:43.439  INFO 18104 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 12:47:43.684  INFO 18104 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 12:47:43.691  INFO 18104 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.481 seconds (JVM running for 3.892)
+2020-08-17 12:47:43.693 ERROR 18104 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 12:47:43.693  WARN 18104 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 12:47:43.693  INFO 18104 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 12:47:47.136  INFO 18104 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 12:47:47.136  INFO 18104 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 12:47:47.142  INFO 18104 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-08-17 12:48:01.344  WARN 18104 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.deroussenicolas.entities.User` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-08-17 12:48:07.745  INFO 18104 --- [http-nio-8080-exec-5] c.d.controller.UserControllerRest        : New user created in database = com.deroussenicolas.entities.User@1c5629c2
+2020-08-17 12:48:17.014  INFO 18104 --- [http-nio-8080-exec-6] c.d.controller.UserControllerRest        : New user created in database = com.deroussenicolas.entities.User@6a8fe28b
+2020-08-17 12:48:36.553  WARN 18104 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('[' (code 91)): was expecting a colon to separate field name and value; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('[' (code 91)): was expecting a colon to separate field name and value
+ at [Source: (PushbackInputStream); line: 3, column: 20]]
+2020-08-17 12:48:57.125  WARN 18104 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `java.lang.Long` out of START_ARRAY token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.lang.Long` out of START_ARRAY token
+ at [Source: (PushbackInputStream); line: 3, column: 21] (through reference chain: com.deroussenicolas.entities.User["id_user"])]
+2020-08-17 12:49:09.826  INFO 18104 --- [http-nio-8080-exec-1] c.d.controller.UserControllerRest        : New user created in database = com.deroussenicolas.entities.User@7ac64358
+2020-08-17 12:49:59.041  INFO 18460 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 18460 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 12:49:59.044  INFO 18460 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 12:49:59.588  INFO 18460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 12:49:59.663  INFO 18460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65ms. Found 6 JPA repository interfaces.
+2020-08-17 12:50:00.288  INFO 18460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 12:50:00.296  INFO 18460 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 12:50:00.296  INFO 18460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 12:50:00.401  INFO 18460 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 12:50:00.402  INFO 18460 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1324 ms
+2020-08-17 12:50:00.571  INFO 18460 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 12:50:00.617  INFO 18460 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 12:50:00.672  INFO 18460 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 12:50:00.683  WARN 18460 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 12:50:00.806  INFO 18460 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 12:50:00.911  INFO 18460 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 12:50:01.100  INFO 18460 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 12:50:01.115  INFO 18460 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 12:50:01.128  INFO 18460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 12:50:01.129  INFO 18460 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 12:50:01.778  INFO 18460 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 12:50:01.784  INFO 18460 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 12:50:02.022  INFO 18460 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 12:50:02.029  INFO 18460 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.311 seconds (JVM running for 3.683)
+2020-08-17 12:50:02.031 ERROR 18460 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 12:50:02.031  WARN 18460 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 12:50:02.031  INFO 18460 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 12:50:05.718  INFO 18460 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 12:50:05.718  INFO 18460 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 12:50:05.724  INFO 18460 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-08-17 12:50:05.883  INFO 18460 --- [http-nio-8080-exec-2] c.d.controller.UserControllerRest        : New user created in database = User [id_user=1, firstname=Gerard, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[com.deroussenicolas.entities.Role@31930536], topicList=[], postList=[], articleList=[]]
+2020-08-17 12:51:12.857  INFO 14584 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 14584 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 12:51:12.859  INFO 14584 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 12:51:13.401  INFO 14584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 12:51:13.478  INFO 14584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68ms. Found 6 JPA repository interfaces.
+2020-08-17 12:51:14.112  INFO 14584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 12:51:14.122  INFO 14584 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 12:51:14.122  INFO 14584 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 12:51:14.228  INFO 14584 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 12:51:14.228  INFO 14584 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1332 ms
+2020-08-17 12:51:14.391  INFO 14584 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 12:51:14.440  INFO 14584 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 12:51:14.489  INFO 14584 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 12:51:14.499  WARN 14584 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 12:51:14.637  INFO 14584 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 12:51:14.745  INFO 14584 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 12:51:14.918  INFO 14584 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 12:51:14.936  INFO 14584 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 12:51:14.946  INFO 14584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 12:51:14.947  INFO 14584 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 12:51:15.583  INFO 14584 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 12:51:15.589  INFO 14584 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 12:51:15.821  INFO 14584 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 12:51:15.827  INFO 14584 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.303 seconds (JVM running for 3.641)
+2020-08-17 12:51:15.829 ERROR 14584 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 12:51:15.829  WARN 14584 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 12:51:15.829  INFO 14584 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 12:51:19.395  INFO 14584 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 12:51:19.395  INFO 14584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 12:51:19.402  INFO 14584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-08-17 12:51:19.594  INFO 14584 --- [http-nio-8080-exec-1] c.d.controller.UserControllerRest        : New user created in database = User [id_user= AutoGenerated, firstname=Gerard, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[com.deroussenicolas.entities.Role@7c8a5345], topicList=[], postList=[], articleList=[]]
+2020-08-17 12:52:05.047  INFO 16268 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 16268 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 12:52:05.050  INFO 16268 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 12:52:05.642  INFO 16268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 12:52:05.718  INFO 16268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68ms. Found 6 JPA repository interfaces.
+2020-08-17 12:52:06.359  INFO 16268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 12:52:06.368  INFO 16268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 12:52:06.369  INFO 16268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 12:52:06.482  INFO 16268 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 12:52:06.482  INFO 16268 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1394 ms
+2020-08-17 12:52:06.638  INFO 16268 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 12:52:06.685  INFO 16268 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 12:52:06.740  INFO 16268 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 12:52:06.747  WARN 16268 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 12:52:06.876  INFO 16268 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 12:52:06.985  INFO 16268 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 12:52:07.165  INFO 16268 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 12:52:07.179  INFO 16268 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 12:52:07.211  INFO 16268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 12:52:07.213  INFO 16268 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 12:52:07.819  INFO 16268 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 12:52:07.826  INFO 16268 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 12:52:08.067  INFO 16268 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 12:52:08.074  INFO 16268 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.37 seconds (JVM running for 3.693)
+2020-08-17 12:52:08.076 ERROR 16268 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 12:52:08.077  WARN 16268 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 12:52:08.077  INFO 16268 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 12:52:15.903  INFO 16268 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 12:52:15.904  INFO 16268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 12:52:15.911  INFO 16268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-08-17 12:52:16.104  INFO 16268 --- [http-nio-8080-exec-1] c.d.controller.UserControllerRest        : New user created in database = User [id_user= AutoGenerated, firstname=Gerard, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 12:59:37.398  INFO 5048 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 5048 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 12:59:37.400  INFO 5048 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 12:59:37.951  INFO 5048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 12:59:38.024  INFO 5048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64ms. Found 6 JPA repository interfaces.
+2020-08-17 12:59:38.644  INFO 5048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 12:59:38.654  INFO 5048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 12:59:38.654  INFO 5048 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 12:59:38.769  INFO 5048 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 12:59:38.770  INFO 5048 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1337 ms
+2020-08-17 12:59:38.926  INFO 5048 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 12:59:38.975  INFO 5048 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 12:59:39.025  INFO 5048 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 12:59:39.046  WARN 5048 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 12:59:39.166  INFO 5048 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 12:59:39.271  INFO 5048 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 12:59:39.465  INFO 5048 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 12:59:39.485  INFO 5048 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 12:59:39.516  INFO 5048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 12:59:39.518  INFO 5048 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 12:59:40.119  INFO 5048 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 12:59:40.126  INFO 5048 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 12:59:40.353  INFO 5048 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 12:59:40.361  INFO 5048 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.312 seconds (JVM running for 3.662)
+2020-08-17 12:59:40.362 ERROR 5048 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 12:59:40.363  WARN 5048 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 12:59:40.363  INFO 5048 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 13:00:05.062  INFO 5048 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 13:00:05.062  INFO 5048 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 13:00:05.069  INFO 5048 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-08-17 13:00:05.236  INFO 5048 --- [http-nio-8080-exec-2] c.d.controller.UserControllerRest        : User updated in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:00:21.750  INFO 5048 --- [http-nio-8080-exec-3] c.d.controller.UserControllerRest        : User updated in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:00:42.407  INFO 5048 --- [http-nio-8080-exec-4] c.d.controller.UserControllerRest        : User updated in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:00:51.540  INFO 5048 --- [http-nio-8080-exec-5] c.d.controller.UserControllerRest        : User updated in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:13:39.825  INFO 15392 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 15392 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 13:13:39.828  INFO 15392 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 13:13:40.404  INFO 15392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 13:13:40.486  INFO 15392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74ms. Found 6 JPA repository interfaces.
+2020-08-17 13:13:41.131  INFO 15392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 13:13:41.140  INFO 15392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 13:13:41.141  INFO 15392 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 13:13:41.257  INFO 15392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 13:13:41.257  INFO 15392 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1376 ms
+2020-08-17 13:13:41.434  INFO 15392 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 13:13:41.479  INFO 15392 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 13:13:41.532  INFO 15392 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 13:13:41.541  WARN 15392 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 13:13:41.691  INFO 15392 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 13:13:41.804  INFO 15392 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 13:13:41.986  INFO 15392 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 13:13:42.001  INFO 15392 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 13:13:42.019  INFO 15392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 13:13:42.020  INFO 15392 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 13:13:42.637  INFO 15392 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 13:13:42.644  INFO 15392 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 13:13:42.975  INFO 15392 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 13:13:42.981  INFO 15392 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.585 seconds (JVM running for 4.017)
+2020-08-17 13:13:42.982 ERROR 15392 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 13:13:42.983  WARN 15392 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 13:13:42.983  INFO 15392 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 13:14:04.850  INFO 15392 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 13:14:04.850  INFO 15392 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 13:14:04.857  INFO 15392 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-08-17 13:14:05.062  INFO 15392 --- [http-nio-8080-exec-1] c.d.controller.UserControllerRest        : User updated in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:14:18.414  INFO 15392 --- [http-nio-8080-exec-3] c.d.controller.UserControllerRest        : User updated in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:16:56.519  INFO 18272 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 18272 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 13:16:56.522  INFO 18272 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 13:16:57.085  INFO 18272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 13:16:57.167  INFO 18272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75ms. Found 6 JPA repository interfaces.
+2020-08-17 13:16:57.811  INFO 18272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 13:16:57.821  INFO 18272 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 13:16:57.821  INFO 18272 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 13:16:57.927  INFO 18272 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 13:16:57.927  INFO 18272 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1370 ms
+2020-08-17 13:16:58.118  INFO 18272 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 13:16:58.164  INFO 18272 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 13:16:58.212  INFO 18272 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 13:16:58.230  WARN 18272 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 13:16:58.378  INFO 18272 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 13:16:58.491  INFO 18272 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 13:16:58.673  INFO 18272 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 13:16:58.693  INFO 18272 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 13:16:58.704  INFO 18272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 13:16:58.707  INFO 18272 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 13:16:59.489  INFO 18272 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 13:16:59.497  INFO 18272 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 13:16:59.799  INFO 18272 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 13:16:59.805  INFO 18272 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.659 seconds (JVM running for 4.063)
+2020-08-17 13:16:59.807 ERROR 18272 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 13:16:59.808  WARN 18272 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 13:16:59.808  INFO 18272 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 13:17:11.133  INFO 18272 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 13:17:11.134  INFO 18272 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 13:17:11.139  INFO 18272 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-08-17 13:17:11.262 ERROR 18272 --- [http-nio-8080-exec-2] c.d.controller.UserControllerRest        : Error during the user creation in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:17:17.883 ERROR 18272 --- [http-nio-8080-exec-4] c.d.controller.UserControllerRest        : Error during the user creation in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:17:40.881 ERROR 18272 --- [http-nio-8080-exec-6] c.d.controller.UserControllerRest        : Error during the user creation in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:17:50.698  INFO 18272 --- [http-nio-8080-exec-8] c.d.controller.UserControllerRest        : User updated in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:18:13.152  INFO 18272 --- [http-nio-8080-exec-9] c.d.controller.UserControllerRest        : User updated in database = User [id_user= AutoGenerated, firstname=Franck, lastname=Elastique, email=aaa@aol.fr, password=$2a$10$QJ1kkAVEOKtcPeBy.Nx/1evowZVl6Pf03SVWtB1Bb6WV0pyCViqde, roles=[Role [id_role=5, description=ADMIN]], topicList=[], postList=[], articleList=[]]
+2020-08-17 13:23:16.426  INFO 4272 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 4272 (C:\Users\derou\eclipse-workspace\AssociationsSportives\target\classes started by derou in C:\Users\derou\eclipse-workspace\AssociationsSportives)
+2020-08-17 13:23:16.428  INFO 4272 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-17 13:23:16.977  INFO 4272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-17 13:23:17.046  INFO 4272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63ms. Found 6 JPA repository interfaces.
+2020-08-17 13:23:17.686  INFO 4272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-17 13:23:17.696  INFO 4272 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-17 13:23:17.696  INFO 4272 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-17 13:23:17.801  INFO 4272 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-17 13:23:17.801  INFO 4272 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1335 ms
+2020-08-17 13:23:17.992  INFO 4272 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-17 13:23:18.040  INFO 4272 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-17 13:23:18.097  INFO 4272 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-17 13:23:18.110  WARN 4272 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-17 13:23:18.233  INFO 4272 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-17 13:23:18.342  INFO 4272 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-17 13:23:18.520  INFO 4272 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-17 13:23:18.536  INFO 4272 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-17 13:23:18.573  INFO 4272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-17 13:23:18.575  INFO 4272 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-17 13:23:19.200  INFO 4272 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-17 13:23:19.207  INFO 4272 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-17 13:23:19.545  INFO 4272 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-17 13:23:19.552  INFO 4272 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.467 seconds (JVM running for 3.819)
+2020-08-17 13:23:19.554 ERROR 4272 --- [main] c.d.AssociationsSportivesApplication     : Message logged at ERROR level
+2020-08-17 13:23:19.554  WARN 4272 --- [main] c.d.AssociationsSportivesApplication     : Message logged at WARN level
+2020-08-17 13:23:19.555  INFO 4272 --- [main] c.d.AssociationsSportivesApplication     : Message logged at INFO level
+2020-08-17 13:24:02.786  INFO 4272 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-17 13:24:02.787  INFO 4272 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-17 13:24:02.793  INFO 4272 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-08-17 13:24:02.873 ERROR 4272 --- [http-nio-8080-exec-1] c.d.controller.UserControllerRest        : Error during the deletion in database
+2020-08-17 13:24:12.170  WARN 4272 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1451, SQLState: 23000
+2020-08-17 13:24:12.170 ERROR 4272 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`association`.`user_has_role`, CONSTRAINT `fk_User_has_Role_Role1` FOREIGN KEY (`Role_id_role`) REFERENCES `role` (`id_role`))
+2020-08-17 13:24:12.171  INFO 4272 --- [http-nio-8080-exec-4] o.h.e.j.b.internal.AbstractBatchImpl     : HHH000010: On release of batch it still contained JDBC statements
+2020-08-17 13:24:12.174 ERROR 4272 --- [http-nio-8080-exec-4] c.d.controller.UserControllerRest        : Error during the deletion in database
+2020-08-17 13:24:21.079  WARN 4272 --- [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1451, SQLState: 23000
+2020-08-17 13:24:21.079 ERROR 4272 --- [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`association`.`user_has_role`, CONSTRAINT `fk_User_has_Role_Role1` FOREIGN KEY (`Role_id_role`) REFERENCES `role` (`id_role`))
+2020-08-17 13:24:21.079  INFO 4272 --- [http-nio-8080-exec-6] o.h.e.j.b.internal.AbstractBatchImpl     : HHH000010: On release of batch it still contained JDBC statements
+2020-08-17 13:24:21.080 ERROR 4272 --- [http-nio-8080-exec-6] c.d.controller.UserControllerRest        : Error during the deletion in database
+2020-08-17 13:24:28.526  WARN 4272 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1451, SQLState: 23000
+2020-08-17 13:24:28.526 ERROR 4272 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`association`.`user_has_role`, CONSTRAINT `fk_User_has_Role_Role1` FOREIGN KEY (`Role_id_role`) REFERENCES `role` (`id_role`))
+2020-08-17 13:24:28.526  INFO 4272 --- [http-nio-8080-exec-7] o.h.e.j.b.internal.AbstractBatchImpl     : HHH000010: On release of batch it still contained JDBC statements
+2020-08-17 13:24:28.540 ERROR 4272 --- [http-nio-8080-exec-7] c.d.controller.UserControllerRest        : Error during the deletion in database
