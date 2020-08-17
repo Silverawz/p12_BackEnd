@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.deroussenicolas.dao.UserRepository;
+import com.deroussenicolas.entities.Role;
 import com.deroussenicolas.entities.User;
 import com.deroussenicolas.service.UserService;
 /**
@@ -37,9 +38,4 @@ public class UserServiceImplementation implements UserService {
 		return userRepository.findOneUserById(id);
 	}
 
-	@Override
-	public void delete(Long id) {
-		User user = this.findOneUserById(id);
-		userRepository.delete(user);	
-	}
 }

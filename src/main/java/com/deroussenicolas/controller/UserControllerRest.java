@@ -9,9 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -84,20 +82,4 @@ public class UserControllerRest {
             );
 		}
 	}
-	
-	@DeleteMapping("/user/delete/{id}")
-	public void deletingUser(@PathVariable("id") Long id) {
-		try {
-			User user = userService.findOneUserById(id);
-			userService.delete(id);
-			LOGGER.info("User sucessfully delete in database = " + user.toString());
-		} catch (Exception e) {
-			LOGGER.error("Error during the deletion in database");
-			throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "Error during the user deletion in database", e
-            );
-		}
-	}
-	
-	
 }

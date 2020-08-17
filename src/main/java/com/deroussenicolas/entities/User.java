@@ -17,6 +17,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Cascade;
+
 import com.sun.istack.NotNull;
 
 /**
@@ -47,17 +49,13 @@ public class User implements Serializable {
 	@NotNull
 	@Size(min = 5, max = 255)
 	private String password;
-	@ManyToMany(cascade=CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name="user_has_role", joinColumns=@JoinColumn(name="user_id_user"), inverseJoinColumns=@JoinColumn(name="role_id_role"))
 	private Set<Role> roles;	
-	
-	
 	@OneToMany(mappedBy = "id_topic")
-	private List<Topic> topicList;
-	
+	private List<Topic> topicList;	
 	@OneToMany(mappedBy = "id_post")
 	private List<Post> postList;
-
 	@OneToMany(mappedBy = "id_article", cascade = CascadeType.ALL)
 	private List<Article> articleList;
 	

@@ -16,4 +16,5 @@ public interface UserRepository extends JpaRepository <User, Long> {
 
 	@Query("from User where id_user=?1")
 	public User findOneUserById(Long id);
+	
 }
