@@ -38,6 +38,8 @@ public class Article implements Serializable {
 	private String message;
 	@NotNull
 	private Date date;
+	@NotNull
+	private boolean active;
 	@ManyToOne
 	private User user;
 	
@@ -91,10 +93,18 @@ public class Article implements Serializable {
 		return serialVersionUID;
 	}
 
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	@Override
 	public String toString() {
 		return "Article [id_article=" + id_article + ", title=" + title + ", message=" + message + ", date=" + date
-				+ ", user=" + user + "]";
+				+ ", active=" + active + ", user=" + user + "]";
 	}
 
 }

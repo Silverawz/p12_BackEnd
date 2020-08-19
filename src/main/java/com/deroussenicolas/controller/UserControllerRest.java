@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,7 @@ import com.deroussenicolas.service.UserService;
  * 
  */
 @RestController
+@CrossOrigin
 public class UserControllerRest {
 	
 	private final UserService userService;
@@ -32,6 +34,20 @@ public class UserControllerRest {
 	@Autowired
 	public UserControllerRest(UserService userService) {
 		this.userService = userService;
+	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<Object> login(@RequestBody @Valid User user) {	
+		try {
+			if(user.getEmail().equals("aaa@aol.fr") && user.getPassword().equals("12345")) {
+				System.out.println("ok");
+				return new ResponseEntity<>(HttpStatus.OK);
+			}
+		} catch (Exception e) {
+			LOGGER.error("exception = " + e);
+		}
+		System.out.println("pas ok");
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 	
 	@PostMapping("/user/create")

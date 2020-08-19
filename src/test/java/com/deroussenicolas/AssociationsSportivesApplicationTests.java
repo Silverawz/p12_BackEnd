@@ -1,7 +1,5 @@
 package com.deroussenicolas;
 
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;

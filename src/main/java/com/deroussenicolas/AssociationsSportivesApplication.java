@@ -1,5 +1,6 @@
 package com.deroussenicolas;
 import org.slf4j.Logger;
+
 import org.slf4j.LoggerFactory;
 import java.util.Date;
 import java.util.HashSet;
@@ -8,7 +9,9 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.deroussenicolas.dao.ArticleRepository;

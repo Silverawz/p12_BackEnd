@@ -36,6 +36,8 @@ public class Topic implements Serializable {
 	private String title;
 	@ManyToOne
 	private User user;
+	@NotNull
+	private boolean active;
 	@OneToMany(mappedBy = "id_post", cascade = CascadeType.ALL)
 	private List<Post> postList;
 	
@@ -77,6 +79,14 @@ public class Topic implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 }
