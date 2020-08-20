@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.deroussenicolas.dao.ArticleRepository;
 import com.deroussenicolas.dao.CategoryRepository;
@@ -93,10 +94,10 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		Category category = new Category();
 		category.setDescription("Football");
 		categoryR.save(category);
-		*/
 		
 		
-		/*
+		
+		
 		Article article = new Article();
 		article.setUser(userR.findAll().get(0));
 		article.setDate(new Date());
@@ -111,6 +112,7 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		Category category = categoryR.findAll().get(0);
 		category.setArticlecList(articleSet);
 		categoryR.save(category);
+		
 		
 		
 
