@@ -22,6 +22,7 @@ import com.deroussenicolas.configuration.JwtUtil;
 import com.deroussenicolas.entities.AuthRequest;
 import com.deroussenicolas.entities.User;
 import com.deroussenicolas.service.UserService;
+
 /**
  * 
  * 
@@ -31,79 +32,51 @@ import com.deroussenicolas.service.UserService;
 @RestController
 @CrossOrigin("*")
 public class UserControllerRest {
-	
+
 	private final UserService userService;
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserControllerRest.class);
-	
+
 	@Autowired
 	public UserControllerRest(UserService userService) {
 		this.userService = userService;
 	}
-	
+
 	/***
 	 *  
 	 * 
 	 */
-	
-    @Autowired
-    private JwtUtil jwtUtil;
-    @Autowired
-    private AuthenticationManager authenticationManager;
-	
-	   @PostMapping("/authenticate")
-	    public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
-		   System.out.println(authRequest.getEmail() +"++++"+authRequest.getPassword());
-	        try {
-	            authenticationManager.authenticate(
-	                    new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword())
-	            );
-	        } catch (Exception ex) {
-	            throw new Exception("invalid username/password");
-	        }
-	        return jwtUtil.generateToken(authRequest.getEmail());
-	    }
-	
-	    @GetMapping("/test")
-	    public String welcome() {
-	        return "Welcome to javatechie !!";
-	    }
-	
-	   /***
-		 * 
-		 * 
-		 */
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	@PostMapping("/login")
-	public ResponseEntity<Object> login(@RequestBody @Valid User user) {	
+
+	@Autowired
+	private JwtUtil jwtUtil;
+	@Autowired
+	private AuthenticationManager authenticationManager;
+
+	@PostMapping("/authenticate")
+	public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
 		try {
-			if(user.getEmail().equals("aaa@aol.fr") && user.getPassword().equals("12345")) {
+			authenticationManager.authenticate(
+					new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword()));
+			return jwtUtil.generateToken(authRequest.getEmail());
+		} catch (Exception e) {
+			LOGGER.error("Bad credentials" + e);
+		}
+		return "Bad credentials";
+	}
+
+	@GetMapping("/test")
+	public String welcome() {
+		return "Welcome to javatechie !!";
+	}
+
+	/***
+	 * 
+	 * 
+	 */
+
+	@PostMapping("/login")
+	public ResponseEntity<Object> login(@RequestBody @Valid User user) {
+		try {
+			if (user.getEmail().equals("aaa@aol.fr") && user.getPassword().equals("12345")) {
 				System.out.println("ok");
 				return new ResponseEntity<>(HttpStatus.OK);
 			}
@@ -113,7 +86,7 @@ public class UserControllerRest {
 		System.out.println("pas ok");
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
-	
+
 	@PostMapping("/user/create")
 	public ResponseEntity<Object> creatingUser(@RequestBody @Valid User user) {
 		try {
@@ -122,21 +95,17 @@ public class UserControllerRest {
 			return new ResponseEntity<>(HttpStatus.OK);
 		} catch (Exception e) {
 			LOGGER.error("Error during the user creation in database = " + user.toString());
-			throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "Error during the user creation in database", e
-            );
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error during the user creation in database", e);
 		}
 	}
-	
+
 	@GetMapping("/user/{id}")
 	public User getUser(@PathVariable int id) {
 		try {
 			return userService.findOneUserById(Long.valueOf(id));
 		} catch (Exception e) {
-            throw new ResponseStatusException(    		
-                    HttpStatus.BAD_REQUEST, "Error", e
-            );
-		}		
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error", e);
+		}
 	}
 
 	@PutMapping("/user/update")
@@ -151,14 +120,12 @@ public class UserControllerRest {
 			userFromDB.setTopicList(user.getTopicList());
 			userFromDB.setRoles(user.getRoles());
 			userFromDB.setPostList(user.getPostList());
-			userService.save(userFromDB);	
+			userService.save(userFromDB);
 			LOGGER.info("User updated in database = " + userFromDB.toString());
 			return new ResponseEntity<>(HttpStatus.OK);
 		} catch (Exception e) {
 			LOGGER.error("Error during the user creation in database = " + user.toString());
-			throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "Error during the user update in database", e
-            );
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error during the user update in database", e);
 		}
 	}
 }
