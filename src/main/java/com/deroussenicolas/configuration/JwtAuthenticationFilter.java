@@ -7,19 +7,55 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-@Service
+
+import com.deroussenicolas.service.impl.CustomUserDetailsServiceImplementation;
+
+@Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
+	
+	@Autowired
+	private JwtUtil jwtUtil;
+	@Autowired
+	private CustomUserDetailsServiceImplementation customUserDetailsServiceImplementation;
 
 	@Override
-	  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+	protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
+			FilterChain filterChain) throws ServletException, IOException {
 
-	    response.setHeader("Access-Control-Allow-Origin", "*");
-	    response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-	    response.setHeader("Access-Control-Allow-Credentials", "true");
-	    response.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
-	    response.setHeader("Access-Control-Expose-Headers", "Content-Length, Authorization");
-	    filterChain.doFilter(request, response);
-	  }
+		String authorizationHeader = httpServletRequest.getHeader("Authorization");
+
+		String token = null;
+		String userName = null;
+		try {
+			if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+				token = authorizationHeader.substring(7);
+				userName = jwtUtil.extractUsername(token);
+			}
+
+			if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+
+				UserDetails userDetails = customUserDetailsServiceImplementation.loadUserByUsername(userName);
+
+				if (jwtUtil.validateToken(token, userDetails)) {
+
+					UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+							userDetails, null, userDetails.getAuthorities());
+					usernamePasswordAuthenticationToken
+							.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
+					SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+				}
+			}
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+
+		filterChain.doFilter(httpServletRequest, httpServletResponse);
+	}
 }

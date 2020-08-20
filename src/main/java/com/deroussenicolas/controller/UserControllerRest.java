@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.deroussenicolas.configuration.JwtUtil;
+import com.deroussenicolas.entities.AuthRequest;
 import com.deroussenicolas.entities.User;
 import com.deroussenicolas.service.UserService;
 /**
@@ -25,7 +29,7 @@ import com.deroussenicolas.service.UserService;
  * 
  */
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 public class UserControllerRest {
 	
 	private final UserService userService;
@@ -35,6 +39,66 @@ public class UserControllerRest {
 	public UserControllerRest(UserService userService) {
 		this.userService = userService;
 	}
+	
+	/***
+	 *  
+	 * 
+	 */
+	
+    @Autowired
+    private JwtUtil jwtUtil;
+    @Autowired
+    private AuthenticationManager authenticationManager;
+	
+	   @PostMapping("/authenticate")
+	    public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
+		   System.out.println(authRequest.getEmail() +"++++"+authRequest.getPassword());
+	        try {
+	            authenticationManager.authenticate(
+	                    new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword())
+	            );
+	        } catch (Exception ex) {
+	            throw new Exception("invalid username/password");
+	        }
+	        return jwtUtil.generateToken(authRequest.getEmail());
+	    }
+	
+	    @GetMapping("/test")
+	    public String welcome() {
+	        return "Welcome to javatechie !!";
+	    }
+	
+	   /***
+		 * 
+		 * 
+		 */
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@PostMapping("/login")
 	public ResponseEntity<Object> login(@RequestBody @Valid User user) {	
