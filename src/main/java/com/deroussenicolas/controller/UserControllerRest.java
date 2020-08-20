@@ -1,5 +1,6 @@
 package com.deroussenicolas.controller;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -7,8 +8,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,18 +55,54 @@ public class UserControllerRest {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
+	
 	@PostMapping("/authenticate")
-	public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
+	public String generateToken(@RequestBody AuthRequest authRequest) throws Exception  {
 		try {
-			authenticationManager.authenticate(
-					new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword()));
+	        final Authentication authentication = authenticationManager.authenticate(
+	                new UsernamePasswordAuthenticationToken(
+	                		authRequest.getEmail(),
+	                		authRequest.getPassword()
+	                )
+	        );
+	        SecurityContextHolder.getContext().setAuthentication(authentication);
+	        return jwtUtil.generateToken(authentication);	        
+		} catch (Exception e) {
+			LOGGER.error("Bad credentials" + e);
+		}
+		return "Bad credentials";
+	}
+	
+	/*
+	@PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+	@PostMapping("/authenticate")
+	public String generateToken(@RequestBody AuthRequest authRequest) throws Exception  {
+		try {
+			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+					authRequest.getEmail(), authRequest.getPassword()));		        
 			return jwtUtil.generateToken(authRequest.getEmail());
 		} catch (Exception e) {
 			LOGGER.error("Bad credentials" + e);
 		}
 		return "Bad credentials";
 	}
+	
+	  @RequestMapping(value = "/generate-token", method = RequestMethod.POST)
+	    public ResponseEntity register(@RequestBody LoginUser loginUser) throws AuthenticationException {
 
+	        final Authentication authentication = authenticationManager.authenticate(
+	                new UsernamePasswordAuthenticationToken(
+	                        loginUser.getUsername(),
+	                        loginUser.getPassword()
+	                )
+	        );
+	        SecurityContextHolder.getContext().setAuthentication(authentication);
+	        final String token = jwtUtil.generateToken(authentication);
+	        return ResponseEntity.ok(new AuthToken(token));
+	    }
+	  
+	 */ 
+	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	@GetMapping("/test")
 	public String welcome() {
 		return "Welcome to javatechie !!";
