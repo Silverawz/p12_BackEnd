@@ -60,4 +60,9 @@ public class UserServiceImplementation implements UserDetailsService, UserServic
 		return authorities;
 	}
 
+	@Override
+	public User findByEmail(String username) {
+		return userRepository.findByEmail(username);
+	}
+
 }
