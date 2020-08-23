@@ -1121,3 +1121,584 @@ io.jsonwebtoken.UnsupportedJwtException: Unsigned Claims JWTs are not supported.
 2020-08-21 01:40:02.583  INFO 20672 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
 2020-08-21 01:40:08.993  WARN 20672 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
 2020-08-21 01:40:17.235  INFO 20672 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user bbb@aol.fr, setting security context
+2020-08-23 17:52:00.534  INFO 17592 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 17592 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 17:52:00.536  INFO 17592 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 17:52:01.224  INFO 17592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 17:52:01.321  INFO 17592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87ms. Found 6 JPA repository interfaces.
+2020-08-23 17:52:01.658  INFO 17592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@834831b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 17:52:01.664  INFO 17592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 17:52:02.086  INFO 17592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 17:52:02.101  INFO 17592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 17:52:02.101  INFO 17592 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 17:52:02.249  INFO 17592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 17:52:02.249  INFO 17592 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1676 ms
+2020-08-23 17:52:02.538  INFO 17592 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 17:52:02.682  INFO 17592 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 17:52:02.725  WARN 17592 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 17:52:02.778  INFO 17592 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 17:52:03.019  INFO 17592 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 17:52:03.051  INFO 17592 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@535b1ae6, org.springframework.security.web.context.SecurityContextPersistenceFilter@72b6832e, org.springframework.security.web.header.HeaderWriterFilter@3610f277, org.springframework.security.web.authentication.logout.LogoutFilter@3913f206, com.deroussenicolas.configuration.JwtAuthenticationFilter@c755b2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d9f5016, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@318c68d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@626c19cf, org.springframework.security.web.session.SessionManagementFilter@6bedd4e4, org.springframework.security.web.access.ExceptionTranslationFilter@4091b9c3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e5beb8a]
+2020-08-23 17:52:03.216  INFO 17592 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 17:52:03.393  INFO 17592 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 17:52:03.412  INFO 17592 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 17:52:03.662  INFO 17592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 17:52:03.663  INFO 17592 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 17:52:04.180  INFO 17592 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 17:52:04.188  INFO 17592 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 17:52:04.755  INFO 17592 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 17:52:04.765  INFO 17592 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.576 seconds (JVM running for 4.966)
+2020-08-23 17:52:27.474  INFO 17592 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 17:52:27.474  INFO 17592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 17:52:27.482  INFO 17592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-08-23 17:52:27.500  WARN 17592 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:52:32.740  WARN 17592 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:52:51.726  WARN 17592 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:52:53.509  WARN 17592 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:52:54.519  WARN 17592 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:52:55.946  WARN 17592 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:53:06.069  WARN 17592 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:54:03.460  INFO 20512 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 20512 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 17:54:03.462  INFO 20512 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 17:54:04.126  INFO 20512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 17:54:04.220  INFO 20512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83ms. Found 6 JPA repository interfaces.
+2020-08-23 17:54:04.536  INFO 20512 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@37b72ea' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 17:54:04.541  INFO 20512 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 17:54:04.945  INFO 20512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 17:54:04.958  INFO 20512 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 17:54:04.959  INFO 20512 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 17:54:05.100  INFO 20512 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 17:54:05.101  INFO 20512 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1596 ms
+2020-08-23 17:54:05.339  INFO 20512 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 17:54:05.386  INFO 20512 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 17:54:05.428  WARN 20512 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 17:54:05.444  INFO 20512 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 17:54:05.601  INFO 20512 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 17:54:05.672  INFO 20512 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66223d94, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a235b8e, org.springframework.security.web.header.HeaderWriterFilter@7df28f1, org.springframework.security.web.authentication.logout.LogoutFilter@42d6c12d, com.deroussenicolas.configuration.JwtAuthenticationFilter@53cf9c99, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38d08cb5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b5b59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2bc7db89, org.springframework.security.web.session.SessionManagementFilter@44114b9f, org.springframework.security.web.access.ExceptionTranslationFilter@7e91ed74, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@629984eb]
+2020-08-23 17:54:05.731  INFO 20512 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 17:54:05.904  INFO 20512 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 17:54:05.918  INFO 20512 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 17:54:06.184  INFO 20512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 17:54:06.186  INFO 20512 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 17:54:06.583  INFO 20512 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 17:54:06.590  INFO 20512 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 17:54:06.961  INFO 20512 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 17:54:06.966  INFO 20512 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.862 seconds (JVM running for 4.256)
+2020-08-23 17:54:08.093  INFO 20512 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 17:54:08.094  INFO 20512 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 17:54:08.104  INFO 20512 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-08-23 17:54:08.122  WARN 20512 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:54:17.225  WARN 20512 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:54:21.499  WARN 20512 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:55:35.331  INFO 19228 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 19228 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 17:55:35.333  INFO 19228 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 17:55:36.044  INFO 19228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 17:55:36.153  INFO 19228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99ms. Found 6 JPA repository interfaces.
+2020-08-23 17:55:36.488  INFO 19228 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@67e28be3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 17:55:36.493  INFO 19228 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 17:55:36.933  INFO 19228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 17:55:36.947  INFO 19228 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 17:55:36.948  INFO 19228 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 17:55:37.096  INFO 19228 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 17:55:37.096  INFO 19228 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1711 ms
+2020-08-23 17:55:37.358  INFO 19228 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 17:55:37.417  INFO 19228 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 17:55:37.471  WARN 19228 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 17:55:37.523  INFO 19228 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 17:55:37.729  INFO 19228 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 17:55:37.771  INFO 19228 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53d9826f, org.springframework.security.web.context.SecurityContextPersistenceFilter@7951c3a2, org.springframework.security.web.header.HeaderWriterFilter@414f87a9, org.springframework.security.web.authentication.logout.LogoutFilter@4570d7b6, com.deroussenicolas.configuration.JwtAuthenticationFilter@1687eb01, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d119405, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b432e53, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e84f3c8, org.springframework.security.web.session.SessionManagementFilter@72a2312e, org.springframework.security.web.access.ExceptionTranslationFilter@3b83459e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f1266c6]
+2020-08-23 17:55:37.896  INFO 19228 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 17:55:38.108  INFO 19228 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 17:55:38.125  INFO 19228 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 17:55:38.380  INFO 19228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 17:55:38.382  INFO 19228 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 17:55:38.987  INFO 19228 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 17:55:38.994  INFO 19228 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 17:55:39.467  INFO 19228 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 17:55:39.473  INFO 19228 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.603 seconds (JVM running for 5.111)
+2020-08-23 17:55:41.217  INFO 19228 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 17:55:41.218  INFO 19228 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 17:55:41.226  INFO 19228 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-08-23 17:55:41.240  WARN 19228 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:55:57.507  WARN 19228 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:55:57.514  WARN 19228 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:55:57.724 ERROR 19228 --- [http-nio-8080-exec-6] c.d.controller.UserControllerRest        : Bad credentialsorg.springframework.security.authentication.BadCredentialsException: Bad credentials
+2020-08-23 17:57:04.346  INFO 1188 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 1188 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 17:57:04.348  INFO 1188 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 17:57:04.970  INFO 1188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 17:57:05.071  INFO 1188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93ms. Found 6 JPA repository interfaces.
+2020-08-23 17:57:05.428  INFO 1188 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@cc239ba' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 17:57:05.434  INFO 1188 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 17:57:05.841  INFO 1188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 17:57:05.850  INFO 1188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 17:57:05.850  INFO 1188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 17:57:05.981  INFO 1188 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 17:57:05.981  INFO 1188 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1592 ms
+2020-08-23 17:57:06.221  INFO 1188 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 17:57:06.268  INFO 1188 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 17:57:06.304  WARN 1188 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 17:57:06.323  INFO 1188 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 17:57:06.469  INFO 1188 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 17:57:06.505  INFO 1188 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55b5cd2b, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f3f0ae, org.springframework.security.web.header.HeaderWriterFilter@321ca237, org.springframework.security.web.authentication.logout.LogoutFilter@4733f6f5, com.deroussenicolas.configuration.JwtAuthenticationFilter@7b306b9f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57a6a933, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33f17289, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40bb4f87, org.springframework.security.web.session.SessionManagementFilter@38d08cb5, org.springframework.security.web.access.ExceptionTranslationFilter@318c68d5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@297c9a9b]
+2020-08-23 17:57:06.599  INFO 1188 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 17:57:06.777  INFO 1188 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 17:57:06.793  INFO 1188 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 17:57:07.038  INFO 1188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 17:57:07.040  INFO 1188 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 17:57:07.548  INFO 1188 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 17:57:07.556  INFO 1188 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 17:57:07.931  INFO 1188 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 17:57:07.937  INFO 1188 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.957 seconds (JVM running for 4.318)
+2020-08-23 17:58:39.318  INFO 1188 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 17:58:39.319  INFO 1188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 17:58:39.327  INFO 1188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-08-23 17:58:39.341  WARN 1188 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 17:58:49.928  WARN 1188 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:00:31.068  WARN 1188 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:00:50.573  WARN 1188 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:00:59.063  WARN 1188 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:02:04.654  WARN 1188 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:02:53.899  WARN 1188 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:15:03.590  INFO 6584 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 6584 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:15:03.593  INFO 6584 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:15:04.208  INFO 6584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:15:04.311  INFO 6584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95ms. Found 6 JPA repository interfaces.
+2020-08-23 18:15:04.618  INFO 6584 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4e92466a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:15:04.622  INFO 6584 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:15:05.042  INFO 6584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:15:05.051  INFO 6584 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:15:05.052  INFO 6584 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:15:05.192  INFO 6584 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:15:05.193  INFO 6584 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1559 ms
+2020-08-23 18:15:05.413  INFO 6584 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:15:05.466  INFO 6584 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:15:05.500  WARN 6584 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:15:05.524  INFO 6584 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:15:05.664  INFO 6584 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:15:05.684  INFO 6584 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cbbb9c4, org.springframework.security.web.context.SecurityContextPersistenceFilter@3e8799f, org.springframework.security.web.header.HeaderWriterFilter@2a235b8e, org.springframework.security.web.authentication.logout.LogoutFilter@1f95881a, com.deroussenicolas.configuration.JwtAuthenticationFilter@56637cff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@270d43a7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f59ea8c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63f9b562, org.springframework.security.web.session.SessionManagementFilter@f1266c6, org.springframework.security.web.access.ExceptionTranslationFilter@44114b9f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@173f1614]
+2020-08-23 18:15:05.794  INFO 6584 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:15:05.981  INFO 6584 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:15:06.003  INFO 6584 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:15:06.276  INFO 6584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:15:06.278  INFO 6584 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:15:06.745  INFO 6584 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:15:06.754  INFO 6584 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:15:07.120  INFO 6584 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:15:07.128  INFO 6584 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.874 seconds (JVM running for 4.229)
+2020-08-23 18:15:19.451  INFO 6584 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:15:19.451  INFO 6584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:15:19.460  INFO 6584 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-08-23 18:15:19.474  WARN 6584 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:15:19.823  WARN 6584 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class com.deroussenicolas.entities.JwtResponse]
+2020-08-23 18:16:42.951  INFO 20332 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 20332 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:16:42.954  INFO 20332 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:16:43.569  INFO 20332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:16:43.659  INFO 20332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82ms. Found 6 JPA repository interfaces.
+2020-08-23 18:16:43.971  INFO 20332 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@314ed053' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:16:43.976  INFO 20332 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:16:44.392  INFO 20332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:16:44.402  INFO 20332 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:16:44.402  INFO 20332 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:16:44.533  INFO 20332 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:16:44.534  INFO 20332 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1539 ms
+2020-08-23 18:16:44.747  INFO 20332 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:16:44.791  INFO 20332 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:16:44.830  WARN 20332 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:16:44.847  INFO 20332 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:16:44.980  INFO 20332 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:16:45.024  INFO 20332 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56c8e6f0, org.springframework.security.web.context.SecurityContextPersistenceFilter@40113163, org.springframework.security.web.header.HeaderWriterFilter@2b916808, org.springframework.security.web.authentication.logout.LogoutFilter@38d08cb5, com.deroussenicolas.configuration.JwtAuthenticationFilter@1cc680e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39c85c1a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78d9f51b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71b6172c, org.springframework.security.web.session.SessionManagementFilter@c689973, org.springframework.security.web.access.ExceptionTranslationFilter@2d0b05, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a2ab862]
+2020-08-23 18:16:45.104  INFO 20332 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:16:45.283  INFO 20332 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:16:45.301  INFO 20332 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:16:45.529  INFO 20332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:16:45.531  INFO 20332 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:16:45.951  INFO 20332 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:16:45.960  INFO 20332 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:16:46.316  INFO 20332 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:16:46.322  INFO 20332 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.714 seconds (JVM running for 4.066)
+2020-08-23 18:16:53.645  INFO 20332 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:16:53.645  INFO 20332 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:16:53.653  INFO 20332 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-08-23 18:16:53.670  WARN 20332 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:16:59.965  WARN 20332 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:17:02.556  WARN 20332 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:17:07.436  WARN 20332 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:17:20.493  WARN 20332 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:17:26.196  WARN 20332 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:17:34.168  WARN 20332 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:25:08.244  INFO 9156 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 9156 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:25:08.247  INFO 9156 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:25:08.878  INFO 9156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:25:08.993  INFO 9156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104ms. Found 6 JPA repository interfaces.
+2020-08-23 18:25:09.351  INFO 9156 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4a68135e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:25:09.356  INFO 9156 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:25:09.789  INFO 9156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:25:09.799  INFO 9156 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:25:09.799  INFO 9156 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:25:09.967  INFO 9156 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:25:09.968  INFO 9156 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1684 ms
+2020-08-23 18:25:10.314  INFO 9156 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:25:10.397  INFO 9156 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:25:10.462  WARN 9156 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:25:10.530  INFO 9156 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:25:10.708  INFO 9156 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:25:10.743  INFO 9156 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ef718de, org.springframework.security.web.context.SecurityContextPersistenceFilter@2ceca2ef, org.springframework.security.web.header.HeaderWriterFilter@1280682, org.springframework.security.web.authentication.logout.LogoutFilter@38ee7a9d, com.deroussenicolas.configuration.JwtAuthenticationFilter@4996c99, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b42121d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@438c9aa7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@287ae90c, org.springframework.security.web.session.SessionManagementFilter@75fd65c, org.springframework.security.web.access.ExceptionTranslationFilter@3b353651, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@671ea6ff]
+2020-08-23 18:25:10.873  INFO 9156 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:25:11.099  INFO 9156 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:25:11.122  INFO 9156 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:25:11.427  INFO 9156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:25:11.429  INFO 9156 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:25:11.956  INFO 9156 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:25:11.964  INFO 9156 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:25:12.624  INFO 9156 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:25:12.632  INFO 9156 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.733 seconds (JVM running for 5.092)
+2020-08-23 18:25:18.567  INFO 9156 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:25:18.567  INFO 9156 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:25:18.576  INFO 9156 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-08-23 18:25:18.589  WARN 9156 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:25:20.589  WARN 9156 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:25:25.351  WARN 9156 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:25:37.784  WARN 9156 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:25:39.506  WARN 9156 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:25:40.847  WARN 9156 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:28:01.730  INFO 19176 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 19176 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:28:01.732  INFO 19176 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:28:02.341  INFO 19176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:28:02.442  INFO 19176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92ms. Found 6 JPA repository interfaces.
+2020-08-23 18:28:02.735  INFO 19176 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5177e388' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:28:02.741  INFO 19176 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:28:03.154  INFO 19176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:28:03.165  INFO 19176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:28:03.165  INFO 19176 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:28:03.309  INFO 19176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:28:03.310  INFO 19176 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1541 ms
+2020-08-23 18:28:03.550  INFO 19176 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:28:03.597  INFO 19176 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:28:03.633  WARN 19176 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:28:03.650  INFO 19176 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:28:03.800  INFO 19176 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:28:03.840  INFO 19176 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40bb4f87, org.springframework.security.web.context.SecurityContextPersistenceFilter@6baf25d7, org.springframework.security.web.header.HeaderWriterFilter@4c5a2baf, org.springframework.security.web.authentication.logout.LogoutFilter@6ccac6f4, com.deroussenicolas.configuration.JwtAuthenticationFilter@10b1a751, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b5b59, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f1266c6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51a651c1, org.springframework.security.web.session.SessionManagementFilter@363c32cc, org.springframework.security.web.access.ExceptionTranslationFilter@4cfa83f9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20999517]
+2020-08-23 18:28:03.933  INFO 19176 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:28:04.104  INFO 19176 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:28:04.122  INFO 19176 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:28:04.356  INFO 19176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:28:04.358  INFO 19176 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:28:04.814  INFO 19176 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:28:04.822  INFO 19176 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:28:05.194  INFO 19176 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:28:05.202  INFO 19176 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.812 seconds (JVM running for 4.165)
+2020-08-23 18:28:07.689  INFO 19176 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:28:07.690  INFO 19176 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:28:07.699  INFO 19176 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-08-23 18:28:07.721  WARN 19176 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:28:13.866  WARN 19176 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:28:13.871  WARN 19176 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:31:06.562  INFO 17872 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 17872 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:31:06.565  INFO 17872 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:31:07.184  INFO 17872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:31:07.269  INFO 17872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75ms. Found 6 JPA repository interfaces.
+2020-08-23 18:31:07.588  INFO 17872 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@31c2affc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:31:07.594  INFO 17872 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:31:07.978  INFO 17872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:31:07.989  INFO 17872 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:31:07.990  INFO 17872 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:31:08.127  INFO 17872 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:31:08.127  INFO 17872 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1526 ms
+2020-08-23 18:31:08.355  INFO 17872 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:31:08.409  INFO 17872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:31:08.461  WARN 17872 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:31:08.476  INFO 17872 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:31:08.632  INFO 17872 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:31:08.691  INFO 17872 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@297c9a9b, org.springframework.security.web.context.SecurityContextPersistenceFilter@399ca607, org.springframework.security.web.header.HeaderWriterFilter@3d9f5016, org.springframework.security.web.authentication.logout.LogoutFilter@75fd65c, com.deroussenicolas.configuration.JwtAuthenticationFilter@75d982d3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76bf1bb8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f3f0ae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20999517, org.springframework.security.web.session.SessionManagementFilter@4cffcc61, org.springframework.security.web.access.ExceptionTranslationFilter@72b6832e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@661fe025]
+2020-08-23 18:31:08.764  INFO 17872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:31:08.964  INFO 17872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:31:08.989  INFO 17872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:31:09.399  INFO 17872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:31:09.401  INFO 17872 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:31:09.905  INFO 17872 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:31:09.916  INFO 17872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:31:10.326  INFO 17872 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:31:10.332  INFO 17872 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.115 seconds (JVM running for 4.546)
+2020-08-23 18:31:12.453  INFO 17872 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:31:12.453  INFO 17872 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:31:12.466  INFO 17872 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-08-23 18:31:12.482  WARN 17872 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:31:18.731  WARN 17872 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:32:41.938  WARN 17872 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:32:48.251  WARN 17872 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:33:13.892  WARN 17872 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:33:19.187  WARN 17872 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:36:10.576  INFO 21180 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 21180 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:36:10.578  INFO 21180 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:36:11.260  INFO 21180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:36:11.382  INFO 21180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111ms. Found 6 JPA repository interfaces.
+2020-08-23 18:36:11.769  INFO 21180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6441c486' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:36:11.773  INFO 21180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:36:12.178  INFO 21180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:36:12.186  INFO 21180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:36:12.187  INFO 21180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:36:12.308  INFO 21180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:36:12.308  INFO 21180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1691 ms
+2020-08-23 18:36:12.534  INFO 21180 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:36:12.587  INFO 21180 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:36:12.640  WARN 21180 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:36:12.646  INFO 21180 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:36:12.784  INFO 21180 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:36:12.857  INFO 21180 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d229b1c, org.springframework.security.web.context.SecurityContextPersistenceFilter@3878be7b, org.springframework.security.web.header.HeaderWriterFilter@71a3e05c, org.springframework.security.web.authentication.logout.LogoutFilter@1280682, com.deroussenicolas.configuration.JwtAuthenticationFilter@2a369e14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4087c7fc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ec22831, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f825516, org.springframework.security.web.session.SessionManagementFilter@3d9f5016, org.springframework.security.web.access.ExceptionTranslationFilter@41fa769c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@723877dd]
+2020-08-23 18:36:12.909  INFO 21180 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:36:13.088  INFO 21180 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:36:13.107  INFO 21180 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:36:13.498  INFO 21180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:36:13.500  INFO 21180 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:36:13.843  INFO 21180 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:36:13.850  INFO 21180 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:36:14.232  INFO 21180 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:36:14.238  INFO 21180 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.991 seconds (JVM running for 4.361)
+2020-08-23 18:36:15.559  INFO 21180 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:36:15.559  INFO 21180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:36:15.569  INFO 21180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-08-23 18:36:15.624  WARN 21180 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:36:20.927  WARN 21180 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:37:11.050  INFO 22172 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 22172 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:37:11.052  INFO 22172 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:37:11.694  INFO 22172 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:37:11.787  INFO 22172 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85ms. Found 6 JPA repository interfaces.
+2020-08-23 18:37:12.126  INFO 22172 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@37b72ea' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:37:12.133  INFO 22172 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:37:12.679  INFO 22172 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:37:12.692  INFO 22172 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:37:12.693  INFO 22172 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:37:12.832  INFO 22172 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:37:12.832  INFO 22172 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1736 ms
+2020-08-23 18:37:13.036  INFO 22172 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:37:13.204  WARN 22172 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:37:13.210  INFO 22172 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:37:13.281  INFO 22172 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:37:13.431  INFO 22172 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:37:13.449  INFO 22172 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51a651c1, org.springframework.security.web.context.SecurityContextPersistenceFilter@57a6a933, org.springframework.security.web.header.HeaderWriterFilter@1ec22831, org.springframework.security.web.authentication.logout.LogoutFilter@438c9aa7, com.deroussenicolas.configuration.JwtAuthenticationFilter@53cf9c99, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1934ad7c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3913f206, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@173f1614, org.springframework.security.web.session.SessionManagementFilter@6f3f0ae, org.springframework.security.web.access.ExceptionTranslationFilter@321ca237, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6ec63f8]
+2020-08-23 18:37:13.555  INFO 22172 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:37:13.746  INFO 22172 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:37:13.766  INFO 22172 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:37:14.082  INFO 22172 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:37:14.084  INFO 22172 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:37:14.474  INFO 22172 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:37:14.479  INFO 22172 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:37:14.886  INFO 22172 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:37:14.904  INFO 22172 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.197 seconds (JVM running for 4.57)
+2020-08-23 18:37:20.770  INFO 22172 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:37:20.770  INFO 22172 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:37:20.776  INFO 22172 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-08-23 18:37:20.789  WARN 22172 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:37:24.008  WARN 22172 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:37:25.987  WARN 22172 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:37:26.929  WARN 22172 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:38:38.802  INFO 20024 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 20024 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:38:38.804  INFO 20024 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:38:39.443  INFO 20024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:38:39.548  INFO 20024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95ms. Found 6 JPA repository interfaces.
+2020-08-23 18:38:39.858  INFO 20024 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@9d1a267' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:38:39.864  INFO 20024 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:38:40.244  INFO 20024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:38:40.254  INFO 20024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:38:40.254  INFO 20024 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:38:40.396  INFO 20024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:38:40.397  INFO 20024 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1556 ms
+2020-08-23 18:38:40.603  INFO 20024 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:38:40.657  INFO 20024 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:38:40.689  WARN 20024 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:38:40.716  INFO 20024 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:38:40.857  INFO 20024 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:38:40.892  INFO 20024 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@438c9aa7, org.springframework.security.web.context.SecurityContextPersistenceFilter@3610f277, org.springframework.security.web.header.HeaderWriterFilter@21bd128b, org.springframework.security.web.authentication.logout.LogoutFilter@76bf1bb8, com.deroussenicolas.configuration.JwtAuthenticationFilter@6c0e13b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41fa769c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62c72501, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3453acd2, org.springframework.security.web.session.SessionManagementFilter@4091b9c3, org.springframework.security.web.access.ExceptionTranslationFilter@57e388c3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ceca2ef]
+2020-08-23 18:38:40.980  INFO 20024 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:38:41.172  INFO 20024 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:38:41.190  INFO 20024 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:38:41.430  INFO 20024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:38:41.431  INFO 20024 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:38:41.901  INFO 20024 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:38:41.907  INFO 20024 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:38:42.282  INFO 20024 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:38:42.289  INFO 20024 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.831 seconds (JVM running for 4.194)
+2020-08-23 18:38:44.677  INFO 20024 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:38:44.677  INFO 20024 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:38:44.688  INFO 20024 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-08-23 18:38:44.702  WARN 20024 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:38:51.783  WARN 20024 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:39:04.322  WARN 20024 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:39:05.937  WARN 20024 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:39:12.601  WARN 20024 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:39:14.296  WARN 20024 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:39:23.104  WARN 20024 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:41:56.652  INFO 7140 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 7140 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:41:56.654  INFO 7140 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:41:57.261  INFO 7140 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:41:57.352  INFO 7140 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84ms. Found 6 JPA repository interfaces.
+2020-08-23 18:41:57.657  INFO 7140 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6cf31447' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:41:57.662  INFO 7140 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:41:58.044  INFO 7140 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:41:58.052  INFO 7140 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:41:58.053  INFO 7140 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:41:58.187  INFO 7140 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:41:58.188  INFO 7140 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1495 ms
+2020-08-23 18:41:58.402  INFO 7140 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:41:58.453  INFO 7140 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:41:58.481  WARN 7140 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:41:58.513  INFO 7140 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:41:58.655  INFO 7140 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:41:58.691  INFO 7140 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@daf22f0, org.springframework.security.web.context.SecurityContextPersistenceFilter@3913f206, org.springframework.security.web.header.HeaderWriterFilter@76bf1bb8, org.springframework.security.web.authentication.logout.LogoutFilter@5e5beb8a, com.deroussenicolas.configuration.JwtAuthenticationFilter@76ad6715, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b353651, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e84f3c8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6cbbb9c4, org.springframework.security.web.session.SessionManagementFilter@33f17289, org.springframework.security.web.access.ExceptionTranslationFilter@399ca607, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51a651c1]
+2020-08-23 18:41:58.792  INFO 7140 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:41:58.959  INFO 7140 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:41:58.977  INFO 7140 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:41:59.212  INFO 7140 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:41:59.214  INFO 7140 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:41:59.695  INFO 7140 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:41:59.702  INFO 7140 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:42:00.092  INFO 7140 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:42:00.100  INFO 7140 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.776 seconds (JVM running for 4.148)
+2020-08-23 18:42:07.138  INFO 7140 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:42:07.138  INFO 7140 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:42:07.148  INFO 7140 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-08-23 18:42:07.164  WARN 7140 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:42:12.088  WARN 7140 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:42:22.625  WARN 7140 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:42:32.583  WARN 7140 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:43:58.361  INFO 18920 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 18920 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:43:58.364  INFO 18920 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:43:58.979  INFO 18920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:43:59.069  INFO 18920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82ms. Found 6 JPA repository interfaces.
+2020-08-23 18:43:59.366  INFO 18920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6a0659ac' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:43:59.372  INFO 18920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:43:59.749  INFO 18920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:43:59.759  INFO 18920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:43:59.760  INFO 18920 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:43:59.882  INFO 18920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:43:59.882  INFO 18920 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1482 ms
+2020-08-23 18:44:00.105  INFO 18920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:44:00.162  INFO 18920 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:44:00.206  WARN 18920 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:44:00.218  INFO 18920 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:44:00.364  INFO 18920 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:44:00.424  INFO 18920 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38ee7a9d, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ec22831, org.springframework.security.web.header.HeaderWriterFilter@23ed382c, org.springframework.security.web.authentication.logout.LogoutFilter@5d5a51b1, com.deroussenicolas.configuration.JwtAuthenticationFilter@618ff5c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@516592b1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76bf1bb8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@629984eb, org.springframework.security.web.session.SessionManagementFilter@321ca237, org.springframework.security.web.access.ExceptionTranslationFilter@77db3d02, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d229b1c]
+2020-08-23 18:44:00.513  INFO 18920 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:44:00.721  INFO 18920 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:44:00.739  INFO 18920 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:44:00.967  INFO 18920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:44:00.969  INFO 18920 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:44:01.483  INFO 18920 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:44:01.490  INFO 18920 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:44:01.855  INFO 18920 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:44:01.860  INFO 18920 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.848 seconds (JVM running for 4.225)
+2020-08-23 18:44:07.472  INFO 18920 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:44:07.473  INFO 18920 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:44:07.482  INFO 18920 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-08-23 18:44:07.498  WARN 18920 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:49:15.829  INFO 4544 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 4544 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:49:15.831  INFO 4544 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:49:16.666  INFO 4544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:49:16.786  INFO 4544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110ms. Found 6 JPA repository interfaces.
+2020-08-23 18:49:17.191  INFO 4544 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@25b5c5e3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:49:17.197  INFO 4544 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:49:17.652  INFO 4544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:49:17.663  INFO 4544 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:49:17.663  INFO 4544 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:49:17.794  INFO 4544 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:49:17.794  INFO 4544 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1920 ms
+2020-08-23 18:49:18.083  INFO 4544 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:49:18.163  INFO 4544 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:49:18.224  WARN 4544 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:49:18.239  INFO 4544 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:49:18.407  INFO 4544 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:49:18.462  INFO 4544 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55b5cd2b, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f3f0ae, org.springframework.security.web.header.HeaderWriterFilter@321ca237, org.springframework.security.web.authentication.logout.LogoutFilter@4733f6f5, com.deroussenicolas.configuration.JwtAuthenticationFilter@eac3a26, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57a6a933, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33f17289, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40bb4f87, org.springframework.security.web.session.SessionManagementFilter@38d08cb5, org.springframework.security.web.access.ExceptionTranslationFilter@318c68d5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@297c9a9b]
+2020-08-23 18:49:18.602  INFO 4544 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:49:18.827  INFO 4544 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:49:18.847  INFO 4544 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:49:19.106  INFO 4544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:49:19.112  INFO 4544 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:49:19.649  INFO 4544 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:49:19.656  INFO 4544 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:49:20.235  INFO 4544 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:49:20.242  INFO 4544 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.81 seconds (JVM running for 5.273)
+2020-08-23 18:49:21.670  INFO 4544 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:49:21.671  INFO 4544 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:49:21.679  INFO 4544 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-08-23 18:49:21.699  WARN 4544 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:49:25.595  WARN 4544 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:49:35.269  WARN 4544 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:49:40.294  WARN 4544 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:52:40.250  INFO 18408 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 18408 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:52:40.253  INFO 18408 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:52:40.857  INFO 18408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:52:40.958  INFO 18408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92ms. Found 6 JPA repository interfaces.
+2020-08-23 18:52:41.278  INFO 18408 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3047254d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:52:41.284  INFO 18408 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:52:41.662  INFO 18408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:52:41.671  INFO 18408 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:52:41.671  INFO 18408 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:52:41.797  INFO 18408 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:52:41.797  INFO 18408 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1503 ms
+2020-08-23 18:52:42.033  INFO 18408 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:52:42.087  INFO 18408 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:52:42.131  WARN 18408 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:52:42.148  INFO 18408 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:52:42.308  INFO 18408 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:52:42.397  INFO 18408 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63f9b562, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b353651, org.springframework.security.web.header.HeaderWriterFilter@76536c53, org.springframework.security.web.authentication.logout.LogoutFilter@17b016ac, com.deroussenicolas.configuration.JwtAuthenticationFilter@5a1c3cb4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1280682, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b2ccba5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20ead579, org.springframework.security.web.session.SessionManagementFilter@3913f206, org.springframework.security.web.access.ExceptionTranslationFilter@76bf1bb8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c184d4d]
+2020-08-23 18:52:42.429  INFO 18408 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:52:42.603  INFO 18408 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:52:42.622  INFO 18408 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:52:42.925  INFO 18408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:52:42.926  INFO 18408 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:52:43.322  INFO 18408 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:52:43.331  INFO 18408 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:52:43.704  INFO 18408 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:52:43.711  INFO 18408 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.802 seconds (JVM running for 4.165)
+2020-08-23 18:52:56.677  INFO 18408 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:52:56.678  INFO 18408 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:52:56.689  INFO 18408 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-08-23 18:52:56.709  WARN 18408 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:53:34.574  WARN 18408 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:53:42.797  WARN 18408 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:54:53.485  INFO 18104 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 18104 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-08-23 18:54:53.487  INFO 18104 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-08-23 18:54:54.130  INFO 18104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-23 18:54:54.223  INFO 18104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85ms. Found 6 JPA repository interfaces.
+2020-08-23 18:54:54.550  INFO 18104 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1f966492' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:54:54.556  INFO 18104 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-23 18:54:54.981  INFO 18104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-23 18:54:54.992  INFO 18104 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-23 18:54:54.993  INFO 18104 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-23 18:54:55.148  INFO 18104 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-23 18:54:55.149  INFO 18104 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1621 ms
+2020-08-23 18:54:55.385  INFO 18104 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-23 18:54:55.440  INFO 18104 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-23 18:54:55.482  WARN 18104 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-23 18:54:55.502  INFO 18104 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-23 18:54:55.648  INFO 18104 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-23 18:54:55.685  INFO 18104 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3fcee3d9, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b42121d, org.springframework.security.web.header.HeaderWriterFilter@53d9826f, org.springframework.security.web.authentication.logout.LogoutFilter@7b1e5e55, com.deroussenicolas.configuration.JwtAuthenticationFilter@4821aa9f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33188612, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c8f60f3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9c93d16, org.springframework.security.web.session.SessionManagementFilter@2ceca2ef, org.springframework.security.web.access.ExceptionTranslationFilter@1280682, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b0e9707]
+2020-08-23 18:54:55.779  INFO 18104 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-08-23 18:54:55.974  INFO 18104 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-08-23 18:54:55.994  INFO 18104 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-23 18:54:56.351  INFO 18104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-23 18:54:56.352  INFO 18104 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-08-23 18:54:56.757  INFO 18104 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-23 18:54:56.764  INFO 18104 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-23 18:54:57.193  INFO 18104 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-08-23 18:54:57.200  INFO 18104 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.056 seconds (JVM running for 4.445)
+2020-08-23 18:54:59.526  INFO 18104 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-23 18:54:59.526  INFO 18104 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-23 18:54:59.539  INFO 18104 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2020-08-23 18:54:59.555  WARN 18104 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:55:25.483  WARN 18104 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:55:29.328  WARN 18104 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:55:35.379  WARN 18104 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:55:40.878  WARN 18104 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:55:40.907  INFO 18104 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-08-23 18:55:47.622  INFO 18104 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-08-23 18:55:48.236  WARN 18104 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:55:48.246  INFO 18104 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-08-23 18:55:49.387  INFO 18104 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-08-23 18:55:50.703  INFO 18104 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-08-23 18:55:55.940  WARN 18104 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:56:02.179  WARN 18104 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:56:13.103  WARN 18104 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:56:21.991  WARN 18104 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header
+2020-08-23 18:56:26.033  INFO 18104 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user ccc@aol.fr, setting security context
+2020-08-23 18:56:29.806  INFO 18104 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user ccc@aol.fr, setting security context
+2020-08-23 18:56:37.438  WARN 18104 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : couldn't find bearer string, will ignore the header

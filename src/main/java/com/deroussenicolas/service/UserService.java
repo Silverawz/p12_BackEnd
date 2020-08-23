@@ -15,4 +15,6 @@ public interface UserService {
 	
 	public User findOneUserById(Long id);
 
+	public User findByEmail(String username);
+
 }
