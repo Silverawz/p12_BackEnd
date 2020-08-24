@@ -95,7 +95,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             	logger.error("Exception.", e);
             }
         } else {
-            logger.warn("couldn't find bearer string, will ignore the header");
+            //logger.warn("couldn't find bearer string, will ignore the header");
         }
         
         try {
@@ -109,7 +109,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     SecurityContextHolder.getContext().setAuthentication(authentication);
                 }
             }
-		} catch (Exception e) {
+		} catch (Exception e) {			
 			System.err.println(e.getMessage());
 		}
 

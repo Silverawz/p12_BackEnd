@@ -19,6 +19,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Cascade;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 /**
@@ -35,6 +36,7 @@ public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
+	@JsonIgnore
 	private Long id_user;
 	@NotNull
 	@Size(min = 3, max = 70)
@@ -48,19 +50,36 @@ public class User implements Serializable {
 	private String email;
 	@NotNull
 	@Size(min = 5, max = 255)
+	@JsonIgnore
 	private String password;
 	@NotNull
 	private boolean active;
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name="user_has_role", joinColumns=@JoinColumn(name="user_id_user"), inverseJoinColumns=@JoinColumn(name="role_id_role"))
 	private Set<Role> roles;	
+	@JsonIgnore
 	@OneToMany(mappedBy = "id_topic")
 	private List<Topic> topicList;	
+	@JsonIgnore
 	@OneToMany(mappedBy = "id_post")
 	private List<Post> postList;
+	@JsonIgnore
 	@OneToMany(mappedBy = "id_article", cascade = CascadeType.ALL)
 	private List<Article> articleList;
 	
+	public User(@Size(min = 3, max = 70) String firstname, @Size(min = 3, max = 70) String lastname,
+			@Email @Size(min = 5, max = 70) String email, @Size(min = 5, max = 255) String password, boolean active,
+			Set<Role> roles) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+		this.active = active;
+		this.roles = roles;
+	}
+
 	public User() {
 		
 	}
