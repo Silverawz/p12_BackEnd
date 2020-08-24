@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.deroussenicolas.dao.RoleRepository;
+import com.deroussenicolas.entities.Role;
 import com.deroussenicolas.service.RoleService;
 
 /**
@@ -19,4 +20,9 @@ public class RoleServiceImplementation implements RoleService {
 	
 	@Autowired
 	private RoleRepository roleRepository;
+
+	@Override
+	public Role findSpecificRole(String description) {
+		return roleRepository.findSpecificRole(description);
+	}
 }

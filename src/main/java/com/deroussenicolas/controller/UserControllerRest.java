@@ -3,6 +3,8 @@ package com.deroussenicolas.controller;
 import java.net.URI;
 import java.time.Instant;
 import java.time.ZonedDateTime;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Consumer;
 
 import javax.annotation.security.RolesAllowed;
@@ -23,6 +25,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,7 +40,10 @@ import org.springframework.web.server.ResponseStatusException;
 import com.deroussenicolas.configuration.JwtUtil;
 import com.deroussenicolas.entities.AuthRequest;
 import com.deroussenicolas.entities.JwtResponse;
+import com.deroussenicolas.entities.RegisterRequest;
+import com.deroussenicolas.entities.Role;
 import com.deroussenicolas.entities.User;
+import com.deroussenicolas.service.RoleService;
 import com.deroussenicolas.service.UserService;
 import com.deroussenicolas.service.impl.UserServiceImplementation;
 
@@ -52,13 +59,16 @@ import com.deroussenicolas.service.impl.UserServiceImplementation;
 public class UserControllerRest {
 
 	private final UserService userService;
+	private final RoleService roleService;
 	private final UserServiceImplementation userServiceImpl;
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserControllerRest.class);
-
+	private Set<Role> roleSet;
+	
 	@Autowired
-	public UserControllerRest(UserService userService, UserServiceImplementation userServiceImpl ) {
+	public UserControllerRest(UserService userService, UserServiceImplementation userServiceImpl, RoleService roleService ) {
 		this.userService = userService;
 		this.userServiceImpl = userServiceImpl;
+		this.roleService = roleService;
 	}
 
 	/***
@@ -70,11 +80,16 @@ public class UserControllerRest {
 	private JwtUtil jwtUtil;
 	@Autowired
 	private AuthenticationManager authenticationManager;
-
+	@Autowired
+	private PasswordEncoder encoder;
 	
 	@PostMapping("/signin")
-	public ResponseEntity<?> generateToken(@RequestBody AuthRequest authRequest) throws Exception  {
-		System.err.println(authRequest.getUsername()+"+"+authRequest.getPassword());
+	public ResponseEntity<?> signin(@RequestBody AuthRequest authRequest) throws Exception  {
+		User user = userService.findByEmail(authRequest.getUsername());
+		if(!user.isActive()) {
+			LOGGER.error("User is inactive | For email : " + user.getEmail());
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).body("User is not active");
+		}
 		try {
 	        final Authentication authentication = authenticationManager.authenticate(
 	                new UsernamePasswordAuthenticationToken(
@@ -83,8 +98,6 @@ public class UserControllerRest {
 	                )
 	        );
 	        SecurityContextHolder.getContext().setAuthentication(authentication);
-	        // return new ResponseEntity<>(jwtUtil.generateToken(authentication), HttpStatus.OK) ;     //jwtUtil.generateToken(authentication), authRequest.getEmail()
-	        User user = userService.findByEmail(authRequest.getUsername());
 	        return ResponseEntity.ok(new JwtResponse(
 	        		jwtUtil.generateToken(authentication), 
 	        		user.getId_user(),
@@ -94,8 +107,29 @@ public class UserControllerRest {
 		} catch (Exception e) {
 			LOGGER.error("Bad credentials" + e);
 		}
-		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error");
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).body("An error occured");
 	}
+	
+	@PostMapping("/signup")
+	public ResponseEntity<?> signup(@RequestBody RegisterRequest registerRequest) throws Exception  {
+		try {
+			if(userService.findByEmail(registerRequest.getEmail()) == null) {
+				String newPasswordEncoded = encoder.encode(registerRequest.getPassword());
+				roleSet = new HashSet<>();
+				roleSet.add(roleService.findSpecificRole("USER"));
+				User user = new User(registerRequest.getFirstname(), registerRequest.getLastname(), 
+						registerRequest.getEmail(), newPasswordEncoded , true, roleSet);
+				userService.save(user);
+				return ResponseEntity.ok(user);
+			} else {
+				return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Email already exists!");
+			}
+		} catch (Exception e) {
+			LOGGER.error("Error occured while authentication : " + e);
+		}
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Error");	
+	}
+	
 	
 	/*
 	@PreAuthorize("hasAnyRole('USER', 'ADMIN')")
