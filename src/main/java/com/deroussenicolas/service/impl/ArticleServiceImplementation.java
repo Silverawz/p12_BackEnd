@@ -1,4 +1,6 @@
 package com.deroussenicolas.service.impl;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,5 +25,10 @@ public class ArticleServiceImplementation implements ArticleService {
 	@Override
 	public void save(Article article) {
 		articleRepository.save(article);	
+	}
+
+	@Override
+	public List<Article> findAllArticleActive(boolean isActive) {
+		return articleRepository.findAllArticleActive(isActive);
 	}
 }

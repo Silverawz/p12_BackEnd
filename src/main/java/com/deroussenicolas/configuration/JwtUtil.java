@@ -1,11 +1,14 @@
 package com.deroussenicolas.configuration;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -13,6 +16,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+
+import com.deroussenicolas.AssociationsSportivesApplication;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -29,24 +34,29 @@ public class JwtUtil {
 	private String secret;
 	private final long ACCESS_TOKEN_VALIDITY_SECONDS = 1000 * 60 * 60 * 10;
 	private final String AUTHORITIES_KEY = "roles";
+	private static final Logger LOGGER = LoggerFactory.getLogger(JwtUtil.class);
 	
     public String extractUsername(String token) {
-        return extractClaim(token, Claims::getSubject);
+        return extractClaim(token, Claims::getSubject); 
     }
 
     public Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
     }
-
+/*     	try {
+        } catch (ExpiredJwtException e) {
+        	LOGGER.warn("The token is expired and not valid anymore", e);
+        } */
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
     }
-    private Claims extractAllClaims(String token) {
-        return Jwts.parser()
-        		.setSigningKey(secret)
-        		.parseClaimsJws(token)
-        		.getBody();
+    
+    private Claims extractAllClaims(String token) { 	
+    		return Jwts.parser()
+    	    		.setSigningKey(secret)
+    	    		.parseClaimsJws(token)
+    	    		.getBody(); 
     }
 
     private Boolean isTokenExpired(String token) {
