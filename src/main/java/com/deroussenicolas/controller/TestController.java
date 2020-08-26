@@ -42,8 +42,8 @@ public class TestController {
 
 	@GetMapping("/admin")
 	@PreAuthorize("hasRole('ADMIN')")
-	public List<User> adminAccess() {	
-		return userService.findAll();
+	public String adminAccess() {	
+		return "Admin Board.";
 	}
 	
 }

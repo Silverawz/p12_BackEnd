@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -30,7 +32,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	private UserServiceImplementation userServiceImplementation;
 	private final String HEADER_STRING = "Authorization";
 	private final String TOKEN_PREFIX = "Bearer ";
-	
+	private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
 	
 	/*
 	@Override
@@ -84,15 +86,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             try {
                 username = jwtUtil.extractUsername(authToken);
             } catch (IllegalArgumentException e) {
-                logger.error("An error occured during getting username from token", e);
+            	LOGGER.error("An error occured during getting username from token", e);
             } catch (ExpiredJwtException e) {
-                logger.warn("The token is expired and not valid anymore", e);
+            	LOGGER.warn("The token is expired and not valid anymore", e);
             } catch(SignatureException e){
-                logger.error("Authentication Failed. Username or Password not valid.", e);
+            	LOGGER.error("Authentication Failed. Username or Password not valid.", e);
             } catch(UnsupportedJwtException e) {
-            	logger.error("Authentication Failed. Unsigned Claims JWTs are not supported.", e);
+            	LOGGER.error("Authentication Failed. Unsigned Claims JWTs are not supported.", e);
             } catch (Exception e) {
-            	logger.error("Exception.", e);
+            	LOGGER.error("Exception.", e);
             }
         } else {
             //logger.warn("couldn't find bearer string, will ignore the header");
@@ -105,7 +107,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     UsernamePasswordAuthenticationToken authentication = 
                     		jwtUtil.getAuthentication(authToken, SecurityContextHolder.getContext().getAuthentication(), userDetails);
                     authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(req));
-                    logger.info("authenticated user " + username + ", setting security context");
+                    LOGGER.info("authenticated user " + username + ", setting security context");
                     SecurityContextHolder.getContext().setAuthentication(authentication);
                 }
             }

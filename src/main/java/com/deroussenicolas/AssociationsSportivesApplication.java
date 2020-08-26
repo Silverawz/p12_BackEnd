@@ -65,7 +65,33 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		LOGGER.info("Message logged at INFO level");
 		LOGGER.debug("Message logged at DEBUG level");
 		*/
+		/*
+		Article article = new Article();
+		article.setUser(userR.findByEmail("aaa@aol.fr"));
+		article.setDate(new Date());
+		article.setMessage("Lorem Ipsum is simply dummy text of the was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum");
+		article.setTitle("Demain, à nous!");
+		articleR.save(article);
 		
+		Article article1 = new Article();
+		article1.setUser(userR.findByEmail("aaa@aol.fr"));
+		article1.setDate(new Date());
+		article1.setMessage("texte3........................");
+		article1.setTitle("Dommage, pas pour cette fois!");
+		articleR.save(article1);
+		
+			
+		Set<Article> articleSet = new HashSet<>();
+		articleSet.add(articleR.findAll().get(0));
+		articleSet.add(articleR.findAll().get(1));
+		articleSet.add(articleR.findAll().get(2));
+		Category category = categoryR.findAll().get(0);
+		category.setArticlecList(articleSet);
+		categoryR.save(category);
+		
+		User user = userR.findByEmail("aaa@aol.fr");
+		System.err.println(user.getFirstname());
+		*/
 		// OK
 		/*
 		User user = new User();
