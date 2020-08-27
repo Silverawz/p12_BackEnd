@@ -13,4 +13,5 @@ public interface ArticleService {
 
 	public void save(Article article);
 	public List<Article> findAllArticleActive(boolean isActive);
+	public List<Article> sortArticleByDate(List<Article> articles);
 }
