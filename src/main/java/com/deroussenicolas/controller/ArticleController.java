@@ -21,6 +21,8 @@ public class ArticleController {
 	
 	@GetMapping("/football/active")
 	public List<Article> footballArticleActiveList() {
-		return articleService.findAllArticleActive(true);
+		List<Article> activeArticles = articleService.findAllArticleActive(true);
+		List<Article> articlesSortedByDate = articleService.sortArticleByDate(activeArticles);
+		return articlesSortedByDate;
 	}
 }

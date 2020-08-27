@@ -64,20 +64,22 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		LOGGER.warn("Message logged at WARN level");
 		LOGGER.info("Message logged at INFO level");
 		LOGGER.debug("Message logged at DEBUG level");
-		*/
-		/*
+		
+		
 		Article article = new Article();
 		article.setUser(userR.findByEmail("aaa@aol.fr"));
 		article.setDate(new Date());
 		article.setMessage("Lorem Ipsum is simply dummy text of the was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum");
-		article.setTitle("Demain, à nous!");
+		article.setTitle("TITRE TITRETITRETITRETITRETITRE!");
+		article.setActive(true);
 		articleR.save(article);
 		
 		Article article1 = new Article();
 		article1.setUser(userR.findByEmail("aaa@aol.fr"));
 		article1.setDate(new Date());
-		article1.setMessage("texte3........................");
-		article1.setTitle("Dommage, pas pour cette fois!");
+		article1.setMessage("texte.........................texte.........................texte.........................");
+		article1.setTitle("TITRE TITRETITRETITRETITRETITRE!");
+		article1.setActive(true);
 		articleR.save(article1);
 		
 			
@@ -85,10 +87,13 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		articleSet.add(articleR.findAll().get(0));
 		articleSet.add(articleR.findAll().get(1));
 		articleSet.add(articleR.findAll().get(2));
+		articleSet.add(articleR.findAll().get(3));
+		articleSet.add(articleR.findAll().get(4));
 		Category category = categoryR.findAll().get(0);
 		category.setArticlecList(articleSet);
 		categoryR.save(category);
-		
+		*/
+		/*
 		User user = userR.findByEmail("aaa@aol.fr");
 		System.err.println(user.getFirstname());
 		*/
