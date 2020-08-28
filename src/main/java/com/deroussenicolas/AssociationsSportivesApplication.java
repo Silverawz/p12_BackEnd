@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ import com.deroussenicolas.entities.Post;
 import com.deroussenicolas.entities.Role;
 import com.deroussenicolas.entities.Topic;
 import com.deroussenicolas.entities.User;
+import com.deroussenicolas.service.ArticleService;
 /**
  * implements CommandLineRunner
  * 
@@ -43,6 +45,8 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 	@Autowired
 	private ArticleRepository articleR;
 	@Autowired
+	private ArticleService articleService;
+	@Autowired
 	private CategoryRepository categoryR;
 	@Autowired
 	private PostRepository postR;
@@ -58,7 +62,25 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		
+		
 		System.err.println("commandlineRunner.... START");
+		
+		/*
+		Long idParsedAsLong = Long.valueOf(1); 
+		List<Article> list = articleR.findAllFootballArticlesActive(idParsedAsLong, true);
+		for (Article article : list) {
+			System.err.println(article.toString());
+		}
+
+		System.err.println(articleService.findAllFootballArticlesActive(1));
+		List<Article> articles = articleService.findAllFootballArticlesActive(1);
+		for (Article article : articles) {
+			System.err.println(article.getTitle());
+			System.err.println(article.getDate());
+		}
+		*/
+		
+		
 		/*
 		LOGGER.error("Message logged at ERROR level");
 		LOGGER.warn("Message logged at WARN level");

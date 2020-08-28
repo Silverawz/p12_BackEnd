@@ -1,11 +1,11 @@
 package com.deroussenicolas.entities;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,8 +16,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
-
-import org.hibernate.annotations.Cascade;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
@@ -60,13 +58,13 @@ public class User implements Serializable {
 	private Set<Role> roles;	
 	@JsonIgnore
 	@OneToMany(mappedBy = "id_topic")
-	private List<Topic> topicList;	
+	private Set<Topic> topicList;	
 	@JsonIgnore
 	@OneToMany(mappedBy = "id_post")
-	private List<Post> postList;
+	private Set<Post> postList;
 	@JsonIgnore
 	@OneToMany(mappedBy = "id_article", cascade = CascadeType.ALL)
-	private List<Article> articleList;
+	private Set<Article> articleList;
 	
 	public User(@Size(min = 3, max = 70) String firstname, @Size(min = 3, max = 70) String lastname,
 			@Email @Size(min = 5, max = 70) String email, @Size(min = 5, max = 255) String password, boolean active,
@@ -132,27 +130,27 @@ public class User implements Serializable {
 		this.roles = roles;
 	}
 
-	public List<Topic> getTopicList() {
+	public Set<Topic> getTopicList() {
 		return topicList;
 	}
 
-	public void setTopicList(List<Topic> topicList) {
+	public void setTopicList(Set<Topic> topicList) {
 		this.topicList = topicList;
 	}
 
-	public List<Post> getPostList() {
+	public Set<Post> getPostList() {
 		return postList;
 	}
 
-	public void setPostList(List<Post> postList) {
+	public void setPostList(Set<Post> postList) {
 		this.postList = postList;
 	}
 
-	public List<Article> getArticleList() {
+	public Set<Article> getArticleList() {
 		return articleList;
 	}
 
-	public void setArticleList(List<Article> articleList) {
+	public void setArticleList(Set<Article> articleList) {
 		this.articleList = articleList;
 	}
 

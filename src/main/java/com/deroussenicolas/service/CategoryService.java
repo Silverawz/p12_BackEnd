@@ -1,4 +1,7 @@
 package com.deroussenicolas.service;
+
+import com.deroussenicolas.entities.Category;
+
 /**
  * 
  * @author deroussen nicolas
@@ -6,4 +9,5 @@ package com.deroussenicolas.service;
  */
 public interface CategoryService {
 
+	public Category findCategoryByCategoryName(String description);
 }
