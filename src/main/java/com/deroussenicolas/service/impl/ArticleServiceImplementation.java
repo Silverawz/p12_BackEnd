@@ -2,12 +2,14 @@ package com.deroussenicolas.service.impl;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.deroussenicolas.dao.ArticleRepository;
+import com.deroussenicolas.dao.CategoryRepository;
 import com.deroussenicolas.entities.Article;
 import com.deroussenicolas.service.ArticleService;
 
@@ -23,17 +25,24 @@ public class ArticleServiceImplementation implements ArticleService {
 
 	@Autowired
 	private ArticleRepository articleRepository;
-
+	@Autowired
+	private CategoryRepository categoryRepository;
+	
 	@Override
 	public void save(Article article) {
 		articleRepository.save(article);	
 	}
 
-	@Override
-	public List<Article> findAllArticleActive(boolean isActive) {
-		return articleRepository.findAllArticleActive(isActive);
-	}
 	
+	/**
+	 * Find all articles for the "Football" category, active or not depending of the parameter
+	 * @return the articles list
+	 */
+	@Override
+	public List<Article> findAllFootballArticlesActive(boolean active) {
+		Long idCategoryFootball = categoryRepository.findCategoryByCategoryName("Football").getId_category();	
+		return sortArticleByDate(articleRepository.findAllFootballArticlesActive(idCategoryFootball, active));
+	}
 	
 	/**
 	 * sort a list of articles by date
@@ -66,4 +75,5 @@ public class ArticleServiceImplementation implements ArticleService {
 		}
 		return lowestArticleDateFound;	
 	}
+
 }

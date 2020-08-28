@@ -34,7 +34,7 @@ public class Article implements Serializable {
 	@Size(min = 5, max = 70)
 	private String title;
 	@NotNull
-	@Size(min = 5, max = 255)
+	@Size(min = 5, max = 1000)
 	private String message;
 	@NotNull
 	private Date date;
@@ -104,7 +104,7 @@ public class Article implements Serializable {
 	@Override
 	public String toString() {
 		return "Article [id_article=" + id_article + ", title=" + title + ", message=" + message + ", date=" + date
-				+ ", active=" + active + ", user=" + user + "]";
+				+ ", active=" + active + ", user=" + user.getEmail() + "]";
 	}
 
 }
