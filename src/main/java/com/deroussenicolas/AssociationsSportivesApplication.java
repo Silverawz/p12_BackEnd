@@ -2,6 +2,8 @@ package com.deroussenicolas;
 import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -64,7 +66,33 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		
 		
 		System.err.println("commandlineRunner.... START");
+		/*
+		Article article = new Article();
+		article.setUser(userR.findByEmail("aaa@aol.fr"));
+		article.setDate(new Date());
+		article.setMessage("Lorem Ipsum is simply dummy text of the was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum");
+		article.setTitle("volley ball titre!");
+		article.setActive(true);
+		articleR.save(article);
+	
+		Article article1 = new Article();
+		article1.setUser(userR.findByEmail("bbb@aol.fr"));
+		article1.setDate(new Date());
+		article1.setMessage("Lorem Ipsum is simply dummy text of the was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum");
+		article1.setTitle("volley ball! ZZZZZZZZZZZZZZZZZZZZZ");
+		article1.setActive(true);
+		articleR.save(article1);
 		
+		
+		List<Article> articleList = new ArrayList<>();
+		Category category = categoryR.findAll().get(2);
+		
+		articleList = category.getArticlecList();
+		articleList.add(articleR.findAll().get(7));
+		articleList.add(articleR.findAll().get(8));
+
+		category.setArticlecList(articleList);
+		categoryR.save(category);*/
 		/*
 		Long idParsedAsLong = Long.valueOf(1); 
 		List<Article> list = articleR.findAllFootballArticlesActive(idParsedAsLong, true);
@@ -78,7 +106,7 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 			System.err.println(article.getTitle());
 			System.err.println(article.getDate());
 		}
-		*/
+		
 		
 		
 		/*

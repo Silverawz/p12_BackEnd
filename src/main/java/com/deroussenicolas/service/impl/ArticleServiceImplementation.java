@@ -1,8 +1,6 @@
 package com.deroussenicolas.service.impl;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +30,6 @@ public class ArticleServiceImplementation implements ArticleService {
 	public void save(Article article) {
 		articleRepository.save(article);	
 	}
-
 	
 	/**
 	 * Find all articles for the "Football" category, active or not depending of the parameter
@@ -41,9 +38,29 @@ public class ArticleServiceImplementation implements ArticleService {
 	@Override
 	public List<Article> findAllFootballArticlesActive(boolean active) {
 		Long idCategoryFootball = categoryRepository.findCategoryByCategoryName("Football").getId_category();	
-		return sortArticleByDate(articleRepository.findAllFootballArticlesActive(idCategoryFootball, active));
+		return sortArticleByDate(categoryRepository.getOne(idCategoryFootball).getArticlecListActive());
 	}
 	
+	/**
+	 * Find all articles for the "Volleyball" category, active or not depending of the parameter
+	 * @return the articles list
+	 */
+	@Override
+	public List<Article> findAllVolleyballArticlesActive(boolean active) {
+		Long idCategoryVolleyball = categoryRepository.findCategoryByCategoryName("Volleyball").getId_category();	
+		return sortArticleByDate(categoryRepository.getOne(idCategoryVolleyball).getArticlecListActive());
+	}
+
+	/**
+	 * Find all articles for the "Basketball" category, active or not depending of the parameter
+	 * @return the articles list
+	 */
+	@Override
+	public List<Article> findAllBasketballArticlesActive(boolean active) {
+		Long idCategoryBasketball = categoryRepository.findCategoryByCategoryName("Basketball").getId_category();	
+		return sortArticleByDate(categoryRepository.getOne(idCategoryBasketball).getArticlecListActive());
+	}	
+		
 	/**
 	 * sort a list of articles by date
 	 * @return the list sorted
