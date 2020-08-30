@@ -23,4 +23,14 @@ public class ArticleController {
 	public List<Article> footballArticleActiveList() {
 		return articleService.findAllFootballArticlesActive(true);
 	}
+	
+	@GetMapping("/volleyball/active")
+	public List<Article> volleyballArticleActiveList() {
+		return articleService.findAllVolleyballArticlesActive(true);
+	}
+	
+	@GetMapping("/basketball/active")
+	public List<Article> basketballArticleActiveList() {
+		return articleService.findAllBasketballArticlesActive(true);
+	}
 }

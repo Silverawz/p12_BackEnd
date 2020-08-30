@@ -14,4 +14,6 @@ public interface ArticleService {
 	public void save(Article article);
 	public List<Article> findAllFootballArticlesActive(boolean active);
 	public List<Article> sortArticleByDate(List<Article> articles);
+	public List<Article> findAllVolleyballArticlesActive(boolean active);
+	public List<Article> findAllBasketballArticlesActive(boolean active);
 }

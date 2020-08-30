@@ -1,10 +1,12 @@
 package com.deroussenicolas.entities;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -39,10 +41,10 @@ public class Category implements Serializable {
 	
 	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(name="category_has_topic", joinColumns=@JoinColumn(name="category_id_category"), inverseJoinColumns=@JoinColumn(name="topic_id_topic"))
-	private Set<Topic> topicList;
-	@ManyToMany(cascade=CascadeType.ALL)
+	private List<Topic> topicList;
+	@ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name="category_has_article", joinColumns=@JoinColumn(name="category_id_category"), inverseJoinColumns=@JoinColumn(name="article_id_article"))
-	private Set<Article> articlecList;
+	private List<Article> articlecList;
 	
 	
 	public Category() {
@@ -65,18 +67,30 @@ public class Category implements Serializable {
 		this.description = description;
 	}
 
-	public Set<Topic> getTopicList() {
+	public List<Topic> getTopicList() {
 		return topicList;
 	}
 
-	public void setTopicList(Set<Topic> topicList) {
+	public void setTopicList(List<Topic> topicList) {
 		this.topicList = topicList;
 	}
-	public Set<Article> getArticlecList() {
+	public List<Article> getArticlecList() {
 		return articlecList;
 	}
-
-	public void setArticlecList(Set<Article> articlecList) {
+	
+	public List<Article> getArticlecListActive() {
+		List<Article> articlesActive = new ArrayList<>();
+		if(articlecList != null) {
+			for (Article article : articlecList) {
+				if(article.isActive()) {
+					articlesActive.add(article);
+				}		
+			}
+		}
+		return articlesActive;
+	}
+	
+	public void setArticlecList(List<Article> articlecList) {
 		this.articlecList = articlecList;
 	}
 
