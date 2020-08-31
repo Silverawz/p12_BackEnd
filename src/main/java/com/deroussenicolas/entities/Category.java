@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -42,9 +43,9 @@ public class Category implements Serializable {
 	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(name="category_has_topic", joinColumns=@JoinColumn(name="category_id_category"), inverseJoinColumns=@JoinColumn(name="topic_id_topic"))
 	private List<Topic> topicList;
-	@ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name="category_has_article", joinColumns=@JoinColumn(name="category_id_category"), inverseJoinColumns=@JoinColumn(name="article_id_article"))
-	private List<Article> articlecList;
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="category_has_article", joinColumns=@JoinColumn(name="category_id_category"), inverseJoinColumns=@JoinColumn(name="article_id_topic"))
+	private List<Article> articles;
 	
 	
 	public Category() {
@@ -73,25 +74,6 @@ public class Category implements Serializable {
 
 	public void setTopicList(List<Topic> topicList) {
 		this.topicList = topicList;
-	}
-	public List<Article> getArticlecList() {
-		return articlecList;
-	}
-	
-	public List<Article> getArticlecListActive() {
-		List<Article> articlesActive = new ArrayList<>();
-		if(articlecList != null) {
-			for (Article article : articlecList) {
-				if(article.isActive()) {
-					articlesActive.add(article);
-				}		
-			}
-		}
-		return articlesActive;
-	}
-	
-	public void setArticlecList(List<Article> articlecList) {
-		this.articlecList = articlecList;
 	}
 
 	public static long getSerialversionuid() {

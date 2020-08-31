@@ -1,22 +1,12 @@
 package com.deroussenicolas;
-import org.slf4j.Logger;
-
-import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.deroussenicolas.dao.ArticleRepository;
 import com.deroussenicolas.dao.CategoryRepository;
@@ -26,10 +16,6 @@ import com.deroussenicolas.dao.TopicRepository;
 import com.deroussenicolas.dao.UserRepository;
 import com.deroussenicolas.entities.Article;
 import com.deroussenicolas.entities.Category;
-import com.deroussenicolas.entities.Post;
-import com.deroussenicolas.entities.Role;
-import com.deroussenicolas.entities.Topic;
-import com.deroussenicolas.entities.User;
 import com.deroussenicolas.service.ArticleService;
 /**
  * implements CommandLineRunner
@@ -65,8 +51,16 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		
 		
 		
-		System.err.println("commandlineRunner.... START");
-		/*
+		System.err.println("commandlineRunner.... START");/*
+		Long id = Long.valueOf(2);
+		
+		List<Article> articles = articleR.findAllArticlesActiveByCategoryId(id, true);
+		
+		for (Article a : articles) {
+			System.err.println("id de l'article=" + a.getId_article());
+			System.err.println("date de l'article=" + a.getDate());
+		}
+		
 		Article article = new Article();
 		article.setUser(userR.findByEmail("aaa@aol.fr"));
 		article.setDate(new Date());
