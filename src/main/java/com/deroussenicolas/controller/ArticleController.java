@@ -33,4 +33,5 @@ public class ArticleController {
 	public List<Article> basketballArticleActiveList() {
 		return articleService.findAllBasketballArticlesActive(true);
 	}
+
 }

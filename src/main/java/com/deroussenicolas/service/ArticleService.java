@@ -16,4 +16,5 @@ public interface ArticleService {
 	public List<Article> sortArticleByDate(List<Article> articles);
 	public List<Article> findAllVolleyballArticlesActive(boolean active);
 	public List<Article> findAllBasketballArticlesActive(boolean active);
+	public List<Article> findAllArticlesFromUser(String userEmail);
 }
