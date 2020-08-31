@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.deroussenicolas.dao.ArticleRepository;
 import com.deroussenicolas.dao.CategoryRepository;
+import com.deroussenicolas.dao.UserRepository;
 import com.deroussenicolas.entities.Article;
 import com.deroussenicolas.service.ArticleService;
 
@@ -25,6 +26,8 @@ public class ArticleServiceImplementation implements ArticleService {
 	private ArticleRepository articleRepository;
 	@Autowired
 	private CategoryRepository categoryRepository;
+	@Autowired
+	private UserRepository userRepository;
 	
 	@Override
 	public void save(Article article) {
@@ -62,6 +65,16 @@ public class ArticleServiceImplementation implements ArticleService {
 	}	
 		
 	/**
+	 * Find all articles made by the user ordered, active and inactive are included
+	 * @return the articles list
+	 */
+	@Override
+	public List<Article> findAllArticlesFromUser(String userEmail) {	
+		Long user_id = userRepository.findByEmail(userEmail).getId_user();
+		return articleRepository.findAllArticlesFromUser(user_id);
+	}
+	
+	/**
 	 * sort a list of articles by date
 	 * @return the list sorted
 	 */
@@ -92,5 +105,6 @@ public class ArticleServiceImplementation implements ArticleService {
 		}
 		return lowestArticleDateFound;	
 	}
+
 
 }

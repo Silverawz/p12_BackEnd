@@ -34,6 +34,9 @@ public interface ArticleRepository extends JpaRepository <Article, Long> {
 	 * */
 	 //join fetch a.user
 	
-	@Query(value = "SELECT * FROM Article a JOIN Category_has_article b ON a.id_article=b.Article_id_article where b.category_id_category=?1 and a.active=?2 order by a.date desc", nativeQuery=true)
+	@Query(nativeQuery=true, value = "SELECT * FROM Article a JOIN Category_has_article b ON a.id_article=b.Article_id_article where b.category_id_category=?1 and a.active=?2 order by a.date desc")
 	List<Article> findAllArticlesActiveByCategoryId(Long id, boolean active);
+
+	@Query(nativeQuery=true, value = "SELECT * FROM Article a JOIN Category_has_article b ON a.id_article=b.Article_id_article where a.user_id_user=?1 order by a.date desc")
+	List<Article> findAllArticlesFromUser(Long user_id);
 }

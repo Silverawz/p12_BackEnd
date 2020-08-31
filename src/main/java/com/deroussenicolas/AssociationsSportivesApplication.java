@@ -50,8 +50,18 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		
+		System.err.println("commandlineRunner.... START");
 		
-		System.err.println("commandlineRunner.... START");/*
+		/*
+		Long id = Long.valueOf(1);
+		List<Article> articles = articleR.findAllArticlesFromUser(id);
+		for (Article a : articles) {
+			System.err.println(a.getId_article());
+		}
+		
+		
+		
+
 		Long id = Long.valueOf(2);
 		
 		List<Article> articles = articleR.findAllArticlesActiveByCategoryId(id, true);
