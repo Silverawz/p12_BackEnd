@@ -32,33 +32,33 @@ public class ArticleServiceImplementation implements ArticleService {
 	}
 	
 	/**
-	 * Find all articles for the "Football" category, active or not depending of the parameter
+	 * Find all articles for the "Football" category ordered, active or not depending of the parameter
 	 * @return the articles list
 	 */
 	@Override
 	public List<Article> findAllFootballArticlesActive(boolean active) {
 		Long idCategoryFootball = categoryRepository.findCategoryByCategoryName("Football").getId_category();	
-		return sortArticleByDate(categoryRepository.getOne(idCategoryFootball).getArticlecListActive());
+		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryFootball, active);
 	}
 	
 	/**
-	 * Find all articles for the "Volleyball" category, active or not depending of the parameter
+	 * Find all articles for the "Volleyball" category ordered, active or not depending of the parameter
 	 * @return the articles list
 	 */
 	@Override
 	public List<Article> findAllVolleyballArticlesActive(boolean active) {
 		Long idCategoryVolleyball = categoryRepository.findCategoryByCategoryName("Volleyball").getId_category();	
-		return sortArticleByDate(categoryRepository.getOne(idCategoryVolleyball).getArticlecListActive());
+		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryVolleyball, active);
 	}
 
 	/**
-	 * Find all articles for the "Basketball" category, active or not depending of the parameter
+	 * Find all articles for the "Basketball" category ordered, active or not depending of the parameter
 	 * @return the articles list
 	 */
 	@Override
 	public List<Article> findAllBasketballArticlesActive(boolean active) {
 		Long idCategoryBasketball = categoryRepository.findCategoryByCategoryName("Basketball").getId_category();	
-		return sortArticleByDate(categoryRepository.getOne(idCategoryBasketball).getArticlecListActive());
+		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryBasketball, active);
 	}	
 		
 	/**
