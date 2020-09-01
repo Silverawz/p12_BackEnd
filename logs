@@ -1366,3 +1366,354 @@ java.sql.SQLSyntaxErrorException: Champ 'id' inconnu dans order clause
 2020-09-01 15:49:15.039  INFO 7560 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-09-01 15:49:15.039  INFO 7560 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-09-01 15:49:15.048  INFO 7560 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-09-01 17:23:11.778  INFO 8304 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 8304 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-09-01 17:23:11.781  INFO 8304 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-09-01 17:23:12.425  INFO 8304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-01 17:23:12.525  INFO 8304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93ms. Found 6 JPA repository interfaces.
+2020-09-01 17:23:12.831  INFO 8304 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@421a4ee1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-01 17:23:12.837  INFO 8304 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-01 17:23:13.282  INFO 8304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-01 17:23:13.292  INFO 8304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-01 17:23:13.292  INFO 8304 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-01 17:23:13.438  INFO 8304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-01 17:23:13.438  INFO 8304 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1615 ms
+2020-09-01 17:23:13.663  INFO 8304 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-01 17:23:13.710  INFO 8304 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-01 17:23:13.762  WARN 8304 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-01 17:23:13.769  INFO 8304 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-09-01 17:23:13.900  INFO 8304 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-01 17:23:13.950  INFO 8304 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a6ea47d, org.springframework.security.web.context.SecurityContextPersistenceFilter@b27b210, org.springframework.security.web.header.HeaderWriterFilter@4cffcc61, org.springframework.security.web.authentication.logout.LogoutFilter@56c8e6f0, com.deroussenicolas.configuration.JwtAuthenticationFilter@17fa1336, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33f17289, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@270d43a7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54b2fc58, org.springframework.security.web.session.SessionManagementFilter@5b5b59, org.springframework.security.web.access.ExceptionTranslationFilter@63f855b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55b5cd2b]
+2020-09-01 17:23:14.022  INFO 8304 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-01 17:23:14.199  INFO 8304 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-01 17:23:14.219  INFO 8304 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-09-01 17:23:14.477  INFO 8304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-01 17:23:14.479  INFO 8304 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-01 17:23:14.929  INFO 8304 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-01 17:23:14.936  INFO 8304 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-01 17:23:15.300  INFO 8304 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-01 17:23:15.305  INFO 8304 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.905 seconds (JVM running for 4.258)
+2020-09-01 17:23:20.914  INFO 8304 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-01 17:23:20.915  INFO 8304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-01 17:23:20.922  INFO 8304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-09-01 17:35:52.935  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:35:54.516  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:36:04.791  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:36:22.912  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:36:23.639  INFO 8304 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:36:25.091  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:36:26.498  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:36:27.059  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:09.018  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:11.707  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:23.085  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:24.364  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:25.484  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:26.467  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:27.195  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:28.043  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:28.788  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:30.393  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:31.499  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:32.556  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:35.433  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:37.747  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:37:38.960  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:40.776  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:42.794  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:45.099  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:50.360  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:51.086  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:51.828  INFO 8304 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:53.523  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:55.272  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:56.066  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:57.083  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:57.642  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:58.331  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:59.032  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:38:59.950  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:01.593  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:02.453  INFO 8304 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:03.137  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:04.403  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:05.030  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:06.772  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:08.121  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:08.935  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:10.463  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:11.392  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:12.596  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:13.785  INFO 8304 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:15.776  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:16.213  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:17.566  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:18.083  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:19.470  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:36.156  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:37.137  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:38.164  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:40.076  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:41.147  INFO 8304 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:42.109  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:42.736  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:44.922  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:47.187  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:49.240  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:51.323  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:57.956  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:39:58.854  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:40:12.048  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:40:14.267  INFO 8304 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:40:16.006  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:40:16.730  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:40:17.611  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:40:19.070  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:40:22.293  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:40:46.864  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:41:00.397  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user bbb@aol.fr, setting security context
+2020-09-01 17:41:53.750  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user bbb@aol.fr, setting security context
+2020-09-01 17:41:55.388  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user bbb@aol.fr, setting security context
+2020-09-01 17:45:48.293  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:07.494  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:08.960  INFO 8304 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:10.092  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:11.295  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:11.787  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:12.668  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:12.988  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:13.305  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:13.817  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:14.236  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 17:46:16.632  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:07.088  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:23.795  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:25.911  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:27.832  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:29.203  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:30.930  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:32.491  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:33.643  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:34.806  INFO 8304 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:35.779  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:38.844  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:41.761  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:42.861  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:43.469  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:44.540  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:02:47.040  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:03:04.815  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:03:06.890  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:03:30.961  INFO 8304 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:07:27.163  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:07:32.455  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:07:40.480  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:07:57.882  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:09:00.924  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:10:01.682  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:10:02.790  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:11:38.283  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:11:45.774  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:17:25.327  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:17:29.517  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:17:30.855  INFO 8304 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:17:31.613  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:17:36.345  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:19:05.494  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:19:23.790  INFO 8304 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:24:35.070  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:24:38.054  INFO 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:24:39.710  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:24:41.347  INFO 8304 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:24:42.333  INFO 8304 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:24:55.570  INFO 8304 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:25:25.621  INFO 8304 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:25:27.558  INFO 8304 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:26:29.892  INFO 8304 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:27:10.294 ERROR 8304 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : Authentication Failed. Username or Password not valid.
+
+io.jsonwebtoken.SignatureException: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:354) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:481) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:541) ~[jjwt-0.9.1.jar:0.9.1]
+	at com.deroussenicolas.configuration.JwtUtil.extractAllClaims(JwtUtil.java:58) ~[classes/:na]
+	at com.deroussenicolas.configuration.JwtUtil.extractClaim(JwtUtil.java:51) ~[classes/:na]
+	at com.deroussenicolas.configuration.JwtUtil.extractUsername(JwtUtil.java:40) ~[classes/:na]
+	at com.deroussenicolas.configuration.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:87) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+
+2020-09-01 18:27:20.804  INFO 8304 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:37:03.523  INFO 18880 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 18880 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-09-01 18:37:03.526  INFO 18880 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-09-01 18:37:04.245  INFO 18880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-01 18:37:04.356  INFO 18880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96ms. Found 6 JPA repository interfaces.
+2020-09-01 18:37:04.674  INFO 18880 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@e04ccf8' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-01 18:37:04.678  INFO 18880 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-01 18:37:05.058  INFO 18880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-01 18:37:05.069  INFO 18880 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-01 18:37:05.069  INFO 18880 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-01 18:37:05.194  INFO 18880 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-01 18:37:05.195  INFO 18880 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1625 ms
+2020-09-01 18:37:05.393  INFO 18880 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-01 18:37:05.462  INFO 18880 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-01 18:37:05.512  WARN 18880 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-01 18:37:05.514  INFO 18880 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-09-01 18:37:05.646  INFO 18880 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-01 18:37:05.703  INFO 18880 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a13fcf3, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f34907b, org.springframework.security.web.header.HeaderWriterFilter@173f1614, org.springframework.security.web.authentication.logout.LogoutFilter@10e5bf9c, com.deroussenicolas.configuration.JwtAuthenticationFilter@26586b74, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@16da1abc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9b5f3c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@250b5e5b, org.springframework.security.web.session.SessionManagementFilter@4b1ec694, org.springframework.security.web.access.ExceptionTranslationFilter@40bb4f87, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@32faa16c]
+2020-09-01 18:37:05.760  INFO 18880 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-01 18:37:06.124  INFO 18880 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-01 18:37:06.142  INFO 18880 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-09-01 18:37:06.196  INFO 18880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-01 18:37:06.198  INFO 18880 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-01 18:37:06.286  INFO 18880 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-01 18:37:06.286  INFO 18880 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-01 18:37:06.842  INFO 18880 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-01 18:37:06.849  INFO 18880 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-01 18:37:06.985  INFO 18880 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 699 ms
+2020-09-01 18:37:07.269  INFO 18880 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-01 18:37:07.284  INFO 18880 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 4.13 seconds (JVM running for 4.486)
+2020-09-01 18:37:07.393  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:37:09.652  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:37:11.369  INFO 18880 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:37:12.355  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:37:13.634  INFO 18880 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:37:23.440  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:38:06.748  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:38:13.199  INFO 18880 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:38:17.661  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:38:29.078  INFO 18880 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:39:05.511  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:39:19.306  INFO 18880 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:39:30.337  INFO 18880 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:39:36.654  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:40:18.019  INFO 18880 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:05.670  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:06.896  INFO 18880 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:08.589  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:09.085  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:09.360  INFO 18880 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:17.488  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:18.704  INFO 18880 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:20.176  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:20.521  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:21.460  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:21.866  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:23.272  INFO 18880 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:24.960  INFO 18880 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:25.374  INFO 18880 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:27.210  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:41:52.923  INFO 18880 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:09.333  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:41.714  INFO 18880 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:42.409  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:44.073  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:46.062  INFO 18880 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:52.873  INFO 18880 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:54.149  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:55.037  INFO 18880 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:57.787  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:58.825  INFO 18880 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:59.161  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:42:59.858  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:43:01.997  INFO 18880 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:43:05.202  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:44:07.821  INFO 18880 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:44:18.011  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:44:27.078  INFO 18880 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:45:45.310  INFO 18880 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:45:50.062  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:46:01.992  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:46:23.858  INFO 18880 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:46:25.198  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:46:33.279  INFO 18880 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:46:41.533  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:48:03.861  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:48:07.698  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:48:09.025  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:50:22.146  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:50:52.399  INFO 18880 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:51:07.204  INFO 18880 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:51:33.928  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:53:54.194  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:54:05.950  INFO 18880 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:54:18.569  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:54:28.633  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:54:56.309  INFO 18880 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:56:21.368  INFO 18880 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:56:38.438  INFO 18880 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:56:53.245  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:57:32.460  INFO 18880 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:57:46.186  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:57:56.774  INFO 18880 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:58:25.065  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:58:36.595  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:58:53.273  INFO 18880 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:59:44.416  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 18:59:57.480  INFO 18880 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:00:14.102  INFO 18880 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:00:27.657  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:00:53.160  INFO 18880 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:01:18.465  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:01:29.577  INFO 18880 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:01:56.072  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:02:12.324  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:03:17.009  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:03:53.674  INFO 18880 --- [http-nio-8080-exec-6] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:05:22.153  INFO 18880 --- [http-nio-8080-exec-9] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:05:38.304  INFO 18880 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:06:01.250  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:07:30.454  INFO 18880 --- [http-nio-8080-exec-2] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:07:33.268  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:07:33.615  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:07:33.907  INFO 18880 --- [http-nio-8080-exec-7] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:07:34.320  INFO 18880 --- [http-nio-8080-exec-8] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:07:35.054  INFO 18880 --- [http-nio-8080-exec-10] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:07:37.482  INFO 18880 --- [http-nio-8080-exec-1] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:07:39.112  INFO 18880 --- [http-nio-8080-exec-3] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:07:40.032  INFO 18880 --- [http-nio-8080-exec-4] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
+2020-09-01 19:07:42.148  INFO 18880 --- [http-nio-8080-exec-5] c.d.c.JwtAuthenticationFilter            : authenticated user aaa@aol.fr, setting security context
