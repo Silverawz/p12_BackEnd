@@ -27,30 +27,35 @@ public class ArticleController {
 	@Autowired
 	private ArticleRepository articleRepository;
 	
-
+/*
 	@GetMapping("/football/test")
 	public ResponseEntity<Page<Article>> footballTestPageable(@RequestParam(defaultValue = "0") Integer page, 
             @RequestParam(defaultValue = "10") Integer size) {	
 	      Page<Article> pagesArticles = articleService.getAllArticles(page, size);      
 	      return new ResponseEntity<Page<Article>>(pagesArticles, new HttpHeaders(), HttpStatus.OK); 
-	}	
+	}	*/
 	
 	
-	
-	
+		
 	@GetMapping("/football/active")
-	public List<Article> footballArticleActiveList() {	
-		return articleService.findAllFootballArticlesActive(true);
+	public ResponseEntity<Page<Article>> footballArticleActiveList(@RequestParam(defaultValue = "0") Integer page, 
+            @RequestParam(defaultValue = "10") Integer size) {	
+	      Page<Article> pagesArticles = articleService.findAllFootballArticlesActive(true, page, size);      
+	      return new ResponseEntity<Page<Article>>(pagesArticles, new HttpHeaders(), HttpStatus.OK); 
 	}
 	
 	@GetMapping("/volleyball/active")
-	public List<Article> volleyballArticleActiveList() {
-		return articleService.findAllVolleyballArticlesActive(true);
+	public ResponseEntity<Page<Article>> volleyballArticleActiveList(@RequestParam(defaultValue = "0") Integer page, 
+            @RequestParam(defaultValue = "10") Integer size) {	
+	      Page<Article> pagesArticles = articleService.findAllVolleyballArticlesActive(true, page, size);      
+	      return new ResponseEntity<Page<Article>>(pagesArticles, new HttpHeaders(), HttpStatus.OK); 
 	}
 	
 	@GetMapping("/basketball/active")
-	public List<Article> basketballArticleActiveList() {
-		return articleService.findAllBasketballArticlesActive(true);
+	public ResponseEntity<Page<Article>> basketballArticleActiveList(@RequestParam(defaultValue = "0") Integer page, 
+            @RequestParam(defaultValue = "10") Integer size) {	
+	      Page<Article> pagesArticles = articleService.findAllBasketballArticlesActive(true, page, size);      
+	      return new ResponseEntity<Page<Article>>(pagesArticles, new HttpHeaders(), HttpStatus.OK); 
 	}
 
 }

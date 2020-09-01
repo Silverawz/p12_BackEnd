@@ -14,12 +14,12 @@ import com.deroussenicolas.entities.Article;
 public interface ArticleService {
 
 	public void save(Article article);
-	public List<Article> findAllFootballArticlesActive(boolean active);
+	public Page<Article> findAllFootballArticlesActive(boolean active, Integer pageNo, Integer pageSize);
 	public List<Article> sortArticleByDate(List<Article> articles);
-	public List<Article> findAllVolleyballArticlesActive(boolean active);
-	public List<Article> findAllBasketballArticlesActive(boolean active);
-	public List<Article> findAllArticlesFromUser(String userEmail);
-	public Page<Article> getAllArticles(Integer pageNo, Integer pageSize);
+	public Page<Article> findAllVolleyballArticlesActive(boolean active, Integer pageNo, Integer pageSize);
+	public Page<Article> findAllBasketballArticlesActive(boolean active, Integer pageNo, Integer pageSize);
+	public Page<Article> findAllArticlesFromUser(String userEmail, Integer pageNo, Integer pageSize);
+	//public Page<Article> getAllArticles(Integer pageNo, Integer pageSize);
 	
 	
 }

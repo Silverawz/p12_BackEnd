@@ -32,6 +32,7 @@ public class ArticleServiceImplementation implements ArticleService {
 	private CategoryRepository categoryRepository;
 	@Autowired
 	private UserRepository userRepository;
+	private Pageable pageable;
 	
 	@Override
 	public void save(Article article) {
@@ -43,9 +44,10 @@ public class ArticleServiceImplementation implements ArticleService {
 	 * @return the articles list
 	 */
 	@Override
-	public List<Article> findAllFootballArticlesActive(boolean active) {
+	public Page<Article> findAllFootballArticlesActive(boolean active, Integer pageNo, Integer pageSize) {
 		Long idCategoryFootball = categoryRepository.findCategoryByCategoryName("Football").getId_category();	
-		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryFootball, active);
+		pageable = PageRequest.of(pageNo, pageSize); 
+		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryFootball, active, pageable);
 	}
 	
 	/**
@@ -53,9 +55,10 @@ public class ArticleServiceImplementation implements ArticleService {
 	 * @return the articles list
 	 */
 	@Override
-	public List<Article> findAllVolleyballArticlesActive(boolean active) {
+	public Page<Article> findAllVolleyballArticlesActive(boolean active, Integer pageNo, Integer pageSize) {
 		Long idCategoryVolleyball = categoryRepository.findCategoryByCategoryName("Volleyball").getId_category();	
-		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryVolleyball, active);
+		pageable = PageRequest.of(pageNo, pageSize); 
+		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryVolleyball, active, pageable);
 	}
 
 	/**
@@ -63,9 +66,10 @@ public class ArticleServiceImplementation implements ArticleService {
 	 * @return the articles list
 	 */
 	@Override
-	public List<Article> findAllBasketballArticlesActive(boolean active) {
+	public Page<Article> findAllBasketballArticlesActive(boolean active, Integer pageNo, Integer pageSize) {
 		Long idCategoryBasketball = categoryRepository.findCategoryByCategoryName("Basketball").getId_category();	
-		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryBasketball, active);
+		pageable = PageRequest.of(pageNo, pageSize); 
+		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryBasketball, active, pageable);
 	}	
 		
 	/**
@@ -73,9 +77,10 @@ public class ArticleServiceImplementation implements ArticleService {
 	 * @return the articles list
 	 */
 	@Override
-	public List<Article> findAllArticlesFromUser(String userEmail) {	
+	public Page<Article> findAllArticlesFromUser(String userEmail, Integer pageNo, Integer pageSize) {	
 		Long user_id = userRepository.findByEmail(userEmail).getId_user();
-		return articleRepository.findAllArticlesFromUser(user_id);
+		pageable = PageRequest.of(pageNo, pageSize); 
+		return articleRepository.findAllArticlesFromUser(user_id, pageable);
 	}
 	
 	/**
@@ -110,11 +115,12 @@ public class ArticleServiceImplementation implements ArticleService {
 		return lowestArticleDateFound;	
 	}
 
+	/*
 	public Page<Article> getAllArticles(Integer pageNo, Integer pageSize) {
 		 Pageable pageable = PageRequest.of(pageNo, pageSize); 
 		 Long id = Long.valueOf(1);
 		 return articleRepository.getAllArticles(id, true, pageable);
-	}
+	}*/
 
 
 }
