@@ -55,7 +55,7 @@ public interface ArticleRepository extends PagingAndSortingRepository<Article, L
 			countQuery = "SELECT count(*) FROM Article a JOIN Category_has_article b ON a.id_article=b.Article_id_article where b.category_id_category=?1 and a.active=?2 order by a.date desc")
 	Page<Article> findAllArticlesActiveByCategoryId(Long id, boolean active, Pageable pageable);
 
-	
-
+	@Query(value = "select a from Article a where a.id_article=?1")
+	Article findArticleById(Long id);
 
 }

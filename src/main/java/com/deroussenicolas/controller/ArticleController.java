@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,6 +58,19 @@ public class ArticleController {
             @RequestParam(defaultValue = "10") Integer size) {	
 	      Page<Article> pagesArticles = articleService.findAllBasketballArticlesActive(true, page, size);      
 	      return new ResponseEntity<Page<Article>>(pagesArticles, new HttpHeaders(), HttpStatus.OK); 
+	}
+	
+	@GetMapping("/article")
+	public ResponseEntity<Article> getArticleById(@RequestParam int id){
+		Article article = articleService.findArticleById(id);	
+		return new ResponseEntity<Article>(article, new HttpHeaders(), HttpStatus.OK); 
+	}
+	
+	
+	@PutMapping("/article") 
+	public ResponseEntity<Article> updateArticle(@RequestBody Article article){
+		System.err.println(article.toString());
+		return new ResponseEntity<Article>(articleService.findArticleById(1), new HttpHeaders(), HttpStatus.OK);
 	}
 
 }
