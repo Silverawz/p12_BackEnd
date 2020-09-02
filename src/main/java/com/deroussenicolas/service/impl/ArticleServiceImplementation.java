@@ -115,6 +115,12 @@ public class ArticleServiceImplementation implements ArticleService {
 		return lowestArticleDateFound;	
 	}
 
+	@Override
+	public Article findArticleById(int article_id) {
+		Long id_as_Long = Long.valueOf(article_id);
+		return articleRepository.findArticleById(id_as_Long);
+	}
+
 	/*
 	public Page<Article> getAllArticles(Integer pageNo, Integer pageSize) {
 		 Pageable pageable = PageRequest.of(pageNo, pageSize); 
