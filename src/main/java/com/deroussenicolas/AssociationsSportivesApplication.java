@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.domain.Page;
 
 import com.deroussenicolas.dao.ArticleRepository;
 import com.deroussenicolas.dao.CategoryRepository;
@@ -51,7 +52,6 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		
 		
 		System.err.println("commandlineRunner.... START");
-		
 		/*
 		Long id = Long.valueOf(1);
 		List<Article> articles = articleR.findAllArticlesFromUser(id);

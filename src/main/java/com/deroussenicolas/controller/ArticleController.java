@@ -2,11 +2,16 @@ package com.deroussenicolas.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -28,7 +33,7 @@ public class ArticleController {
 	private ArticleService articleService;
 	@Autowired
 	private ArticleRepository articleRepository;
-	
+	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
 /*
 	@GetMapping("/football/test")
 	public ResponseEntity<Page<Article>> footballTestPageable(@RequestParam(defaultValue = "0") Integer page, 
@@ -61,16 +66,21 @@ public class ArticleController {
 	}
 	
 	@GetMapping("/article")
-	public ResponseEntity<Article> getArticleById(@RequestParam int id){
+	public ResponseEntity<Article> getArticleById(@RequestParam int id) {
 		Article article = articleService.findArticleById(id);	
 		return new ResponseEntity<Article>(article, new HttpHeaders(), HttpStatus.OK); 
 	}
 	
-	
 	@PutMapping("/article") 
-	public ResponseEntity<Article> updateArticle(@RequestBody Article article){
-		System.err.println(article.toString());
-		return new ResponseEntity<Article>(articleService.findArticleById(1), new HttpHeaders(), HttpStatus.OK);
+	public ResponseEntity<?> updateArticle(@RequestBody @Valid Article article) {
+		try {
+			articleService.updateArticle(article);
+			return new ResponseEntity<>(new HttpHeaders(), HttpStatus.OK);
+		} catch (Exception e) {
+			LOGGER.error("Update article failed for = " + article.toString() +
+					" || error ="+ e);
+		}
+		return new ResponseEntity<>(new HttpHeaders(), HttpStatus.BAD_REQUEST);
 	}
 
 }

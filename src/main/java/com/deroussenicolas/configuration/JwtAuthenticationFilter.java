@@ -93,7 +93,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             	LOGGER.error("Authentication Failed. Username or Password not valid.", e);
             } catch(UnsupportedJwtException e) {
             	LOGGER.error("Authentication Failed. Unsigned Claims JWTs are not supported.", e);
-            } catch (Exception e) {
+            } catch (RuntimeException e) {
             	LOGGER.error("Exception.", e);
             }
         } else {
