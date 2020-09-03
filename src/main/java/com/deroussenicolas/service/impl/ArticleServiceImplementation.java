@@ -121,6 +121,16 @@ public class ArticleServiceImplementation implements ArticleService {
 		return articleRepository.findArticleById(id_as_Long);
 	}
 
+	@Override
+	public void updateArticle(Article article) {
+		Article previousArticle = articleRepository.findArticleById(article.getId_article());
+		previousArticle.setTitle(article.getTitle());
+		previousArticle.setMessage(article.getMessage());
+		previousArticle.setActive(article.isActive());
+		articleRepository.save(previousArticle);
+	}
+
+
 	/*
 	public Page<Article> getAllArticles(Integer pageNo, Integer pageSize) {
 		 Pageable pageable = PageRequest.of(pageNo, pageSize); 

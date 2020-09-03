@@ -21,6 +21,6 @@ public interface ArticleService {
 	public Page<Article> findAllArticlesFromUser(String userEmail, Integer pageNo, Integer pageSize);
 	//public Page<Article> getAllArticles(Integer pageNo, Integer pageSize);
 	public Article findArticleById(int article_id);
-	
+	public void updateArticle(Article article);	
 	
 }
