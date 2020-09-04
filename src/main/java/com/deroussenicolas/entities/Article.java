@@ -47,7 +47,7 @@ public class Article implements Serializable {
 	private Date date;
 	@NotNull
 	private boolean active;
-	@ManyToMany(cascade=CascadeType.ALL)
+	@ManyToMany(cascade=CascadeType.ALL, mappedBy = "articles", fetch = FetchType.EAGER)
 	private List<Category> categories;
 	@ManyToOne
 	private User user;
@@ -108,6 +108,14 @@ public class Article implements Serializable {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
 	@Override

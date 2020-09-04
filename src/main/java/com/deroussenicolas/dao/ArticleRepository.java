@@ -43,8 +43,8 @@ public interface ArticleRepository extends PagingAndSortingRepository<Article, L
 */
 	
 	
-	@Query(nativeQuery=true, value = "SELECT * FROM Article a JOIN Category_has_article b ON a.id_article=b.Article_id_article where a.user_id_user=?1 order by a.date desc",
-			countQuery = "SELECT * FROM Article a JOIN Category_has_article b ON a.id_article=b.Article_id_article where a.user_id_user=?1 order by a.date desc")
+	@Query(nativeQuery=true, value = "SELECT * FROM Article a JOIN Category_has_article b ON a.id_article=b.Article_id_article where a.user_id_user=?1 group by a.id_article order by a.date desc",
+			countQuery = "SELECT count(*) FROM Article a JOIN Category_has_article b ON a.id_article=b.Article_id_article where a.user_id_user=?1 group by a.id_article order by a.date desc")
 	Page<Article> findAllArticlesFromUser(Long user_id,  Pageable pageable);
 	
 	

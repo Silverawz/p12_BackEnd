@@ -17,6 +17,7 @@ import com.deroussenicolas.dao.TopicRepository;
 import com.deroussenicolas.dao.UserRepository;
 import com.deroussenicolas.entities.Article;
 import com.deroussenicolas.entities.Category;
+import com.deroussenicolas.entities.User;
 import com.deroussenicolas.service.ArticleService;
 /**
  * implements CommandLineRunner
@@ -52,6 +53,16 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		
 		
 		System.err.println("commandlineRunner.... START");
+			
+		User admin = userR.findByEmail("aaa@aol.fr");
+		Long id = Long.valueOf(1);
+		Article articles = articleR.findArticleById(id);
+		
+		System.out.println(articles.getCategories().get(0).getDescription());
+		
+		
+		
+		
 		/*
 		Long id = Long.valueOf(1);
 		List<Article> articles = articleR.findAllArticlesFromUser(id);
