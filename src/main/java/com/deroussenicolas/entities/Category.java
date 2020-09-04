@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 /**
@@ -39,12 +40,12 @@ public class Category implements Serializable {
 	@NotNull
 	@Size(min = 5, max = 70)
 	private String description;
-	
+	@JsonIgnore
 	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(name="category_has_topic", joinColumns=@JoinColumn(name="category_id_category"), inverseJoinColumns=@JoinColumn(name="topic_id_topic"))
 	private List<Topic> topicList;
-	@ManyToMany(cascade=CascadeType.ALL)
-	@JoinTable(name="category_has_article", joinColumns=@JoinColumn(name="category_id_category"), inverseJoinColumns=@JoinColumn(name="article_id_topic"))
+	@ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinTable(name="category_has_article", joinColumns=@JoinColumn(name="category_id_category"), inverseJoinColumns=@JoinColumn(name="article_id_article"))
 	private List<Article> articles;
 	
 	
