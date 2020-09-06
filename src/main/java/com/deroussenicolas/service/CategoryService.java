@@ -1,5 +1,7 @@
 package com.deroussenicolas.service;
 
+import java.util.List;
+
 import com.deroussenicolas.entities.Category;
 
 /**
@@ -10,4 +12,5 @@ import com.deroussenicolas.entities.Category;
 public interface CategoryService {
 
 	public Category findCategoryByCategoryName(String description);
+	public List<Category> findAllCategories();
 }
