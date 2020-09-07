@@ -18,6 +18,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import com.sun.istack.NotNull;
 
 /**
@@ -47,7 +50,8 @@ public class Article implements Serializable {
 	private Date date;
 	@NotNull
 	private boolean active;
-	@ManyToMany(cascade=CascadeType.ALL, mappedBy = "articles", fetch = FetchType.EAGER)
+	@ManyToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinTable(name="category_has_article", joinColumns=@JoinColumn(name="article_id_article"), inverseJoinColumns=@JoinColumn(name="category_id_category"))
 	private List<Category> categories;
 	@ManyToOne
 	private User user;
