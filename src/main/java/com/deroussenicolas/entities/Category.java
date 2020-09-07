@@ -44,7 +44,7 @@ public class Category implements Serializable {
 	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(name="category_has_topic", joinColumns=@JoinColumn(name="category_id_category"), inverseJoinColumns=@JoinColumn(name="topic_id_topic"))
 	private List<Topic> topicList;
-	@ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name="category_has_article", joinColumns=@JoinColumn(name="category_id_category"), inverseJoinColumns=@JoinColumn(name="article_id_article"))
 	private List<Article> articles;
 	
@@ -75,6 +75,14 @@ public class Category implements Serializable {
 
 	public void setTopicList(List<Topic> topicList) {
 		this.topicList = topicList;
+	}
+	@JsonIgnore
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
 	}
 
 	public static long getSerialversionuid() {

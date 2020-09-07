@@ -1,4 +1,5 @@
 package com.deroussenicolas;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -53,17 +54,40 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		
 		
 		System.err.println("commandlineRunner.... START");
-			
-		User admin = userR.findByEmail("aaa@aol.fr");
-		Long id = Long.valueOf(1);
-		Article articles = articleR.findArticleById(id);
-		
-		System.out.println(articles.getCategories().get(0).getDescription());
-		
-		
 		
 		
 		/*
+		Long id = Long.valueOf(8);
+		Article article = articleR.findArticleById(id);
+		
+		List<Category> categories = new ArrayList<>();
+		article.setCategories(categories);
+		
+		
+		articleR.save(article);
+		*/
+		/*
+		Category category = categoryR.findCategoryByCategoryName("Football");
+		Category category2 = categoryR.findCategoryByCategoryName("Basketball");
+		Category category3 = categoryR.findCategoryByCategoryName("Volleyball");
+		
+		
+		List<Article> articles = new ArrayList<>();
+		articles.add(article);
+		category2.setArticles(articles);
+		category2.getArticles().remove(0);
+		categoryR.save(category2);
+		*/
+		
+		//Category category = categoryR.findCategoryByCategoryName("Football");
+		//System.out.println(category.getArticles().get(0).getTitle());
+		/*
+		User admin = userR.findByEmail("aaa@aol.fr");
+		Long id = Long.valueOf(1);
+
+
+		
+		
 		Long id = Long.valueOf(1);
 		List<Article> articles = articleR.findAllArticlesFromUser(id);
 		for (Article a : articles) {

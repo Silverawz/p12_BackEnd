@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.deroussenicolas.dao.ArticleRepository;
 import com.deroussenicolas.entities.Article;
+import com.deroussenicolas.entities.Category;
 import com.deroussenicolas.service.ArticleService;
 
 @CrossOrigin(origins = "*")
@@ -73,14 +74,14 @@ public class ArticleController {
 	
 	@PutMapping("/article") 
 	public ResponseEntity<?> updateArticle(@RequestBody @Valid Article article) {
-		try {
+		//try {
 			articleService.updateArticle(article);
 			return new ResponseEntity<>(new HttpHeaders(), HttpStatus.OK);
-		} catch (Exception e) {
+		/*} catch (Exception e) {
 			LOGGER.error("Update article failed for = " + article.toString() +
 					" || error ="+ e);
-		}
-		return new ResponseEntity<>(new HttpHeaders(), HttpStatus.BAD_REQUEST);
+		}*/
+		//return new ResponseEntity<>(new HttpHeaders(), HttpStatus.BAD_REQUEST);
 	}
 
 }
