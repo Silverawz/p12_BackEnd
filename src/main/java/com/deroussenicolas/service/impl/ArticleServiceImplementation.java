@@ -15,6 +15,7 @@ import com.deroussenicolas.dao.CategoryRepository;
 import com.deroussenicolas.dao.UserRepository;
 import com.deroussenicolas.entities.Article;
 import com.deroussenicolas.entities.Category;
+import com.deroussenicolas.exception.InvalidArticleException;
 import com.deroussenicolas.service.ArticleService;
 
 /**
@@ -123,101 +124,23 @@ public class ArticleServiceImplementation implements ArticleService {
 	}
 
 	@Override
-	public void updateArticle(Article article) {
+	public void updateArticle(Article article) throws InvalidArticleException {
 		Article previousArticle = articleRepository.findArticleById(article.getId_article());
 		boolean validation = true;
-		if(previousArticle == null) {
-			System.err.println("1");
+		if(previousArticle == null || 
+		!verificationArticleTextSize(5, 70, article.getTitle()) || 
+		!verificationArticleTextSize(5, 1000, article.getMessage()) || 
+		article.getCategories().size() < 1) {
 			validation = false;
-		}
-		
-		if(!verificationArticleTextSize(5, 70, article.getTitle())) {
-			System.err.println("2");
-			validation = false;
-		}
-		if(!verificationArticleTextSize(5, 1000, article.getMessage())) {	
-			System.err.println("3");
-			validation = false;
-		}
-		
-		// categories ici
-		// check if atleast 1 category is set
-		if(article.getCategories().size() < 1) {
-			validation = false;
-			System.err.println("4");
+		}	
+		if(!validation) {
+			throw new InvalidArticleException("Article is invalid.");
 		}
 		if(validation) {
 			article.setUser(previousArticle.getUser());
 			articleRepository.save(article);
-			
-	
 		}
-
-
-		
-		
-		
-		
-		
-		//set categories
-		/*
-		for (Category c : article.getCategories()) {
-			if(c.getDescription() == "Football") {
-				Category footballCategory = categoryRepository.findCategoryByCategoryName("Football");
-				List<Article> articlesOfFootballCategory = footballCategory.getArticles();
-				articlesOfFootballCategory.add(article);
-				categoryRepository.save(footballCategory);
-			} else if (c.getDescription() == "Basketball") {
-				Category basketballCategory = categoryRepository.findCategoryByCategoryName("Basketball");
-				List<Article> articlesOfBasketballCategory = basketballCategory.getArticles();
-				articlesOfBasketballCategory.add(article);
-				categoryRepository.save(basketballCategory);
-			} else if (c.getDescription() == "Volleyball") {
-				Category volleyballCategory = categoryRepository.findCategoryByCategoryName("Volleyball");
-				List<Article> articlesOfVolleyballCategory = volleyballCategory.getArticles();
-				articlesOfVolleyballCategory.add(article);
-				categoryRepository.save(volleyballCategory);
-			}			
-		} */
-		
-		
-		
-		
-		
-
-		
-		/* WORK
-		 * 
-		 * 		System.out.println(previousArticle.isActive()+("========>")+article.isActive());
-		for (Category c : article.getCategories()) {
-			System.out.println("news one="+c.getDescription());
-		}
-		
-		for (Category c : previousArticle.getCategories()) {
-			System.out.println("previous="+c.getDescription());
-		}*/
-		/* WORK
-		System.out.println(previousArticle.getTitle()+" ====> "+article.getTitle());
-		System.out.println(previousArticle.getMessage()+" ====> "+article.getMessage());
-		System.out.println(previousArticle.getDate()+" ====> "+article.getDate());
-		System.out.println(previousArticle.getUser().getEmail()+" ====> "+article.getUser().getEmail());
-		System.out.println(previousArticle.getId_article()+" ====> "+article.getId_article());	*/	
-		
-		/*previousArticle.setTitle(article.getTitle());
-		previousArticle.setMessage(article.getMessage());
-		previousArticle.setActive(article.isActive());
-		
-		previousArticle.setCategories(article.getCategories());*/
-
 	}
-
-
-	/*
-	public Page<Article> getAllArticles(Integer pageNo, Integer pageSize) {
-		 Pageable pageable = PageRequest.of(pageNo, pageSize); 
-		 Long id = Long.valueOf(1);
-		 return articleRepository.getAllArticles(id, true, pageable);
-	}*/
 
 	
 	/**
