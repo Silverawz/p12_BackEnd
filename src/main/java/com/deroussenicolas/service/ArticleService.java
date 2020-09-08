@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 
 import com.deroussenicolas.entities.Article;
+import com.deroussenicolas.exception.InvalidArticleException;
 
 /**
  * 
@@ -21,6 +22,6 @@ public interface ArticleService {
 	public Page<Article> findAllArticlesFromUser(String userEmail, Integer pageNo, Integer pageSize);
 	//public Page<Article> getAllArticles(Integer pageNo, Integer pageSize);
 	public Article findArticleById(int article_id);
-	public void updateArticle(Article article);	
+	public void updateArticle(Article article) throws InvalidArticleException;	
 	
 }
