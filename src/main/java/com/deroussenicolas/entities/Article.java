@@ -50,7 +50,7 @@ public class Article implements Serializable {
 	private Date date;
 	@NotNull
 	private boolean active;
-	@ManyToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade= CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinTable(name="category_has_article", joinColumns=@JoinColumn(name="article_id_article"), inverseJoinColumns=@JoinColumn(name="category_id_category"))
 	private List<Category> categories;
 	@ManyToOne

@@ -1,22 +1,23 @@
 package com.deroussenicolas.service.impl;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.deroussenicolas.dao.ArticleRepository;
-import com.deroussenicolas.dao.CategoryRepository;
-import com.deroussenicolas.dao.UserRepository;
 import com.deroussenicolas.entities.Article;
 import com.deroussenicolas.entities.Category;
+import com.deroussenicolas.entities.User;
 import com.deroussenicolas.exception.InvalidArticleException;
 import com.deroussenicolas.service.ArticleService;
+import com.deroussenicolas.service.CategoryService;
+import com.deroussenicolas.service.UserService;
 
 /**
  * implements ArticleService
@@ -31,10 +32,19 @@ public class ArticleServiceImplementation implements ArticleService {
 	@Autowired
 	private ArticleRepository articleRepository;
 	@Autowired
-	private CategoryRepository categoryRepository;
+	private CategoryService categoryService;
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 	private Pageable pageable;
+	
+	private final String ARTICLE_NULL = "Article is null";
+	private final String ARTICLE_NOT_FOUND = "Article not found with id =";
+	private final String ARTICLE_SIZE_INVALID_TITLE = "Size of title is invalid, must be between 5 and 70.";	
+	private final String ARTICLE_SIZE_INVALID_MESSAGE = "Size of message is invalid, must be between 5 and 1000.";
+	private final String CATEGORY_NOT_FOUND =  "No category founds. An article can't exists without atlast one category.";
+	private final String CATEGORY_DOES_NOT_MATCHES = "An exception occured with the category list, one category does not exists in database.";
+	private final String USER_NOT_FOUND = "User not found.";
+	private final String CATEGORY_LIST_EMPTY_OR_NULL = "An exception occured with the category list, it's empty or null.";
 	
 	@Override
 	public void save(Article article) {
@@ -47,7 +57,7 @@ public class ArticleServiceImplementation implements ArticleService {
 	 */
 	@Override
 	public Page<Article> findAllFootballArticlesActive(boolean active, Integer pageNo, Integer pageSize) {
-		Long idCategoryFootball = categoryRepository.findCategoryByCategoryName("Football").getId_category();	
+		Long idCategoryFootball = categoryService.findCategoryByCategoryName("Football").getId_category();	
 		pageable = PageRequest.of(pageNo, pageSize); 
 		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryFootball, active, pageable);
 	}
@@ -58,7 +68,7 @@ public class ArticleServiceImplementation implements ArticleService {
 	 */
 	@Override
 	public Page<Article> findAllVolleyballArticlesActive(boolean active, Integer pageNo, Integer pageSize) {
-		Long idCategoryVolleyball = categoryRepository.findCategoryByCategoryName("Volleyball").getId_category();	
+		Long idCategoryVolleyball = categoryService.findCategoryByCategoryName("Volleyball").getId_category();	
 		pageable = PageRequest.of(pageNo, pageSize); 
 		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryVolleyball, active, pageable);
 	}
@@ -69,7 +79,7 @@ public class ArticleServiceImplementation implements ArticleService {
 	 */
 	@Override
 	public Page<Article> findAllBasketballArticlesActive(boolean active, Integer pageNo, Integer pageSize) {
-		Long idCategoryBasketball = categoryRepository.findCategoryByCategoryName("Basketball").getId_category();	
+		Long idCategoryBasketball = categoryService.findCategoryByCategoryName("Basketball").getId_category();	
 		pageable = PageRequest.of(pageNo, pageSize); 
 		return articleRepository.findAllArticlesActiveByCategoryId(idCategoryBasketball, active, pageable);
 	}	
@@ -80,7 +90,7 @@ public class ArticleServiceImplementation implements ArticleService {
 	 */
 	@Override
 	public Page<Article> findAllArticlesFromUser(String userEmail, Integer pageNo, Integer pageSize) {	
-		Long user_id = userRepository.findByEmail(userEmail).getId_user();
+		Long user_id = userService.findByEmail(userEmail).getId_user();
 		pageable = PageRequest.of(pageNo, pageSize); 
 		return articleRepository.findAllArticlesFromUser(user_id, pageable);
 	}
@@ -123,25 +133,65 @@ public class ArticleServiceImplementation implements ArticleService {
 		return articleRepository.findArticleById(id_as_Long);
 	}
 
+	/**
+	 * update article in database
+	 * @return void
+	 * @exception InvalidArticleException
+	 */
 	@Override
 	public void updateArticle(Article article) throws InvalidArticleException {
 		Article previousArticle = articleRepository.findArticleById(article.getId_article());
-		boolean validation = true;
-		if(previousArticle == null || 
-		!verificationArticleTextSize(5, 70, article.getTitle()) || 
-		!verificationArticleTextSize(5, 1000, article.getMessage()) || 
-		article.getCategories().size() < 1) {
-			validation = false;
-		}	
-		if(!validation) {
-			throw new InvalidArticleException("Article is invalid.");
+		if(previousArticle == null) {
+			throw new InvalidArticleException(ARTICLE_NOT_FOUND + article.getId_article());
+		} 
+		else if(!verificationArticleTextSize(5, 70, article.getTitle())) {
+			throw new InvalidArticleException(ARTICLE_SIZE_INVALID_TITLE);
 		}
-		if(validation) {
-			article.setUser(previousArticle.getUser());
-			articleRepository.save(article);
+		else if(!verificationArticleTextSize(5, 1000, article.getMessage())){
+			throw new InvalidArticleException(ARTICLE_SIZE_INVALID_MESSAGE);
 		}
+		else if(article.getCategories().size() < 1) {
+			throw new InvalidArticleException(CATEGORY_NOT_FOUND);
+		}
+		else if(!verificationCategoryExists(article.getCategories())) {
+			throw new InvalidArticleException(CATEGORY_DOES_NOT_MATCHES);
+		}		
+		article.setUser(previousArticle.getUser());
+		articleRepository.save(article);		
 	}
 
+	/**
+	 * create article in database
+	 * @return void
+	 * @exception InvalidArticleException
+	 */
+	@Override
+	public void createArticle(Article article, String userEmail) throws InvalidArticleException {
+		if(article == null) {
+			throw new InvalidArticleException(ARTICLE_NULL);
+		}
+		else if(!verificationArticleTextSize(5, 70, article.getTitle())) {
+			throw new InvalidArticleException(ARTICLE_SIZE_INVALID_TITLE);
+		}
+		else if(!verificationArticleTextSize(5, 1000, article.getMessage())){
+			throw new InvalidArticleException(ARTICLE_SIZE_INVALID_MESSAGE);
+		}
+		else if(article.getCategories().size() < 1) {
+			throw new InvalidArticleException(CATEGORY_NOT_FOUND);
+		}
+		if(!verificationCategoryExists(article.getCategories())) {
+			throw new InvalidArticleException(CATEGORY_DOES_NOT_MATCHES);
+		}
+		article.setDate(new Date());
+		User user = userService.findByEmail(userEmail);
+		if(user != null) {
+			article.setUser(user);
+		} else {
+			throw new InvalidArticleException(USER_NOT_FOUND);
+		}
+		articleRepository.save(article);		
+	}
+	
 	
 	/**
 	 * check if the size of title, message are respected in the article
@@ -155,5 +205,29 @@ public class ArticleServiceImplementation implements ArticleService {
 			return true;
 		}
 	}
+	
+	
+	/**
+	 * check if every category in the category list exists in database and recreate a list for the insertion of the categories
+	 * @return true if the list in parameter contains only category already existing in database otherwise false
+	 */
+	private boolean verificationCategoryExists(List<Category> categoriesFromParameter) throws InvalidArticleException {
+		if(categoriesFromParameter.size() == 0 || categoriesFromParameter == null) {
+			throw new InvalidArticleException(CATEGORY_LIST_EMPTY_OR_NULL);
+		}
+		List<Category> categoriesListFromDatabase = categoryService.findAllCategories();
+		int sizeOfcategoriesFromParameter = categoriesFromParameter.size();
+		for (Category category : categoriesListFromDatabase) {
+			int incrementalNotMarches = 0;
+			for (Category categoryFromParameter : categoriesFromParameter) {
+				if(category.getDescription() != categoryFromParameter.getDescription()) {
+					incrementalNotMarches++;
+				} else if(sizeOfcategoriesFromParameter == incrementalNotMarches) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}	
 	
 }

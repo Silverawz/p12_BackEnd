@@ -12,8 +12,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +38,8 @@ public class ArticleController {
 	@Autowired
 	private ArticleRepository articleRepository;
 	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
+	private final String  CREATION_ARTICLE_FAILED = "Failed to create the article : ";
+	private final String  ERROR_MESSAGE_NEXT_LINE = "\n | Error message = " ;
 /*
 	@GetMapping("/football/test")
 	public ResponseEntity<Page<Article>> footballTestPageable(@RequestParam(defaultValue = "0") Integer page, 
@@ -74,16 +78,28 @@ public class ArticleController {
 	}
 	
 	@PutMapping("/article") 
-	public ResponseEntity<?> updateArticle(@RequestBody @Valid Article article) {
+	public ResponseEntity<?> updateArticle(@RequestBody @Valid Article article) throws InvalidArticleException {
 		try {
 			articleService.updateArticle(article);
 			return new ResponseEntity<>(new HttpHeaders(), HttpStatus.OK);
 		} catch (InvalidArticleException e1) {
-			LOGGER.error("Update article failed for = " + article.toString() +
-					" || error ="+ e1);
+			LOGGER.error(CREATION_ARTICLE_FAILED + article.toString() + ERROR_MESSAGE_NEXT_LINE + e1);
 		} catch (Exception e2) {
-			LOGGER.error("Update article failed for = " + article.toString() +
-					" || error ="+ e2);
+			LOGGER.error(CREATION_ARTICLE_FAILED + article.toString() + ERROR_MESSAGE_NEXT_LINE + e2);
+		}
+		return new ResponseEntity<>(new HttpHeaders(), HttpStatus.BAD_REQUEST);
+	}
+	
+	@PostMapping("/article")
+	public ResponseEntity<?> createArticle(@RequestBody @Valid Article article) throws InvalidArticleException {
+		try {
+			String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			articleService.createArticle(article, userEmail);
+			return new ResponseEntity<>(new HttpHeaders(), HttpStatus.OK);
+		} catch (InvalidArticleException e1) {
+			LOGGER.error(CREATION_ARTICLE_FAILED + article.toString() + ERROR_MESSAGE_NEXT_LINE + e1);
+		} catch (Exception e2) {
+			LOGGER.error(CREATION_ARTICLE_FAILED + article.toString() + ERROR_MESSAGE_NEXT_LINE + e2);
 		}
 		return new ResponseEntity<>(new HttpHeaders(), HttpStatus.BAD_REQUEST);
 	}
