@@ -2,8 +2,6 @@ package com.deroussenicolas.service;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.data.domain.Page;
 
 import com.deroussenicolas.entities.Article;
@@ -22,7 +20,6 @@ public interface ArticleService {
 	public Page<Article> findAllVolleyballArticlesActive(boolean active, Integer pageNo, Integer pageSize);
 	public Page<Article> findAllBasketballArticlesActive(boolean active, Integer pageNo, Integer pageSize);
 	public Page<Article> findAllArticlesFromUser(String userEmail, Integer pageNo, Integer pageSize);
-	//public Page<Article> getAllArticles(Integer pageNo, Integer pageSize);
 	public Article findArticleById(int article_id);
 	public void updateArticle(Article article) throws InvalidArticleException;
 	public void createArticle(Article article, String userEmail) throws InvalidArticleException;;	
