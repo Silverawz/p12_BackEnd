@@ -43,10 +43,7 @@ public class JwtUtil {
     public Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
     }
-/*     	try {
-        } catch (ExpiredJwtException e) {
-        	LOGGER.warn("The token is expired and not valid anymore", e);
-        } */
+
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
@@ -62,22 +59,7 @@ public class JwtUtil {
     private Boolean isTokenExpired(String token) {
         return extractExpiration(token).before(new Date());
     }
-/*
-    public String generateToken(String username) {
-        Map<String, Object> claims = new HashMap<>();
-        return createToken(claims, username);
-    }
 
-    private String createToken(Map<String, Object> claims, String subject) {
-        return Jwts.builder()
-        		.setClaims(claims)
-        		.setSubject(subject)
-        		.setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + ACCESS_TOKEN_VALIDITY_SECONDS))
-                .signWith(SignatureAlgorithm.HS256, secret)
-                .compact();
-    }
-*/
     public Boolean validateToken(String token, UserDetails userDetails) {
         final String username = extractUsername(token);
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
@@ -107,15 +89,11 @@ public class JwtUtil {
                     Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(","))
                             .map(SimpleGrantedAuthority::new)
                             .collect(Collectors.toList());
-            //return new UsernamePasswordAuthenticationToken(userDetails, "", authorities);
             return new UsernamePasswordAuthenticationToken(userDetails.getUsername(), userDetails.getPassword(), authorities);
 		} catch (Exception e) {
 			System.err.println("Roles list is empty.");
 		}
         return new UsernamePasswordAuthenticationToken(userDetails.getUsername(), userDetails.getPassword(), authorities);
-        
-       // throw new Exception();
-       // return new UsernamePasswordAuthenticationToken(userDetails.getUsername(), userDetails.getPassword(), authorities);
     }
     
 }

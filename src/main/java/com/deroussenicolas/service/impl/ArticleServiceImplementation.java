@@ -198,6 +198,9 @@ public class ArticleServiceImplementation implements ArticleService {
 	 * @return true if respected otherwise false
 	 */
 	private boolean verificationArticleTextSize(int minSize, int maxSize, String subject) {
+		if(subject == null) {
+			return false;
+		}
 		int lengthOfSubject = subject.length();
 		if(lengthOfSubject < minSize || lengthOfSubject > maxSize) {
 			return false;
