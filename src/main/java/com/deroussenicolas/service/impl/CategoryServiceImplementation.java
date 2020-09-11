@@ -1,10 +1,13 @@
 package com.deroussenicolas.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.deroussenicolas.dao.CategoryRepository;
+import com.deroussenicolas.entities.Category;
 import com.deroussenicolas.service.CategoryService;
 
 /**
@@ -19,4 +22,14 @@ public class CategoryServiceImplementation implements CategoryService {
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
+
+	@Override
+	public Category findCategoryByCategoryName(String description) {
+		return categoryRepository.findCategoryByCategoryName(description);
+	}
+
+	@Override
+	public List<Category> findAllCategories() {
+		return categoryRepository.findAll();
+	}
 }

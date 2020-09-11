@@ -2,6 +2,7 @@ package com.deroussenicolas.configuration;
 
 import java.io.IOException;
 
+
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -33,49 +34,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	private final String HEADER_STRING = "Authorization";
 	private final String TOKEN_PREFIX = "Bearer ";
 	private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
-	
-	/*
-	@Override
-	protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
-			FilterChain filterChain) throws ServletException, IOException {
 
-		String authorizationHeader = httpServletRequest.getHeader("Authorization");
-
-		String token = null;
-		String userName = null;
-		try {
-			if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
-				token = authorizationHeader.substring(7);
-				userName = jwtUtil.extractUsername(token);
-			}
-
-			if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-
-				UserDetails userDetails = userServiceImplementation.loadUserByUsername(userName);
-
-				if (jwtUtil.validateToken(token, userDetails)) {
-
-					UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-							userDetails, null, userDetails.getAuthorities());
-					usernamePasswordAuthenticationToken
-							.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
-					SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
-				}
-			}
-		} catch (Exception e) {
-			System.err.println(e.getMessage());
-		}
-
-		filterChain.doFilter(httpServletRequest, httpServletResponse);
-	}
-	
-	*/
-	
-	
-	
-	
-	
-	
 	@Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
         String header = req.getHeader(HEADER_STRING);
@@ -86,20 +45,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             try {
                 username = jwtUtil.extractUsername(authToken);
             } catch (IllegalArgumentException e) {
-            	LOGGER.error("An error occured during getting username from token", e);
+            	LOGGER.error("An error occured during getting username from token");
             } catch (ExpiredJwtException e) {
-            	LOGGER.warn("The token is expired and not valid anymore", e);
+            	LOGGER.error("The token is expired and not valid anymore");
             } catch(SignatureException e){
-            	LOGGER.error("Authentication Failed. Username or Password not valid.", e);
+            	LOGGER.error("Authentication Failed. Username or Password not valid.");
             } catch(UnsupportedJwtException e) {
-            	LOGGER.error("Authentication Failed. Unsigned Claims JWTs are not supported.", e);
-            } catch (Exception e) {
-            	LOGGER.error("Exception.", e);
+            	LOGGER.error("Authentication Failed. Unsigned Claims JWTs are not supported.");
+            } catch (RuntimeException e) {
+            	LOGGER.error("RuntimeException.");
             }
         } else {
             //logger.warn("couldn't find bearer string, will ignore the header");
-        }
-        
+        }   
         try {
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 UserDetails userDetails = userServiceImplementation.loadUserByUsername(username);
@@ -112,11 +70,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 }
             }
 		} catch (Exception e) {			
-			System.err.println(e.getMessage());
+			LOGGER.error("An exception occured.");
 		}
-
-
-
         chain.doFilter(req, res);
     }
 
