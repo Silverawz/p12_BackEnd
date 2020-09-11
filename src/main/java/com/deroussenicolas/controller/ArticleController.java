@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -71,6 +72,7 @@ public class ArticleController {
 		return new ResponseEntity<Article>(null, new HttpHeaders(), HttpStatus.BAD_REQUEST); 
 	}
 	
+	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
 	@PutMapping("/article") 
 	public ResponseEntity<?> updateArticle(@RequestBody @Valid Article article) throws InvalidArticleException {
 		try {
@@ -84,6 +86,7 @@ public class ArticleController {
 		return new ResponseEntity<>(new HttpHeaders(), HttpStatus.BAD_REQUEST);
 	}
 	
+	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
 	@PostMapping("/article")
 	public ResponseEntity<?> createArticle(@RequestBody @Valid Article article) throws InvalidArticleException {
 		try {
