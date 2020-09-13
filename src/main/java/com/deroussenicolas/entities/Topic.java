@@ -5,9 +5,13 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -40,6 +44,9 @@ public class Topic implements Serializable {
 	private boolean active;
 	@OneToMany(mappedBy = "id_post", cascade = CascadeType.ALL)
 	private List<Post> postList;
+	@ManyToMany(cascade= CascadeType.MERGE, fetch = FetchType.EAGER)
+	@JoinTable(name="category_has_topic", joinColumns=@JoinColumn(name="topic_id_topic"), inverseJoinColumns=@JoinColumn(name="category_id_category"))
+	private List<Category> categories;
 	
 	public Topic() {
 		super();
@@ -75,6 +82,15 @@ public class Topic implements Serializable {
 
 	public void setPostList(List<Post> postList) {
 		this.postList = postList;
+	}
+
+	
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
 	public static long getSerialversionuid() {

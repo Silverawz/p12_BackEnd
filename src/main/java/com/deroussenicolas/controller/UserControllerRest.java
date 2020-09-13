@@ -1,6 +1,7 @@
 package com.deroussenicolas.controller;
 
 import java.util.HashSet;
+
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.deroussenicolas.exception.InvalidUserException;
 import com.deroussenicolas.configuration.JwtUtil;
 import com.deroussenicolas.entities.AuthRequest;
 import com.deroussenicolas.entities.JwtResponse;
@@ -60,11 +61,22 @@ public class UserControllerRest {
 	}
 	
 	@PostMapping("/signin")
-	public ResponseEntity<?> signin(@RequestBody AuthRequest authRequest) throws Exception  {
+	public ResponseEntity<?> signin(@RequestBody AuthRequest authRequest) throws InvalidUserException  {
+		try {
+			userService.verificationAuthRequestIsValid(authRequest);
+		} catch (InvalidUserException e) {
+			LOGGER.error("User informations are incorrect.");
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).body("User informations are incorrect.");
+		}catch (Exception e) {
+			LOGGER.error("Error occured while authentication : " + e);
+		}		 
 		User user = userService.findByEmail(authRequest.getUsername());
-		if(!user.isActive()) {
+		if(user == null) {
+			LOGGER.error("User is null.");
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).body("User does not exists.");
+		} else if(!user.isActive()) {
 			LOGGER.error("User is inactive | For email : " + user.getEmail());
-			return ResponseEntity.status(HttpStatus.FORBIDDEN).body("User is not active");
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).body("User is not active.");
 		}
 		try {
 	        final Authentication authentication = authenticationManager.authenticate(
@@ -83,13 +95,14 @@ public class UserControllerRest {
 		} catch (Exception e) {
 			LOGGER.error("Bad credentials" + e);
 		}
-		return ResponseEntity.status(HttpStatus.FORBIDDEN).body("An error occured");
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).body("An error has occured with the request.");
 	}
 	
 	@PostMapping("/signup")
-	public ResponseEntity<?> signup(@RequestBody RegisterRequest registerRequest) throws Exception  {
+	public ResponseEntity<?> signup(@RequestBody RegisterRequest registerRequest) throws InvalidUserException  {
 		try {
 			if(userService.findByEmail(registerRequest.getEmail()) == null) {
+				userService.verificationRegisterRequestIsValid(registerRequest);
 				String newPasswordEncoded = encoder.encode(registerRequest.getPassword());
 				roleSet = new HashSet<>();
 				roleSet.add(roleService.findSpecificRole("USER"));
@@ -100,6 +113,9 @@ public class UserControllerRest {
 			} else {
 				return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Email already exists!");
 			}
+		} catch (InvalidUserException e) {
+			LOGGER.error("User informations are incorrect.");
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).body("User informations are incorrect.");
 		} catch (Exception e) {
 			LOGGER.error("Error occured while authentication : " + e);
 		}
