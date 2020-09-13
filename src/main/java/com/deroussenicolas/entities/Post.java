@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 /**
@@ -40,6 +41,7 @@ public class Post implements Serializable {
 	private User user;
 	
 	@ManyToOne
+	@JsonIgnore
 	private Topic topic;
 	
 

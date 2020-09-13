@@ -1,5 +1,6 @@
 package com.deroussenicolas;
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -9,7 +10,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.domain.Page;
-
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import com.deroussenicolas.dao.ArticleRepository;
 import com.deroussenicolas.dao.CategoryRepository;
 import com.deroussenicolas.dao.PostRepository;
@@ -54,7 +56,12 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 		System.err.println("commandlineRunner.... START");
 		
 		// test here
-		
+		/*
+		int a = 1;
+		Long idLong = Long.valueOf(a);
+		Pageable pageable = PageRequest.of(5, 1); 
+		Page page = topicR.findAllTopicsActiveByCategoryIdAndByDesignation(idLong, true, "a", pageable);
+		System.out.println(page.getSize());*/
 		System.err.println("commandlineRunner.... END");	
 	}
 
