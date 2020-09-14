@@ -1,7 +1,6 @@
 package com.deroussenicolas.service.impl;
 
 import java.util.HashSet;
-
 import java.util.List;
 import java.util.Set;
 
@@ -13,12 +12,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.deroussenicolas.exception.InvalidArticleException;
-import com.deroussenicolas.exception.InvalidUserException;
 import com.deroussenicolas.dao.UserRepository;
 import com.deroussenicolas.entities.AuthRequest;
 import com.deroussenicolas.entities.RegisterRequest;
 import com.deroussenicolas.entities.User;
+import com.deroussenicolas.exception.InvalidUserException;
 import com.deroussenicolas.service.UserService;
 /**
  * implements UserService

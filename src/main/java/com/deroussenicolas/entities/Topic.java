@@ -42,7 +42,7 @@ public class Topic implements Serializable {
 	private User user;
 	@NotNull
 	private boolean active;
-	@OneToMany(mappedBy = "id_post", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "topic", cascade = CascadeType.ALL)
 	private List<Post> postList;
 	@ManyToMany(cascade= CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinTable(name="category_has_topic", joinColumns=@JoinColumn(name="topic_id_topic"), inverseJoinColumns=@JoinColumn(name="category_id_category"))

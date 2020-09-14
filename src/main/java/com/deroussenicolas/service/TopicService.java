@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 import com.deroussenicolas.entities.Topic;
+import com.deroussenicolas.exception.InvalidTopicException;
 
 /**
  * 
@@ -13,5 +14,5 @@ import com.deroussenicolas.entities.Topic;
 public interface TopicService {
 
 	public List<Topic> findAll();
-	public Page<Topic> findTopicsActiveByCategoryIdAndByTitleContains(Integer page, Integer size, Long categoryId, boolean active, String titleContains);
+	public Page<Topic> findTopicsActiveByCategoryIdAndByTitleContains(Integer page, Integer size, String category, String active, String titleContains) throws InvalidTopicException;
 }
