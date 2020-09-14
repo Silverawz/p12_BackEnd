@@ -55,13 +55,6 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {	
 		System.err.println("commandlineRunner.... START");
 		
-		// test here
-		/*
-		int a = 1;
-		Long idLong = Long.valueOf(a);
-		Pageable pageable = PageRequest.of(5, 1); 
-		Page page = topicR.findAllTopicsActiveByCategoryIdAndByDesignation(idLong, true, "a", pageable);
-		System.out.println(page.getSize());*/
 		System.err.println("commandlineRunner.... END");	
 	}
 

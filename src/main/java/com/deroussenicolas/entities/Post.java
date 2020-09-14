@@ -41,9 +41,7 @@ public class Post implements Serializable {
 	private User user;
 	
 	@ManyToOne
-	@JsonIgnore
 	private Topic topic;
-	
 
 	public Post() {
 		super();
@@ -80,7 +78,8 @@ public class Post implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
+	
+	@JsonIgnore
 	public Topic getTopic() {
 		return topic;
 	}
