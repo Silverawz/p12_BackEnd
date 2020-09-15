@@ -54,6 +54,7 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {	
 		System.err.println("commandlineRunner.... START");
+		//articleService.createArticle(null, "aaa@aol.fr");
 		
 		System.err.println("commandlineRunner.... END");	
 	}

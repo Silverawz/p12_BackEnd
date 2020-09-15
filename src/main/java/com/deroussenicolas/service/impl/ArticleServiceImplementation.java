@@ -141,19 +141,26 @@ public class ArticleServiceImplementation implements ArticleService {
 	 */
 	@Override
 	public void updateArticle(Article article) throws InvalidArticleException {
-		Article previousArticle = articleRepository.findArticleById(article.getId_article());
-		if(previousArticle == null) {
-			throw new InvalidArticleException(ARTICLE_NOT_FOUND + article.getId_article());
-		} 
+		if(article == null) {
+			throw new InvalidArticleException(ARTICLE_NULL);
+		}
 		else if(!verificationArticleTextSize(5, 70, article.getTitle())) {
 			throw new InvalidArticleException(ARTICLE_SIZE_INVALID_TITLE);
 		}
 		else if(!verificationArticleTextSize(5, 1000, article.getMessage())){
 			throw new InvalidArticleException(ARTICLE_SIZE_INVALID_MESSAGE);
 		}
-		else if(article.getCategories().size() < 1) {
+		else if(article.getCategories() != null) {
+			if(article.getCategories().size() < 1) {
+				throw new InvalidArticleException(CATEGORY_NOT_FOUND);
+			}
+		} else if (article.getCategories() == null) {
 			throw new InvalidArticleException(CATEGORY_NOT_FOUND);
 		}
+		Article previousArticle = articleRepository.findArticleById(article.getId_article());
+		if(previousArticle == null) {
+			throw new InvalidArticleException(ARTICLE_NOT_FOUND + article.getId_article());
+		} 
 		else if(!verificationCategoryExists(article.getCategories())) {
 			throw new InvalidArticleException(CATEGORY_DOES_NOT_MATCHES);
 		}		
@@ -177,7 +184,11 @@ public class ArticleServiceImplementation implements ArticleService {
 		else if(!verificationArticleTextSize(5, 1000, article.getMessage())){
 			throw new InvalidArticleException(ARTICLE_SIZE_INVALID_MESSAGE);
 		}
-		else if(article.getCategories().size() < 1) {
+		else if(article.getCategories() != null) {
+			if(article.getCategories().size() < 1) {
+				throw new InvalidArticleException(CATEGORY_NOT_FOUND);
+			}
+		} else if (article.getCategories() == null) {
 			throw new InvalidArticleException(CATEGORY_NOT_FOUND);
 		}
 		if(!verificationCategoryExists(article.getCategories())) {
