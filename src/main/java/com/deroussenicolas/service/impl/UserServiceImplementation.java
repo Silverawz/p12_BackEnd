@@ -40,6 +40,11 @@ public class UserServiceImplementation implements UserDetailsService, UserServic
 	private final String WRONG_SIZE = "size is incorrect";
 	
 	
+	public UserServiceImplementation(UserRepository userRepository) {
+		super();
+		this.userRepository = userRepository;
+	}
+
 	@Override
 	public void save(User user) {
 		userRepository.save(user);		
@@ -84,6 +89,9 @@ public class UserServiceImplementation implements UserDetailsService, UserServic
 	 */
 	@Override
 	public void verificationAuthRequestIsValid(AuthRequest authRequest) throws InvalidUserException {
+		if(authRequest == null) {
+			throw new InvalidUserException("authRequest "+IS_NULL);
+		}
 		if(authRequest.getUsername() == null) {
 			throw new InvalidUserException(AUTHREQUEST_USERNAME+" "+IS_NULL);
 		} else if (authRequest.getPassword() == null) {
@@ -103,6 +111,9 @@ public class UserServiceImplementation implements UserDetailsService, UserServic
 	 */
 	@Override
 	public void verificationRegisterRequestIsValid(RegisterRequest registerRequest) throws InvalidUserException {
+		if(registerRequest == null) {
+			throw new InvalidUserException("RegisterRequest "+IS_NULL);
+		} 
 		if(registerRequest.getFirstname() == null) {
 			throw new InvalidUserException(REGISTER_FIRSTNAME+" "+IS_NULL);
 		} 
@@ -120,7 +131,7 @@ public class UserServiceImplementation implements UserDetailsService, UserServic
 		if(registerRequest.getEmail() == null) {
 			throw new InvalidUserException(REGISTER_EMAIL+" "+IS_NULL);
 		} 
-		int sizeEmail = registerRequest.getLastname().length();
+		int sizeEmail = registerRequest.getEmail().length();
 		if (sizeEmail < 5 || sizeEmail > 70) {
 			throw new InvalidUserException(REGISTER_EMAIL+" "+WRONG_SIZE);
 		} 

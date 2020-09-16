@@ -1,6 +1,7 @@
 package com.deroussenicolas.service.unit.test;
 
 import static org.mockito.Mockito.doAnswer;
+
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
@@ -32,6 +33,7 @@ import org.junit.Assert;
 import com.deroussenicolas.dao.ArticleRepository;
 import com.deroussenicolas.entities.Article;
 import com.deroussenicolas.entities.Category;
+import com.deroussenicolas.entities.User;
 import com.deroussenicolas.exception.InvalidArticleException;
 import com.deroussenicolas.service.ArticleService;
 import com.deroussenicolas.service.CategoryService;
@@ -59,7 +61,6 @@ public class ArticleServiceTest {
 	
 	@BeforeAll
 	public static void initializeBeforeClass() throws InvalidArticleException {
-		Mockito.mock(CategoryService.class);
 		categories = new ArrayList<>();
 		Category cat1 = new Category(); cat1.setId_category(1L); cat1.setDescription("foot");
 		Category cat2 = new Category(); cat2.setId_category(2L); cat1.setDescription("basket");
@@ -186,16 +187,18 @@ public class ArticleServiceTest {
 	public void sortArticleByDate() {
 		List<Article> articles = new ArrayList<>();
 		Date date = new Date();
-		Article article2 = new Article();
-		article2.setDate(date);
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);
-		cal.add(Calendar.HOUR, -1);
-		Date oneHourBack = cal.getTime();
-		Article article1 = new Article();
-		article1.setDate(oneHourBack);
-		articles.add(article); 
-		articles.add(article1);
-		assertThat(articleServiceImplementation.sortArticleByDate(articles)).isEqualTo(article1); 
+		User user = new User();
+		user.setEmail("aaa@aol.fr");		
+		Article article = new Article();article.setId_article(1L);article.setTitle("valid title");article.setMessage("valid message");
+		article.setDate(date);article.setActive(true);article.setUser(user);
+		articles.add(article);		
+		Calendar cal = Calendar.getInstance();cal.setTime(date);cal.add(Calendar.HOUR, -1);
+		Date oneHourBack = cal.getTime();		
+		Article article1 = new Article();article1.setId_article(2L);article1.setTitle("valid title");article1.setMessage("valid message");
+		article1.setDate(oneHourBack);article1.setActive(true);article1.setUser(user);
+		articles.add(article1);	
+		assertThat(articleServiceImplementation.sortArticleByDate(articles).get(0)).isEqualTo(article1); 
 	}
+	
+	
 }

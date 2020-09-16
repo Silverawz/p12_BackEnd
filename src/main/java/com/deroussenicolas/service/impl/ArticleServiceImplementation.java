@@ -111,7 +111,7 @@ public class ArticleServiceImplementation implements ArticleService {
 			}
 			sortedListOfArticles.add(articles.get(0));
 		}		
-		return sortedListOfArticles;
+		return articles;
 	}
 	
 	/**
