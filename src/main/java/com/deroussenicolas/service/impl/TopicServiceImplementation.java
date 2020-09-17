@@ -1,5 +1,7 @@
 package com.deroussenicolas.service.impl;
 
+
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.deroussenicolas.dao.CategoryRepository;
 import com.deroussenicolas.dao.TopicRepository;
 import com.deroussenicolas.entities.Topic;
 import com.deroussenicolas.exception.InvalidTopicException;
@@ -28,6 +31,15 @@ public class TopicServiceImplementation implements TopicService {
 	private TopicRepository topicRepository;
 	@Autowired
 	private CategoryService categoryService;
+	
+	
+	
+	public TopicServiceImplementation(TopicRepository topicRepository, CategoryService categoryService) {
+		super();
+		this.topicRepository = topicRepository;
+		this.categoryService = categoryService;
+	}
+
 	@Override
 	public List<Topic> findAll() {
 		return topicRepository.findAll();

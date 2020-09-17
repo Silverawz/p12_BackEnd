@@ -55,6 +55,17 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {	
 		System.err.println("commandlineRunner.... START");
 		//articleService.createArticle(null, "aaa@aol.fr");
+		/*
+		Article article = new Article();
+		article.setTitle("valid title");
+		article.setMessage("valid message");
+        List<Category> categories = new ArrayList<>();
+        Category category = new Category();
+        category.setId_category(1L); category.setDescription("Football");
+        categories.add(category);
+        article.setCategories(categories);	
+		articleService.createArticle(article, "jjj@aol.fr"); 
+		*/
 		
 		System.err.println("commandlineRunner.... END");	
 	}

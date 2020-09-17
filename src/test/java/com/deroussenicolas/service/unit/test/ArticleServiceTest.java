@@ -1,35 +1,22 @@
 package com.deroussenicolas.service.unit.test;
 
-import static org.mockito.Mockito.doAnswer;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.doThrow;
+import static org.junit.Assert.assertThrows;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.mockingDetails;
-import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
-import static org.mockito.BDDMockito.given;
-import org.junit.BeforeClass;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.junit.Assert;
+import org.mockito.InjectMocks;
+import org.mockito.junit.MockitoJUnitRunner;
+
 import com.deroussenicolas.dao.ArticleRepository;
 import com.deroussenicolas.entities.Article;
 import com.deroussenicolas.entities.Category;
@@ -37,13 +24,8 @@ import com.deroussenicolas.entities.User;
 import com.deroussenicolas.exception.InvalidArticleException;
 import com.deroussenicolas.service.ArticleService;
 import com.deroussenicolas.service.CategoryService;
+import com.deroussenicolas.service.UserService;
 import com.deroussenicolas.service.impl.ArticleServiceImplementation;
-
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ArticleServiceTest {
@@ -51,27 +33,29 @@ public class ArticleServiceTest {
 	
     private ArticleService articleService = mock(ArticleService.class);
 	private static CategoryService categoryService = mock(CategoryService.class);
-	private static ArticleRepository articleRepository = mock(ArticleRepository.class);;
+	private static ArticleRepository articleRepository = mock(ArticleRepository.class);
+	private static UserService userService = mock(UserService.class);;
 	@InjectMocks
 	private static ArticleServiceImplementation articleServiceImplementation;
 	private String userEmail = "aaa@aol.fr";
 	private static List<Category> categories;
 	private static Article article;
 	
-	
 	@BeforeAll
 	public static void initializeBeforeClass() throws InvalidArticleException {
 		categories = new ArrayList<>();
 		Category cat1 = new Category(); cat1.setId_category(1L); cat1.setDescription("foot");
-		Category cat2 = new Category(); cat2.setId_category(2L); cat1.setDescription("basket");
-		Category cat3 = new Category(); cat3.setId_category(3L); cat1.setDescription("volley");
+		Category cat2 = new Category(); cat2.setId_category(2L); cat2.setDescription("basket");
+		Category cat3 = new Category(); cat3.setId_category(3L); cat3.setDescription("volley");
 		categories.add(cat1);categories.add(cat2);categories.add(cat3);
-		articleServiceImplementation = new ArticleServiceImplementation();	
+		articleServiceImplementation = new ArticleServiceImplementation(articleRepository, categoryService, userService);	
+		given(categoryService.findAllCategories()).willReturn(categories);
 		/*
 		Article article = new Article();
 		article.setId_article(1L);
 		given(articleRepository.findArticleById(1L)).willReturn(article);*/
 	}
+	
 	
 	/** create article
 	 *
@@ -125,6 +109,35 @@ public class ArticleServiceTest {
 		InvalidArticleException exception2 = assertThrows(InvalidArticleException.class, () -> articleServiceImplementation.createArticle(article, userEmail));
         assertThat(exception2.getMessage()).isEqualTo("InvalidArticleException No category founds. An article can't exists without atlast one category.");  
 	}	
+	
+	@Test
+    public void createArticle_WithWrongCategories() throws InvalidArticleException {
+		Article article = new Article();
+		article.setTitle("valid title");
+		article.setMessage("valid message");
+        List<Category> categories = new ArrayList<>();
+        Category category = new Category();
+        category.setId_category(1L); category.setDescription("rugby");
+        categories.add(category);
+        article.setCategories(categories);	
+		InvalidArticleException exception = assertThrows(InvalidArticleException.class, () -> articleServiceImplementation.createArticle(article, userEmail));
+        assertThat(exception.getMessage()).isEqualTo("InvalidArticleException An exception occured with the category list, one category does not exists in database.");  
+	}
+	
+	@Test
+    public void createArticle_WithNullUser() throws InvalidArticleException {
+		Article article = new Article();
+		article.setTitle("valid title");
+		article.setMessage("valid message");
+		article.setUser(null);
+        List<Category> categories = new ArrayList<>();
+        Category category = new Category();
+        category.setId_category(1L); category.setDescription("foot");
+        categories.add(category);
+        article.setCategories(categories);	
+		InvalidArticleException exception = assertThrows(InvalidArticleException.class, () -> articleServiceImplementation.createArticle(article, userEmail));
+        assertThat(exception.getMessage()).isEqualTo("InvalidArticleException User not found.");  
+	}
 	
 	/** update article
 	 *
@@ -184,6 +197,40 @@ public class ArticleServiceTest {
 	}	
 	
 	@Test
+    public void updateArticle_WithNullPreviousArticle() throws InvalidArticleException {
+		Article article = new Article();
+		article.setId_article(1L);
+		article.setTitle("valid title");
+		article.setMessage("valid message");
+		Category category = new Category();
+		category.setId_category(1L); category.setDescription("foot");
+        categories.add(category);
+        article.setCategories(categories); 
+		given(articleRepository.findArticleById(1L)).willReturn(null);
+		InvalidArticleException exception = assertThrows(InvalidArticleException.class, () -> articleServiceImplementation.updateArticle(article));
+        assertThat(exception.getMessage()).isEqualTo("InvalidArticleException Article not found with id =1");   
+	}		
+	
+	@Test
+    public void updateArticle_WithWrongCategories() throws InvalidArticleException {
+		Article article = new Article();
+		article.setId_article(1L);
+		article.setTitle("valid title");
+		article.setMessage("valid message");
+		Category category = new Category();
+		category.setId_category(1L); 
+		category.setDescription("rugby");
+		List<Category> categories = new ArrayList<>();
+        categories.add(category);
+        article.setCategories(categories); 
+        Article previousArticle = new Article();
+		given(articleRepository.findArticleById(1L)).willReturn(previousArticle);
+		InvalidArticleException exception = assertThrows(InvalidArticleException.class, () -> articleServiceImplementation.updateArticle(article));
+        assertThat(exception.getMessage()).isEqualTo("InvalidArticleException An exception occured with the category list, one category does not exists in database.");   
+	}		
+	
+	
+	@Test
 	public void sortArticleByDate() {
 		List<Article> articles = new ArrayList<>();
 		Date date = new Date();
@@ -199,6 +246,5 @@ public class ArticleServiceTest {
 		articles.add(article1);	
 		assertThat(articleServiceImplementation.sortArticleByDate(articles).get(0)).isEqualTo(article1); 
 	}
-	
 	
 }
