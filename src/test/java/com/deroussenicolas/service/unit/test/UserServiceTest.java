@@ -9,6 +9,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -20,6 +21,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.deroussenicolas.dao.UserRepository;
 import com.deroussenicolas.entities.AuthRequest;
@@ -45,34 +47,49 @@ public class UserServiceTest {
 	public static void initializeBeforeClass() {
 		userServiceImplementation = new UserServiceImplementation(userRepository);
 		when(userRepository.findOneUserById(1L)).thenReturn(user1);
+		when(userRepository.findByEmail("aaa@aol.fr")).thenReturn(user1);
 	}
-	
-	
-	
+		
+	@Test
+	public void findOneUserById_withValidId() { 
+		assertThat(userServiceImplementation.findOneUserById(1L)).isEqualTo(user1); 		
+	}
 	
 	@Test
-	public void getAuthority_withNullUser() { 
-		userServiceImplementation.findOneUserById(1L);
-		
-		
-		
-		/*
-		user1 = new User(); user1.setId_user(1L); user1.setActive(true); user1.setArticleList(null); user1.setEmail("aaa@aol.fr");
-		user1.setFirstname("validfirstname"); user1.setLastname("validlastname"); user1.setPassword("validpassword");
-		Role role = new Role(); role.setId_role(1L); role.setDescription("ADMIN");
-		Set<Role> roles = new HashSet<>();
-		roles.add(role);
-		user1.setRoles(roles);
-		userServiceImplementation.loadUserByUsername(user1.getEmail());*/
+	public void findByEmail() {	
+		assertThat(userServiceImplementation.findByEmail("aaa@aol.fr")).isEqualTo(user1); 
 	}
 	
+	@Test
+	public void findAll() {	
+		List<User> users = null;
+		when(userRepository.findAll()).thenReturn(users);
+		assertThat(userServiceImplementation.findAll()).isEqualTo(users); 
+	}	
 	
+	@Test
+	public void loadUserByUsernameWithNullUser() {
+		when(userRepository.findByEmail("aaa@aol.fr")).thenReturn(null);
+		UsernameNotFoundException exception = assertThrows(UsernameNotFoundException.class, () -> userServiceImplementation.loadUserByUsername("aaa@aol.fr"));
+        assertThat(exception.getMessage()).isEqualTo("Invalid username or password."); 
+	}
 	
+	@Test
+	public void loadUserByUsernameWithValidUserButNoRoles() {
+		User user = new User();
+		when(userRepository.findByEmail("nnn@aol.fr")).thenReturn(user);
+		UsernameNotFoundException exception = assertThrows(UsernameNotFoundException.class, () -> userServiceImplementation.loadUserByUsername("nnn@aol.fr"));
+		assertThat(exception.getMessage()).isEqualTo("No roles founds, user must have atlast one role set."); 	
+	}
 	
-	
-	
-	
-	
+	@Test
+	public void loadUserByUsernameWithValidUserAndRole() {
+		User user = new User(); user.setEmail("nnn@aol.fr"); user.setPassword("validpassword");
+		Set<Role> roles = new HashSet<>(); Role role = new Role(); role.setId_role(1L); role.setDescription("ADMIN");
+		user.setRoles(roles);
+		when(userRepository.findByEmail("nnn@aol.fr")).thenReturn(user);
+		userServiceImplementation.loadUserByUsername("nnn@aol.fr"); 	
+	}
 	
 	/**
 	 * verificationAuthRequestIsValid

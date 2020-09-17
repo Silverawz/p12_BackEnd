@@ -1,6 +1,7 @@
 package com.deroussenicolas.service.impl;
 import java.util.ArrayList;
 
+
 import java.util.Date;
 import java.util.List;
 
@@ -38,6 +39,15 @@ public class ArticleServiceImplementation implements ArticleService {
 	private UserService userService;
 	private Pageable pageable;
 	
+	
+	public ArticleServiceImplementation(ArticleRepository articleRepository, CategoryService categoryService,
+			UserService userService) {
+		super();
+		this.articleRepository = articleRepository;
+		this.categoryService = categoryService;
+		this.userService = userService;
+	}
+
 	private final String ARTICLE_NULL = "Article is null";
 	private final String ARTICLE_NOT_FOUND = "Article not found with id =";
 	private final String ARTICLE_SIZE_INVALID_TITLE = "Size of title is invalid, must be between 5 and 70.";	
@@ -163,7 +173,7 @@ public class ArticleServiceImplementation implements ArticleService {
 		} 
 		else if(!verificationCategoryExists(article.getCategories())) {
 			throw new InvalidArticleException(CATEGORY_DOES_NOT_MATCHES);
-		}		
+		}	
 		article.setUser(previousArticle.getUser());
 		articleRepository.save(article);		
 	}
@@ -231,13 +241,15 @@ public class ArticleServiceImplementation implements ArticleService {
 			throw new InvalidArticleException(CATEGORY_LIST_EMPTY_OR_NULL);
 		}
 		List<Category> categoriesListFromDatabase = categoryService.findAllCategories();
-		int sizeOfcategoriesFromParameter = categoriesFromParameter.size();
-		for (Category category : categoriesListFromDatabase) {
+		int sizeOfcategoriesFromParameter = categoriesFromParameter.size();	
+		for (Category categoryFromParameter : categoriesFromParameter) {
 			int incrementalNotMarches = 0;
-			for (Category categoryFromParameter : categoriesFromParameter) {
-				if(category.getDescription() != categoryFromParameter.getDescription()) {
+			A : for (Category  categoryFromDatabase : categoriesListFromDatabase) {
+				if(categoryFromDatabase.getDescription().equals(categoryFromParameter.getDescription())) {
+					break A;
+				} else if(!categoryFromDatabase.getDescription().equals(categoryFromParameter.getDescription())) {
 					incrementalNotMarches++;
-				} else if(sizeOfcategoriesFromParameter == incrementalNotMarches) {
+				} if(sizeOfcategoriesFromParameter == incrementalNotMarches) {
 					return false;
 				}
 			}

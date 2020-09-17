@@ -66,6 +66,9 @@ public class UserServiceImplementation implements UserDetailsService, UserServic
 		if(user == null) {
 			throw new UsernameNotFoundException("Invalid username or password.");
 		}
+		if(user.getRoles() == null) {
+			throw new UsernameNotFoundException("No roles founds, user must have atlast one role set.");
+		}
 		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), getAuthority(user));
 	}
 	
