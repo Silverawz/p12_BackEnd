@@ -1,7 +1,6 @@
 package com.deroussenicolas.service.unit.test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 import static org.junit.Assert.assertThrows;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
