@@ -9,6 +9,6 @@ import com.deroussenicolas.entities.Role;
  */
 public interface RoleService {
 
-	public Role findSpecificRole(String description);
+	Role findSpecificRole(String description);
 
 }
