@@ -13,6 +13,6 @@ import com.deroussenicolas.exception.InvalidPostException;
  */
 public interface PostService {
 
-	Page<Post> findPostsFromTopic(Long idLong, Pageable pageable) throws InvalidPostException;
+	public Page<Post> findPostsFromTopic(Long idLong, Pageable pageable) throws InvalidPostException;
 
 }
