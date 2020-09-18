@@ -1,7 +1,5 @@
 package com.deroussenicolas.service.impl;
 import java.util.ArrayList;
-
-
 import java.util.Date;
 import java.util.List;
 
@@ -39,15 +37,6 @@ public class ArticleServiceImplementation implements ArticleService {
 	private UserService userService;
 	private Pageable pageable;
 	
-	
-	public ArticleServiceImplementation(ArticleRepository articleRepository, CategoryService categoryService,
-			UserService userService) {
-		super();
-		this.articleRepository = articleRepository;
-		this.categoryService = categoryService;
-		this.userService = userService;
-	}
-
 	private final String ARTICLE_NULL = "Article is null";
 	private final String ARTICLE_NOT_FOUND = "Article not found with id =";
 	private final String ARTICLE_SIZE_INVALID_TITLE = "Size of title is invalid, must be between 5 and 70.";	
@@ -121,7 +110,7 @@ public class ArticleServiceImplementation implements ArticleService {
 			}
 			sortedListOfArticles.add(articles.get(0));
 		}		
-		return articles;
+		return sortedListOfArticles;
 	}
 	
 	/**
@@ -151,29 +140,22 @@ public class ArticleServiceImplementation implements ArticleService {
 	 */
 	@Override
 	public void updateArticle(Article article) throws InvalidArticleException {
-		if(article == null) {
-			throw new InvalidArticleException(ARTICLE_NULL);
-		}
+		Article previousArticle = articleRepository.findArticleById(article.getId_article());
+		if(previousArticle == null) {
+			throw new InvalidArticleException(ARTICLE_NOT_FOUND + article.getId_article());
+		} 
 		else if(!verificationArticleTextSize(5, 70, article.getTitle())) {
 			throw new InvalidArticleException(ARTICLE_SIZE_INVALID_TITLE);
 		}
 		else if(!verificationArticleTextSize(5, 1000, article.getMessage())){
 			throw new InvalidArticleException(ARTICLE_SIZE_INVALID_MESSAGE);
 		}
-		else if(article.getCategories() != null) {
-			if(article.getCategories().size() < 1) {
-				throw new InvalidArticleException(CATEGORY_NOT_FOUND);
-			}
-		} else if (article.getCategories() == null) {
+		else if(article.getCategories().size() < 1) {
 			throw new InvalidArticleException(CATEGORY_NOT_FOUND);
 		}
-		Article previousArticle = articleRepository.findArticleById(article.getId_article());
-		if(previousArticle == null) {
-			throw new InvalidArticleException(ARTICLE_NOT_FOUND + article.getId_article());
-		} 
 		else if(!verificationCategoryExists(article.getCategories())) {
 			throw new InvalidArticleException(CATEGORY_DOES_NOT_MATCHES);
-		}	
+		}		
 		article.setUser(previousArticle.getUser());
 		articleRepository.save(article);		
 	}
@@ -194,11 +176,7 @@ public class ArticleServiceImplementation implements ArticleService {
 		else if(!verificationArticleTextSize(5, 1000, article.getMessage())){
 			throw new InvalidArticleException(ARTICLE_SIZE_INVALID_MESSAGE);
 		}
-		else if(article.getCategories() != null) {
-			if(article.getCategories().size() < 1) {
-				throw new InvalidArticleException(CATEGORY_NOT_FOUND);
-			}
-		} else if (article.getCategories() == null) {
+		else if(article.getCategories().size() < 1) {
 			throw new InvalidArticleException(CATEGORY_NOT_FOUND);
 		}
 		if(!verificationCategoryExists(article.getCategories())) {
@@ -241,15 +219,13 @@ public class ArticleServiceImplementation implements ArticleService {
 			throw new InvalidArticleException(CATEGORY_LIST_EMPTY_OR_NULL);
 		}
 		List<Category> categoriesListFromDatabase = categoryService.findAllCategories();
-		int sizeOfcategoriesFromParameter = categoriesFromParameter.size();	
-		for (Category categoryFromParameter : categoriesFromParameter) {
+		int sizeOfcategoriesFromParameter = categoriesFromParameter.size();
+		for (Category category : categoriesListFromDatabase) {
 			int incrementalNotMarches = 0;
-			A : for (Category  categoryFromDatabase : categoriesListFromDatabase) {
-				if(categoryFromDatabase.getDescription().equals(categoryFromParameter.getDescription())) {
-					break A;
-				} else if(!categoryFromDatabase.getDescription().equals(categoryFromParameter.getDescription())) {
+			for (Category categoryFromParameter : categoriesFromParameter) {
+				if(category.getDescription() != categoryFromParameter.getDescription()) {
 					incrementalNotMarches++;
-				} if(sizeOfcategoriesFromParameter == incrementalNotMarches) {
+				} else if(sizeOfcategoriesFromParameter == incrementalNotMarches) {
 					return false;
 				}
 			}

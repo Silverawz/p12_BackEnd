@@ -1,6 +1,5 @@
 package com.deroussenicolas;
 import java.util.ArrayList;
-
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -10,8 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+
 import com.deroussenicolas.dao.ArticleRepository;
 import com.deroussenicolas.dao.CategoryRepository;
 import com.deroussenicolas.dao.PostRepository;
@@ -54,18 +52,8 @@ public class AssociationsSportivesApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {	
 		System.err.println("commandlineRunner.... START");
-		//articleService.createArticle(null, "aaa@aol.fr");
-		/*
-		Article article = new Article();
-		article.setTitle("valid title");
-		article.setMessage("valid message");
-        List<Category> categories = new ArrayList<>();
-        Category category = new Category();
-        category.setId_category(1L); category.setDescription("Football");
-        categories.add(category);
-        article.setCategories(categories);	
-		articleService.createArticle(article, "jjj@aol.fr"); 
-		*/
+		
+		// test here
 		
 		System.err.println("commandlineRunner.... END");	
 	}

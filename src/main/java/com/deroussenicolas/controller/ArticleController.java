@@ -36,11 +36,6 @@ public class ArticleController {
 	private final String  CREATION_ARTICLE_FAILED = "Failed to create the article : ";
 	private final String  ERROR_MESSAGE_NEXT_LINE = "\n | Error message = " ;
 
-	public ArticleController(ArticleService articleService) {
-		super();
-		this.articleService = articleService;
-	}
-
 	@GetMapping("/football/active")
 	public ResponseEntity<Page<Article>> footballArticleActiveList(@RequestParam(defaultValue = "0") Integer page, 
             @RequestParam(defaultValue = "10") Integer size) {	
@@ -57,7 +52,7 @@ public class ArticleController {
 	
 	@GetMapping("/basketball/active")
 	public ResponseEntity<Page<Article>> basketballArticleActiveList(@RequestParam(defaultValue = "0") Integer page, 
-            @RequestParam(defaultValue = "10") Integer size) {	
+            @RequestParam(defaultValue = "10") Integer size) throws InvalidArticleException {	
 		Page<Article> pagesArticles = articleService.findAllBasketballArticlesActive(true, page, size);    
 		return new ResponseEntity<Page<Article>>(pagesArticles, new HttpHeaders(), HttpStatus.OK); 
 	}

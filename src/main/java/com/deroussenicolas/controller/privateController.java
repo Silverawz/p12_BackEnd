@@ -20,13 +20,13 @@ import com.deroussenicolas.service.UserService;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/private")
-public class PrivateController {
-	
+public class privateController {
+
 	private final UserService userService;
 	private final ArticleService articleService;
 
 	@Autowired
-	public PrivateController(UserService userService, ArticleService articleService) {
+	public privateController(UserService userService, ArticleService articleService) {
 		this.userService = userService;
 		this.articleService = articleService;
 	}

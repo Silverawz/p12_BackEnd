@@ -46,7 +46,7 @@ public class WebMvcConfigurerAdapter extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/api/auth/**", "/api/private/**", "/api/sport/**", "/api/forum/**").permitAll().anyRequest().authenticated()
+		http.csrf().disable().authorizeRequests().antMatchers("/api/auth/**", "/api/private/**", "/api/sport/**").permitAll().anyRequest().authenticated()
 				.and().exceptionHandling().and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

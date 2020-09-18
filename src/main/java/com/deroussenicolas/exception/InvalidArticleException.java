@@ -13,7 +13,7 @@ public class InvalidArticleException extends Exception {
 	private static final long serialVersionUID = 1L;
 	
 	public InvalidArticleException(String message) {
-		super("InvalidArticleException "+message);
+		super("InvalidArticleException"+message);
 	}
 
 }
