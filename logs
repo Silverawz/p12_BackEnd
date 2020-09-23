@@ -102,3 +102,32 @@
 2020-09-21 16:47:28.198  INFO 18032 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2020-09-21 16:47:28.199  INFO 18032 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2020-09-21 16:47:28.449  INFO 18032 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-21 17:48:05.776  INFO 17656 --- [main] c.d.AssociationsSportivesApplication     : Starting AssociationsSportivesApplication on DESKTOP-DDG4VL2 with PID 17656 (C:\Users\derou\OneDrive\Desktop\associationsSportives\target\classes started by derou in C:\Users\derou\OneDrive\Desktop\associationsSportives)
+2020-09-21 17:48:05.778  INFO 17656 --- [main] c.d.AssociationsSportivesApplication     : No active profile set, falling back to default profiles: default
+2020-09-21 17:48:06.446  INFO 17656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-21 17:48:06.536  INFO 17656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82ms. Found 6 JPA repository interfaces.
+2020-09-21 17:48:06.866  INFO 17656 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@748e9b20' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-21 17:48:06.873  INFO 17656 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-21 17:48:07.276  INFO 17656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-21 17:48:07.285  INFO 17656 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-21 17:48:07.286  INFO 17656 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-21 17:48:07.426  INFO 17656 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-21 17:48:07.427  INFO 17656 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1610 ms
+2020-09-21 17:48:07.653  INFO 17656 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-21 17:48:07.709  INFO 17656 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-21 17:48:07.736  WARN 17656 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-21 17:48:07.770  INFO 17656 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-09-21 17:48:07.925  INFO 17656 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-21 17:48:08.003  INFO 17656 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11b32a14, org.springframework.security.web.context.SecurityContextPersistenceFilter@1b0e9707, org.springframework.security.web.header.HeaderWriterFilter@daf22f0, org.springframework.security.web.authentication.logout.LogoutFilter@17fede14, com.deroussenicolas.configuration.JwtAuthenticationFilter@51d387d3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74024f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3fcee3d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c33e528, org.springframework.security.web.session.SessionManagementFilter@1c52552f, org.springframework.security.web.access.ExceptionTranslationFilter@7a6ea47d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a13fcf3]
+2020-09-21 17:48:08.044  INFO 17656 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-21 17:48:08.217  INFO 17656 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-21 17:48:08.232  INFO 17656 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-09-21 17:48:08.481  INFO 17656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-21 17:48:08.483  INFO 17656 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-21 17:48:08.969  INFO 17656 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-21 17:48:08.977  INFO 17656 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-21 17:48:09.378  INFO 17656 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-21 17:48:09.384  INFO 17656 --- [main] c.d.AssociationsSportivesApplication     : Started AssociationsSportivesApplication in 3.96 seconds (JVM running for 4.404)
+2020-09-21 17:48:24.322  INFO 17656 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-21 17:48:24.322  INFO 17656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-21 17:48:24.331  INFO 17656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
